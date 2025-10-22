@@ -1,0 +1,40 @@
+# 数据集配置
+data:
+  dataset_name: "SFDDD"
+  root_dir: "data/SFDDD"
+  image_size: 224
+  batch_size: 32
+  num_workers: 4
+  train_split: 0.7
+  val_split: 0.15
+  test_split: 0.15
+
+# 模型配置
+model:
+  name: "MambaDriverDistraction"
+  num_classes: 10  # SFDDD数据集通常有10个类别
+  embed_dim: 256
+  depths: [2, 2, 2]  # 三阶段Mamba
+  ssm_rank: 64
+  dropout_rate: 0.1
+
+# 训练配置
+train:
+  epochs: 100
+  learning_rate: 0.0001
+  weight_decay: 0.0005
+  optimizer: "AdamW"
+  scheduler: "cosine"
+  warmup_epochs: 5
+  device: "cuda"  # "cuda"或"cpu"
+
+# 其他配置
+paths:
+  results_dir: "results"
+  logs_dir: "logs"
+  checkpoint_dir: "checkpoints"
+
+# 推理配置
+inference:
+  checkpoint_path: "checkpoints/best_model.pth"
+  confidence_threshold: 0.5
