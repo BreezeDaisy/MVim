@@ -111,9 +111,9 @@ class Trainer:
     def _prepare_data(self):
         """准备数据加载器"""
         try:
-            # 尝试加载真实数据
+            # 尝试加载真实数据.这里将train目录下的22424张图片划分为15695(train)+3365(val)+3364(test)
             self.train_loader, self.val_loader, self.test_loader, self.class_names = get_dataloaders(self.config)
-            logger.info(f"成功加载真实数据集，训练集大小: {len(self.train_loader.dataset)}, 验证集大小: {len(self.val_loader.dataset)}")
+            logger.info(f"成功加载真实数据集，训练集大小: {len(self.train_loader.dataset)}, 验证集大小: {len(self.val_loader.dataset)}, 测试集大小: {len(self.test_loader.dataset)}")
         except Exception as e:
             logger.warning(f"加载真实数据失败: {e}，使用虚拟数据集进行演示")
             # 使用虚拟数据集
@@ -256,9 +256,9 @@ class Trainer:
         plt.ylabel('True')
         plt.title('Confusion Matrix')
         
-        # 添加类别名称
+        # 添加类别名称（使用原始类别标签）
         class_indices = list(range(len(self.class_names)))
-        class_labels = [self.class_names[f'c{i}'] for i in class_indices]
+        class_labels = [f'c{i}' for i in class_indices]  # 使用原始类别标签如c0, c1等
         plt.xticks(class_indices, class_labels, rotation=45, ha='right')
         plt.yticks(class_indices, class_labels, rotation=0)
         
@@ -271,7 +271,7 @@ class Trainer:
         report = classification_report(
             true_labels, 
             pred_labels,
-            target_names=[self.class_names[f'c{i}'] for i in range(len(self.class_names))],
+            target_names=[f'c{i}' for i in range(len(self.class_names))],  # 使用原始类别标签
             output_dict=True
         )
         
@@ -310,7 +310,7 @@ class Trainer:
             logger.info(f"成功加载模型: {checkpoint_path}")
             return True
         else:
-            logger.warning(f"模型文件不存在: {checkpoint_path}")
+            logger.warning(f"模型文件不存在: {checkpoint_path}，重新训练模型")
             return False
     
     def plot_training_history(self):

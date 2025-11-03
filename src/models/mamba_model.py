@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from mamba_ssm import Mamba, Mamba2  # 导入Mamba模型
+from mamba_ssm import Mamba  # 导入Mamba模型
 
 class MambaBlock(nn.Module):
     """
@@ -177,7 +177,7 @@ class SimpleMambaDriverDistraction(nn.Module):
         
         # 初始卷积特征提取
         self.conv1 = nn.Sequential(
-            nn.Conv2d(3, embed_dim // 4, kernel_size=7, stride=2, padding=3),
+            nn.Conv2d(3, embed_dim // 4, kernel_size=3, stride=2, padding=1),
             nn.BatchNorm2d(embed_dim // 4),
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=3, stride=2, padding=1)
@@ -199,7 +199,7 @@ class SimpleMambaDriverDistraction(nn.Module):
         )
         
         # 计算序列长度（用于Mamba）
-        self.seq_len = (img_size // 32) ** 2
+        self.seq_len = (img_size // 16) ** 2
         
         # 三阶段Mamba
         self.mamba_stages = nn.ModuleList()

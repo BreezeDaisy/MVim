@@ -140,6 +140,7 @@ top_k = engine.get_top_k_predictions('path/to/image.jpg', k=3)
 
 ```bash
 python src/train/train.py
+python -m src.train.train
 ```
 
 运行推理演示：

@@ -62,16 +62,36 @@ class SFDataset(Dataset):
     
     def _load_data(self):
         """加载数据集"""
-        if self.split == 'train':
-            # 训练集包含所有类别文件夹
-            for class_name in self.class_names.keys():
-                class_dir = os.path.join(self.root_dir, class_name)
-                if os.path.exists(class_dir):
-                    for img_name in os.listdir(class_dir):
-                        if img_name.endswith(('.jpg', '.png')):
-                            img_path = os.path.join(class_dir, img_name)
-                            self.image_paths.append(img_path)
-                            self.labels.append(self.class_to_idx[class_name])
+        if self.split in ['train', 'val', 'test']:
+            # 训练集包含在images/train目录下的类别文件夹
+            train_dir = os.path.join(self.root_dir, 'images', 'train')
+            
+            # 尝试使用driver_imgs_list.csv获取标签信息
+            csv_path = os.path.join(self.root_dir, 'driver_imgs_list.csv')
+            use_csv = os.path.exists(csv_path)
+            
+            if use_csv:
+                import pandas as pd
+                df = pd.read_csv(csv_path)
+                
+                for _, row in df.iterrows():
+                    class_name = row['classname']
+                    img_name = row['img']
+                    img_path = os.path.join(train_dir, class_name, img_name)
+                    
+                    if os.path.exists(img_path):
+                        self.image_paths.append(img_path)
+                        self.labels.append(self.class_to_idx[class_name])
+            else:
+                # 如果没有csv文件，直接从文件夹结构加载
+                for class_name in self.class_names.keys():
+                    class_dir = os.path.join(train_dir, class_name)
+                    if os.path.exists(class_dir):
+                        for img_name in os.listdir(class_dir):
+                            if img_name.endswith(('.jpg', '.png')):
+                                img_path = os.path.join(class_dir, img_name)
+                                self.image_paths.append(img_path)
+                                self.labels.append(self.class_to_idx[class_name])
             
             # 划分训练集、验证集和测试集
             if self.split in ['train', 'val', 'test']:
@@ -90,8 +110,8 @@ class SFDataset(Dataset):
                 else:  # test
                     self.image_paths, self.labels = X_test, y_test
         else:
-            # 如果是测试集，直接读取所有图像
-            test_dir = os.path.join(self.root_dir, 'test')
+            # 测试集位于images/test目录
+            test_dir = os.path.join(self.root_dir, 'images', 'test')
             if os.path.exists(test_dir):
                 for img_name in os.listdir(test_dir):
                     if img_name.endswith(('.jpg', '.png')):

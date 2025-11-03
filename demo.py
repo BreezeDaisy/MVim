@@ -11,8 +11,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 from PIL import Image
 
-# 设置中文字体支持
-plt.rcParams['font.sans-serif'] = ['SimHei']  # 用来正常显示中文标签
+# 设置中文字体支持 - 添加更全面的备选字体列表以确保更好的中文显示
+plt.rcParams['font.sans-serif'] = ['SimHei', 'WenQuanYi Micro Hei', 'Heiti TC', 'Arial Unicode MS', 'DejaVu Sans',
+                                   'Noto Sans CJK SC', 'Noto Sans CJK', 'Microsoft YaHei', 'SimSun',
+                                   'KaiTi', 'FangSong', 'STSong', 'Malgun Gothic', 'Apple SD Gothic Neo']  # 用来正常显示中文标签
+# 启用字体回退机制，当指定字体不包含某字符时尝试使用其他可用字体
+plt.rcParams['axes.unicode_minus'] = False  # 用来正常显示负号
 plt.rcParams['axes.unicode_minus'] = False  # 用来正常显示负号
 
 print("=== 驾驶员分心检测系统演示 ===")
@@ -40,17 +44,17 @@ for dep in deps:
 # 导入自定义模块
 print("\n[3] 导入项目模块...")
 try:
-    from src.configs.config import load_config
+    from src.utils.utils import load_config, count_parameters, get_model_size
     from src.models.mamba_model import create_mamba_model, SimpleMambaDriverDistraction
     from src.data.dataset import DummyDriverDataset
-    from src.utils.utils import count_parameters, get_model_size
     print("✓ 成功导入项目模块")
 except Exception as e:
     print(f"✗ 导入模块失败: {e}")
-    # 使用备用导入方式
+    # 备用错误处理
     try:
+        # 尝试单独导入各个模块
         from src.utils.utils import load_config
-        print("✓ 使用备用方式导入配置函数")
+        print("✓ 成功导入配置函数")
     except:
         print("✗ 无法导入配置函数")
 
@@ -88,6 +92,10 @@ except Exception as e:
 # 模型架构演示
 print("\n[5] 模型架构演示...")
 try:
+    # 检查设备是否可用
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(f"使用设备: {device}")
+    
     # 创建一个简单的Mamba模型实例
     model = SimpleMambaDriverDistraction(
         num_classes=10,
@@ -104,8 +112,11 @@ try:
     print(f"  - 模型架构: 三阶段Mamba")
     print(f"  - 类别数量: 10")
     
+    # 将模型移动到设备上
+    model = model.to(device)
+    
     # 测试模型前向传播
-    dummy_input = torch.randn(1, 3, 224, 224)
+    dummy_input = torch.randn(1, 3, 224, 224).to(device)
     output = model(dummy_input)
     print(f"✓ 模型前向传播测试成功")
     print(f"  - 输入形状: {dummy_input.shape}")
