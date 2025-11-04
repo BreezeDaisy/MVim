@@ -29,13 +29,15 @@
 - Python 3.10.18
 - PyTorch 2.9.0+cu126
 - CUDA 12.6
-- 
+- causal_conv1d==1.1.3
+- mamba_ssm==1.1.3
 
 ## 安装依赖
 
 ```bash
 pip install -r requirements.txt
 ```
+python路径与pip路径不同时，以`python -m pip install`安装依赖
 
 ## 数据集准备
 
@@ -56,8 +58,8 @@ pip install -r requirements.txt
 
 数据集应按照以下格式组织：
 
-```
-data/SFDDD/
+```训练集
+data/SFDDD/images/train
 ├── c0/
 │   ├── img_1.jpg
 │   ├── img_2.jpg
@@ -65,6 +67,19 @@ data/SFDDD/
 ├── c1/
 ├── ...
 └── c9/
+```
+```测试集
+data/SFDDD/images/test
+├── img_1.jpg
+├── img_2.jpg
+├── ...
+└── img_1000.jpg
+```
+```标注
+data/SFDDD/annotations/driver_images_list.csv
+- subject: 驾驶员ID
+- classname: 行为类别
+- image: 图像文件名
 ```
 
 如果没有实际数据，项目会自动使用虚拟数据集进行演示。
@@ -88,7 +103,8 @@ data/SFDDD/
 1. **输入层**：接收224x224大小的RGB图像
 2. **特征提取**：使用卷积层或分块嵌入提取视觉特征
 3. **三阶段Mamba**：通过多个Mamba块组成的三阶段结构捕获长期依赖关系
-4. **分类头**：将特征映射到10个驾驶员行为类别
+4. **注意力机制**：在Mamba层后引入空间和通道注意力机制，增强模型对重要特征的关注
+5. **分类头**：将特征映射到10个驾驶员行为类别
 
 ## 训练模型
 
@@ -96,6 +112,7 @@ data/SFDDD/
 
 ```bash
 python src/train/train.py
+python -m src.train.train
 ```
 
 训练过程中会：

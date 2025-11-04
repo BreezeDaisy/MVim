@@ -13,7 +13,7 @@ import seaborn as sns
 
 # 导入自定义模块
 from src.models.mamba_model import create_mamba_model
-from src.data.dataset import get_dataloaders, get_dummy_dataloaders
+from src.data.dataset import get_dataloaders # get_dummy_dataloaders
 
 # 配置日志
 logging.basicConfig(
@@ -28,7 +28,7 @@ logger = logging.getLogger(__name__)
 
 class Trainer:
     """
-    训练器类，用于训练和评估Mamba模型
+    训练器类,用于训练和评估Mamba模型
     """
     def __init__(self, config):
         self.config = config
@@ -310,7 +310,7 @@ class Trainer:
             logger.info(f"成功加载模型: {checkpoint_path}")
             return True
         else:
-            logger.warning(f"模型文件不存在: {checkpoint_path}，重新训练模型")
+            logger.info(f"模型文件不存在: {checkpoint_path}，重新训练模型")
             return False
     
     def plot_training_history(self):

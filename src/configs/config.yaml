@@ -17,11 +17,11 @@ model:
   depths: [2, 2, 2]  # 三阶段Mamba
   ssm_rank: 64
   dropout_rate: 0.1
-  architecture: "simple"  # 可选: "simple"或"mamba"
+  architecture: "mamba"  # 可选: "simple"或"mamba"
 
 # 训练配置
 train:
-  epochs: 20
+  epochs: 50
   learning_rate: 0.0001
   weight_decay: 0.0005
   optimizer: "AdamW"

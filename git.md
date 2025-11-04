@@ -38,3 +38,9 @@ https_proxy=http://172.28.238.143:6500 git push origin main
 ## 撤销未提交的修改
 git checkout -- 文件名  # 撤销单个文件的修改（未 add 状态）
 git reset HEAD 文件名   # 撤销已 add 到暂存区的文件
+
+## 版本回退
+- git log --oneline  # 查看提交历史（简洁显示）(查看完日志后，按q退出)
+- git revert commit_id  # 回退到指定版本（commit_id 为要回退的版本号,在log中查看左侧显示的id）
+- git reset --hard commit_id  # 回退到指定版本并删除目标版本之后的提交记录
+- git push -f origin main  # 强制推送回退后的版本到远程仓库（谨慎使用）,会覆盖其他开发者的提交

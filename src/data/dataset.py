@@ -46,11 +46,11 @@ class SFDataset(Dataset):
         if self.transform is None:
             if self.split == 'train':
                 self.transform = transforms.Compose([
-                    transforms.Resize((image_size, image_size)),
-                    transforms.RandomHorizontalFlip(p=0.5),
-                    transforms.RandomRotation(10),
-                    transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2),
-                    transforms.ToTensor(),
+                    transforms.Resize((image_size,image_size)), # 输入images的尺寸要求为224x224
+                    transforms.RandomHorizontalFlip(p=0.5), # 以p=0.5的概率随机水平翻转
+                    transforms.RandomRotation(10), # 随机旋转角度的范围
+                    transforms.ColorJitter(brightness=0.2, contrast=0.2,saturation=0.2), # 亮度(0.8,1.2)\对比度(0.8,1.2)\饱和度(0.8,1.2)随机调整
+                    transforms.ToTensor(), # 将输入转换为Tensor对象,将通道从[H,W,C]转换为[C,H,W],归一化至[0.0,1.0]
                     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
                 ])
             else:
@@ -74,7 +74,7 @@ class SFDataset(Dataset):
                 import pandas as pd
                 df = pd.read_csv(csv_path)
                 
-                for _, row in df.iterrows():
+                for _, row in df.iterrows():  # 返回值row包含每一行的数据和对应的索引,如claaname='c0',img='img_1.jpg'
                     class_name = row['classname']
                     img_name = row['img']
                     img_path = os.path.join(train_dir, class_name, img_name)
@@ -83,25 +83,17 @@ class SFDataset(Dataset):
                         self.image_paths.append(img_path)
                         self.labels.append(self.class_to_idx[class_name])
             else:
-                # 如果没有csv文件，直接从文件夹结构加载
-                for class_name in self.class_names.keys():
-                    class_dir = os.path.join(train_dir, class_name)
-                    if os.path.exists(class_dir):
-                        for img_name in os.listdir(class_dir):
-                            if img_name.endswith(('.jpg', '.png')):
-                                img_path = os.path.join(class_dir, img_name)
-                                self.image_paths.append(img_path)
-                                self.labels.append(self.class_to_idx[class_name])
+                print("driver_imgs_list.csv不存在")
             
             # 划分训练集、验证集和测试集
             if self.split in ['train', 'val', 'test']:
                 from sklearn.model_selection import train_test_split
                 X_train_val, X_test, y_train_val, y_test = train_test_split(
                     self.image_paths, self.labels, test_size=0.15, stratify=self.labels, random_state=42
-                )
+                ) # 将数据集划分为 训练验证+测试，测试占15%，分层采样(stratify)，随机种子42
                 X_train, X_val, y_train, y_val = train_test_split(
                     X_train_val, y_train_val, test_size=0.1765, stratify=y_train_val, random_state=42
-                )
+                ) # 将训练验证集划分为 训练集+验证集，验证集占15%，分层采样(stratify)，随机种子42
                 
                 if self.split == 'train':
                     self.image_paths, self.labels = X_train, y_train
@@ -133,7 +125,7 @@ class SFDataset(Dataset):
         except Exception as e:
             print(f"Error loading image {img_path}: {e}")
             # 返回一个空白图像和标签
-            image = Image.new('RGB', (self.image_size, self.image_size))
+            # image = Image.new('RGB', (self.image_size, self.image_size))
         
         # 应用变换
         if self.transform:
@@ -145,7 +137,7 @@ def get_dataloaders(config):
     """
     获取数据加载器
     """
-    # 创建数据集
+    # 创建数据加载器
     train_dataset = SFDataset(
         root_dir=config['data']['root_dir'],
         split='train',
@@ -168,9 +160,9 @@ def get_dataloaders(config):
     train_loader = DataLoader(
         train_dataset,
         batch_size=config['data']['batch_size'],
-        shuffle=True,
+        shuffle=True, # 在每个epoch中打乱数据顺序
         num_workers=config['data']['num_workers'],
-        pin_memory=True
+        pin_memory=True # 锁页CPU内存，加快与GPU的数据传输
     )
     
     val_loader = DataLoader(
@@ -191,9 +183,10 @@ def get_dataloaders(config):
     
     return train_loader, val_loader, test_loader, train_dataset.class_names
 
+"""
 # 如果没有实际数据，创建一个虚拟数据集用于演示
 class DummyDriverDataset(Dataset):
-    """虚拟数据集，用于无实际数据时的代码测试"""
+    # 虚拟数据集，用于无实际数据时的代码测试
     def __init__(self, num_samples=100, image_size=224):
         self.num_samples = num_samples
         self.image_size = image_size
@@ -227,7 +220,8 @@ class DummyDriverDataset(Dataset):
         return image, label
 
 def get_dummy_dataloaders(config):
-    """获取虚拟数据加载器"""
+
+    # 获取虚拟数据加载器
     train_dataset = DummyDriverDataset(num_samples=100, image_size=config['data']['image_size'])
     val_dataset = DummyDriverDataset(num_samples=30, image_size=config['data']['image_size'])
     test_dataset = DummyDriverDataset(num_samples=20, image_size=config['data']['image_size'])
@@ -254,3 +248,5 @@ def get_dummy_dataloaders(config):
     )
     
     return train_loader, val_loader, test_loader, train_dataset.class_names
+
+    """

@@ -391,3 +391,135 @@
 2025-10-30 20:26:53,090 - INFO - 开始测试模型性能...
 2025-10-30 20:26:53,142 - INFO - 成功加载模型: checkpoints/best_model.pth
 2025-10-30 20:26:57,142 - INFO - Test Loss: 0.0270, Test Acc: 0.9946
+2025-11-03 17:08:48,585 - INFO - 成功加载真实数据集，训练集大小: 15695, 验证集大小: 3365, 测试集大小: 3364
+2025-11-03 17:08:48,596 - WARNING - 模型文件不存在: checkpoints/latest_model.pth，重新训练模型
+2025-11-03 17:11:06,269 - INFO - Epoch [1/20], Train Loss: 2.3158, Train Acc: 0.1076, Val Loss: 2.3045, Val Acc: 0.1031
+2025-11-03 17:11:06,392 - INFO - 保存最佳模型，验证准确率: 0.1031
+2025-11-03 17:11:32,136 - INFO - Epoch [2/20], Train Loss: 2.3091, Train Acc: 0.1023, Val Loss: 2.3104, Val Acc: 0.1037
+2025-11-03 17:11:32,620 - INFO - 保存最佳模型，验证准确率: 0.1037
+2025-11-03 17:11:58,656 - INFO - Epoch [3/20], Train Loss: 2.3071, Train Acc: 0.1043, Val Loss: 2.2970, Val Acc: 0.1275
+2025-11-03 17:11:59,245 - INFO - 保存最佳模型，验证准确率: 0.1275
+2025-11-03 17:12:25,274 - INFO - Epoch [4/20], Train Loss: 2.2966, Train Acc: 0.1202, Val Loss: 2.2695, Val Acc: 0.1459
+2025-11-03 17:12:25,727 - INFO - 保存最佳模型，验证准确率: 0.1459
+2025-11-03 17:12:51,890 - INFO - Epoch [5/20], Train Loss: 2.1863, Train Acc: 0.1779, Val Loss: 2.0022, Val Acc: 0.2383
+2025-11-03 17:12:52,343 - INFO - 保存最佳模型，验证准确率: 0.2383
+2025-11-03 17:13:19,097 - INFO - Epoch [6/20], Train Loss: 1.8962, Train Acc: 0.2650, Val Loss: 1.6941, Val Acc: 0.3174
+2025-11-03 17:13:19,593 - INFO - 保存最佳模型，验证准确率: 0.3174
+2025-11-03 17:13:46,094 - INFO - Epoch [7/20], Train Loss: 1.6862, Train Acc: 0.3242, Val Loss: 1.5500, Val Acc: 0.3747
+2025-11-03 17:13:46,535 - INFO - 保存最佳模型，验证准确率: 0.3747
+2025-11-03 17:14:13,175 - INFO - Epoch [8/20], Train Loss: 1.5138, Train Acc: 0.3881, Val Loss: 1.3531, Val Acc: 0.4520
+2025-11-03 17:14:13,659 - INFO - 保存最佳模型，验证准确率: 0.4520
+2025-11-03 17:14:40,088 - INFO - Epoch [9/20], Train Loss: 1.3943, Train Acc: 0.4331, Val Loss: 1.2932, Val Acc: 0.4790
+2025-11-03 17:14:40,563 - INFO - 保存最佳模型，验证准确率: 0.4790
+2025-11-03 17:15:06,890 - INFO - Epoch [10/20], Train Loss: 1.2864, Train Acc: 0.4832, Val Loss: 1.1476, Val Acc: 0.5308
+2025-11-03 17:15:07,363 - INFO - 保存最佳模型，验证准确率: 0.5308
+2025-11-03 17:15:34,140 - INFO - Epoch [11/20], Train Loss: 1.1953, Train Acc: 0.5267, Val Loss: 1.0743, Val Acc: 0.5658
+2025-11-03 17:15:34,619 - INFO - 保存最佳模型，验证准确率: 0.5658
+2025-11-03 17:16:01,065 - INFO - Epoch [12/20], Train Loss: 1.1043, Train Acc: 0.5706, Val Loss: 0.9598, Val Acc: 0.6169
+2025-11-03 17:16:01,528 - INFO - 保存最佳模型，验证准确率: 0.6169
+2025-11-03 17:16:28,310 - INFO - Epoch [13/20], Train Loss: 1.0224, Train Acc: 0.6103, Val Loss: 0.9005, Val Acc: 0.6577
+2025-11-03 17:16:28,823 - INFO - 保存最佳模型，验证准确率: 0.6577
+2025-11-03 17:16:55,618 - INFO - Epoch [14/20], Train Loss: 0.9461, Train Acc: 0.6440, Val Loss: 0.8383, Val Acc: 0.6782
+2025-11-03 17:16:56,092 - INFO - 保存最佳模型，验证准确率: 0.6782
+2025-11-03 17:17:22,816 - INFO - Epoch [15/20], Train Loss: 0.8826, Train Acc: 0.6705, Val Loss: 0.8113, Val Acc: 0.7052
+2025-11-03 17:17:23,249 - INFO - 保存最佳模型，验证准确率: 0.7052
+2025-11-03 17:17:50,107 - INFO - Epoch [16/20], Train Loss: 0.8561, Train Acc: 0.6814, Val Loss: 0.7345, Val Acc: 0.7379
+2025-11-03 17:17:50,555 - INFO - 保存最佳模型，验证准确率: 0.7379
+2025-11-03 17:18:17,560 - INFO - Epoch [17/20], Train Loss: 0.8154, Train Acc: 0.6958, Val Loss: 0.7248, Val Acc: 0.7423
+2025-11-03 17:18:18,077 - INFO - 保存最佳模型，验证准确率: 0.7423
+2025-11-03 17:18:44,919 - INFO - Epoch [18/20], Train Loss: 0.7939, Train Acc: 0.7070, Val Loss: 0.7054, Val Acc: 0.7456
+2025-11-03 17:18:45,460 - INFO - 保存最佳模型，验证准确率: 0.7456
+2025-11-03 17:19:12,194 - INFO - Epoch [19/20], Train Loss: 0.7817, Train Acc: 0.7092, Val Loss: 0.7013, Val Acc: 0.7477
+2025-11-03 17:19:12,673 - INFO - 保存最佳模型，验证准确率: 0.7477
+2025-11-03 17:19:39,325 - INFO - Epoch [20/20], Train Loss: 0.7741, Train Acc: 0.7165, Val Loss: 0.6985, Val Acc: 0.7501
+2025-11-03 17:19:39,868 - INFO - 保存最佳模型，验证准确率: 0.7501
+2025-11-03 17:19:40,149 - INFO - 训练完成！总耗时: 0.18 小时
+2025-11-03 17:19:40,149 - INFO - 最佳验证准确率: 0.7501
+2025-11-03 17:19:40,149 - INFO - 开始测试模型性能...
+2025-11-03 17:19:40,205 - INFO - 成功加载模型: checkpoints/best_model.pth
+2025-11-03 17:20:00,049 - INFO - Test Loss: 0.7063, Test Acc: 0.7351
+2025-11-03 17:27:04,567 - INFO - 成功加载真实数据集，训练集大小: 15695, 验证集大小: 3365, 测试集大小: 3364
+2025-11-03 17:27:04,625 - INFO - 成功加载模型: checkpoints/latest_model.pth
+2025-11-03 17:27:32,220 - INFO - Epoch [1/50], Train Loss: 0.7768, Train Acc: 0.7135, Val Loss: 0.6985, Val Acc: 0.7501
+2025-11-03 17:27:32,690 - INFO - 保存最佳模型，验证准确率: 0.7501
+2025-11-03 17:27:59,589 - INFO - Epoch [2/50], Train Loss: 0.7710, Train Acc: 0.7156, Val Loss: 0.6964, Val Acc: 0.7492
+2025-11-03 17:28:27,215 - INFO - Epoch [3/50], Train Loss: 0.7724, Train Acc: 0.7221, Val Loss: 0.6876, Val Acc: 0.7516
+2025-11-03 17:28:27,700 - INFO - 保存最佳模型，验证准确率: 0.7516
+2025-11-03 17:28:55,256 - INFO - Epoch [4/50], Train Loss: 0.7691, Train Acc: 0.7141, Val Loss: 0.6788, Val Acc: 0.7563
+2025-11-03 17:28:55,748 - INFO - 保存最佳模型，验证准确率: 0.7563
+2025-11-03 17:29:23,279 - INFO - Epoch [5/50], Train Loss: 0.7581, Train Acc: 0.7185, Val Loss: 0.6881, Val Acc: 0.7525
+2025-11-03 17:29:51,186 - INFO - Epoch [6/50], Train Loss: 0.7527, Train Acc: 0.7254, Val Loss: 0.6778, Val Acc: 0.7652
+2025-11-03 17:29:51,640 - INFO - 保存最佳模型，验证准确率: 0.7652
+2025-11-03 17:30:18,911 - INFO - Epoch [7/50], Train Loss: 0.7407, Train Acc: 0.7342, Val Loss: 0.6484, Val Acc: 0.7724
+2025-11-03 17:30:19,376 - INFO - 保存最佳模型，验证准确率: 0.7724
+2025-11-03 17:30:46,517 - INFO - Epoch [8/50], Train Loss: 0.7246, Train Acc: 0.7417, Val Loss: 0.6098, Val Acc: 0.7872
+2025-11-03 17:30:46,948 - INFO - 保存最佳模型，验证准确率: 0.7872
+2025-11-03 17:31:14,260 - INFO - Epoch [9/50], Train Loss: 0.7109, Train Acc: 0.7517, Val Loss: 0.6296, Val Acc: 0.7842
+2025-11-03 17:31:42,117 - INFO - Epoch [10/50], Train Loss: 0.6804, Train Acc: 0.7646, Val Loss: 0.5407, Val Acc: 0.8244
+2025-11-03 17:31:42,602 - INFO - 保存最佳模型，验证准确率: 0.8244
+2025-11-03 17:32:10,464 - INFO - Epoch [11/50], Train Loss: 0.6348, Train Acc: 0.7836, Val Loss: 0.5229, Val Acc: 0.8291
+2025-11-03 17:32:10,939 - INFO - 保存最佳模型，验证准确率: 0.8291
+2025-11-03 17:32:38,570 - INFO - Epoch [12/50], Train Loss: 0.5980, Train Acc: 0.7996, Val Loss: 0.4761, Val Acc: 0.8449
+2025-11-03 17:32:39,024 - INFO - 保存最佳模型，验证准确率: 0.8449
+2025-11-03 17:33:06,819 - INFO - Epoch [13/50], Train Loss: 0.5707, Train Acc: 0.8110, Val Loss: 0.4589, Val Acc: 0.8585
+2025-11-03 17:33:07,335 - INFO - 保存最佳模型，验证准确率: 0.8585
+2025-11-03 17:33:34,917 - INFO - Epoch [14/50], Train Loss: 0.5225, Train Acc: 0.8263, Val Loss: 0.5032, Val Acc: 0.8315
+2025-11-03 17:34:02,717 - INFO - Epoch [15/50], Train Loss: 0.4854, Train Acc: 0.8394, Val Loss: 0.5205, Val Acc: 0.8303
+2025-11-03 17:34:30,948 - INFO - Epoch [16/50], Train Loss: 0.4684, Train Acc: 0.8491, Val Loss: 0.4240, Val Acc: 0.8704
+2025-11-03 17:34:31,389 - INFO - 保存最佳模型，验证准确率: 0.8704
+2025-11-03 17:34:58,801 - INFO - Epoch [17/50], Train Loss: 0.4220, Train Acc: 0.8637, Val Loss: 0.3451, Val Acc: 0.8921
+2025-11-03 17:34:59,266 - INFO - 保存最佳模型，验证准确率: 0.8921
+2025-11-03 17:35:26,885 - INFO - Epoch [18/50], Train Loss: 0.3850, Train Acc: 0.8759, Val Loss: 0.3088, Val Acc: 0.9058
+2025-11-03 17:35:27,360 - INFO - 保存最佳模型，验证准确率: 0.9058
+2025-11-03 17:35:55,275 - INFO - Epoch [19/50], Train Loss: 0.3647, Train Acc: 0.8814, Val Loss: 0.3345, Val Acc: 0.9007
+2025-11-03 17:36:23,595 - INFO - Epoch [20/50], Train Loss: 0.3406, Train Acc: 0.8911, Val Loss: 0.2640, Val Acc: 0.9201
+2025-11-03 17:36:24,024 - INFO - 保存最佳模型，验证准确率: 0.9201
+2025-11-03 17:36:52,176 - INFO - Epoch [21/50], Train Loss: 0.3196, Train Acc: 0.9003, Val Loss: 0.2437, Val Acc: 0.9311
+2025-11-03 17:36:52,648 - INFO - 保存最佳模型，验证准确率: 0.9311
+2025-11-03 17:37:20,499 - INFO - Epoch [22/50], Train Loss: 0.2947, Train Acc: 0.9070, Val Loss: 0.2845, Val Acc: 0.9150
+2025-11-03 17:37:48,552 - INFO - Epoch [23/50], Train Loss: 0.2791, Train Acc: 0.9137, Val Loss: 0.2418, Val Acc: 0.9269
+2025-11-03 17:38:16,482 - INFO - Epoch [24/50], Train Loss: 0.2500, Train Acc: 0.9219, Val Loss: 0.2277, Val Acc: 0.9376
+2025-11-03 17:38:16,977 - INFO - 保存最佳模型，验证准确率: 0.9376
+2025-11-03 17:38:44,475 - INFO - Epoch [25/50], Train Loss: 0.2288, Train Acc: 0.9283, Val Loss: 0.1927, Val Acc: 0.9450
+2025-11-03 17:38:44,951 - INFO - 保存最佳模型，验证准确率: 0.9450
+2025-11-03 17:39:13,207 - INFO - Epoch [26/50], Train Loss: 0.2120, Train Acc: 0.9332, Val Loss: 0.2096, Val Acc: 0.9403
+2025-11-03 17:39:40,966 - INFO - Epoch [27/50], Train Loss: 0.1832, Train Acc: 0.9432, Val Loss: 0.1978, Val Acc: 0.9468
+2025-11-03 17:39:41,440 - INFO - 保存最佳模型，验证准确率: 0.9468
+2025-11-03 17:40:09,373 - INFO - Epoch [28/50], Train Loss: 0.1743, Train Acc: 0.9458, Val Loss: 0.1666, Val Acc: 0.9533
+2025-11-03 17:40:09,823 - INFO - 保存最佳模型，验证准确率: 0.9533
+2025-11-03 17:40:37,837 - INFO - Epoch [29/50], Train Loss: 0.1554, Train Acc: 0.9516, Val Loss: 0.1383, Val Acc: 0.9608
+2025-11-03 17:40:38,283 - INFO - 保存最佳模型，验证准确率: 0.9608
+2025-11-03 17:41:06,433 - INFO - Epoch [30/50], Train Loss: 0.1409, Train Acc: 0.9562, Val Loss: 0.1600, Val Acc: 0.9525
+2025-11-03 17:41:34,677 - INFO - Epoch [31/50], Train Loss: 0.1257, Train Acc: 0.9625, Val Loss: 0.1390, Val Acc: 0.9629
+2025-11-03 17:41:35,108 - INFO - 保存最佳模型，验证准确率: 0.9629
+2025-11-03 17:42:03,241 - INFO - Epoch [32/50], Train Loss: 0.1157, Train Acc: 0.9654, Val Loss: 0.1161, Val Acc: 0.9700
+2025-11-03 17:42:03,702 - INFO - 保存最佳模型，验证准确率: 0.9700
+2025-11-03 17:42:31,182 - INFO - Epoch [33/50], Train Loss: 0.0986, Train Acc: 0.9696, Val Loss: 0.1310, Val Acc: 0.9649
+2025-11-03 17:42:59,468 - INFO - Epoch [34/50], Train Loss: 0.0891, Train Acc: 0.9718, Val Loss: 0.1207, Val Acc: 0.9709
+2025-11-03 17:42:59,913 - INFO - 保存最佳模型，验证准确率: 0.9709
+2025-11-03 17:43:27,937 - INFO - Epoch [35/50], Train Loss: 0.0794, Train Acc: 0.9744, Val Loss: 0.1096, Val Acc: 0.9736
+2025-11-03 17:43:28,407 - INFO - 保存最佳模型，验证准确率: 0.9736
+2025-11-03 17:43:56,593 - INFO - Epoch [36/50], Train Loss: 0.0726, Train Acc: 0.9782, Val Loss: 0.1001, Val Acc: 0.9753
+2025-11-03 17:43:57,077 - INFO - 保存最佳模型，验证准确率: 0.9753
+2025-11-03 17:44:25,493 - INFO - Epoch [37/50], Train Loss: 0.0638, Train Acc: 0.9813, Val Loss: 0.1029, Val Acc: 0.9750
+2025-11-03 17:44:53,610 - INFO - Epoch [38/50], Train Loss: 0.0598, Train Acc: 0.9818, Val Loss: 0.1029, Val Acc: 0.9756
+2025-11-03 17:44:54,066 - INFO - 保存最佳模型，验证准确率: 0.9756
+2025-11-03 17:45:21,810 - INFO - Epoch [39/50], Train Loss: 0.0578, Train Acc: 0.9825, Val Loss: 0.0969, Val Acc: 0.9771
+2025-11-03 17:45:22,299 - INFO - 保存最佳模型，验证准确率: 0.9771
+2025-11-03 17:45:50,358 - INFO - Epoch [40/50], Train Loss: 0.0561, Train Acc: 0.9826, Val Loss: 0.0954, Val Acc: 0.9774
+2025-11-03 17:45:50,875 - INFO - 保存最佳模型，验证准确率: 0.9774
+2025-11-03 17:46:19,039 - INFO - Epoch [41/50], Train Loss: 0.0546, Train Acc: 0.9832, Val Loss: 0.0954, Val Acc: 0.9774
+2025-11-03 17:46:47,820 - INFO - Epoch [42/50], Train Loss: 0.0553, Train Acc: 0.9845, Val Loss: 0.0942, Val Acc: 0.9774
+2025-11-03 17:47:15,948 - INFO - Epoch [43/50], Train Loss: 0.0541, Train Acc: 0.9839, Val Loss: 0.0974, Val Acc: 0.9771
+2025-11-03 17:47:44,287 - INFO - Epoch [44/50], Train Loss: 0.0536, Train Acc: 0.9844, Val Loss: 0.0954, Val Acc: 0.9756
+2025-11-03 17:48:12,438 - INFO - Epoch [45/50], Train Loss: 0.0631, Train Acc: 0.9810, Val Loss: 0.0990, Val Acc: 0.9759
+2025-11-03 17:48:41,130 - INFO - Epoch [46/50], Train Loss: 0.0639, Train Acc: 0.9801, Val Loss: 0.0983, Val Acc: 0.9753
+2025-11-03 17:49:09,631 - INFO - Epoch [47/50], Train Loss: 0.0616, Train Acc: 0.9811, Val Loss: 0.1029, Val Acc: 0.9747
+2025-11-03 17:49:38,026 - INFO - Epoch [48/50], Train Loss: 0.0776, Train Acc: 0.9760, Val Loss: 0.1091, Val Acc: 0.9730
+2025-11-03 17:50:06,421 - INFO - Epoch [49/50], Train Loss: 0.0777, Train Acc: 0.9753, Val Loss: 0.1269, Val Acc: 0.9685
+2025-11-03 17:50:34,893 - INFO - Epoch [50/50], Train Loss: 0.1007, Train Acc: 0.9690, Val Loss: 0.1204, Val Acc: 0.9688
+2025-11-03 17:50:35,398 - INFO - 训练完成！总耗时: 0.39 小时
+2025-11-03 17:50:35,398 - INFO - 最佳验证准确率: 0.9774
+2025-11-03 17:50:35,398 - INFO - 开始测试模型性能...
+2025-11-03 17:50:35,454 - INFO - 成功加载模型: checkpoints/best_model.pth
+2025-11-03 17:50:39,245 - INFO - Test Loss: 0.0714, Test Acc: 0.9807
