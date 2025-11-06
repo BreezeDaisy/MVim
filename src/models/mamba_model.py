@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from mamba_ssm import Mamba  # 导入Mamba模型
+import math
 
 class ChannelAttention(nn.Module):
     """
@@ -41,33 +42,105 @@ class ChannelAttention(nn.Module):
 
 class SpatialAttention(nn.Module):
     """
-    空间注意力模块
-    捕获序列维度上的空间信息
+    空间注意力模块（基于稀疏自注意力机制）
+    采用局部窗口+稀疏采样策略，在保持长距离依赖建模能力的同时提高参数效率
     """
-    def __init__(self, kernel_size=7):
+    def __init__(self, in_channels, kernel_size=7, window_size=16, num_global_tokens=4, dropout=0.1):
         super().__init__()
+        self.window_size = window_size
+        self.num_global_tokens = num_global_tokens
+        
+        # 轻量级投影层
+        self.query_proj = nn.Linear(in_channels, in_channels)
+        self.key_proj = nn.Linear(in_channels, in_channels)
+        self.value_proj = nn.Linear(in_channels, in_channels)
+        self.out_proj = nn.Linear(in_channels, in_channels)
+        
+        # 残差卷积路径（更轻量级）
         padding = kernel_size // 2
-        self.conv = nn.Conv1d(2, 1, kernel_size=kernel_size, padding=padding, bias=False)
+        self.residual_conv = nn.Conv1d(2, 1, kernel_size=kernel_size, padding=padding, bias=False)
+        
+        # 全局token投影（用于稀疏全局连接）
+        self.global_token_proj = nn.Linear(in_channels, in_channels // 4)  # 降维以提高效率
+        self.global_out_proj = nn.Linear(in_channels // 4, in_channels)
+        
+        self.dropout = nn.Dropout(dropout)
         self.sigmoid = nn.Sigmoid()
     
     def forward(self, x):
         # x: [batch_size, seq_len, in_channels]
         batch_size, seq_len, in_channels = x.size()
         
-        # 在通道维度上进行平均和最大池化
+        # 1. 局部窗口注意力（高效的局部依赖建模）.将QKV矩阵分组计算score后再cat回输入的维度,本质上减少计算注意力分数的token数量(分组实现)
+        # 计算查询、键、值
+        q = self.query_proj(x)
+        k = self.key_proj(x)
+        v = self.value_proj(x)
+        
+        # 初始化输出
+        x_local_attn = torch.zeros_like(x)
+        
+        # 分窗口处理注意力
+        for i in range(0, seq_len, self.window_size):
+            # 获取当前窗口
+            window_end = min(i + self.window_size, seq_len)
+            window_len = window_end - i
+            
+            # 提取窗口内的Q、K、V
+            q_window = q[:, i:window_end]
+            k_window = k[:, i:window_end]
+            v_window = v[:, i:window_end]
+            
+            # 计算缩放点积注意力（仅在窗口内）
+            scale = 1.0 / math.sqrt(in_channels)
+            attn = torch.matmul(q_window, k_window.transpose(-2, -1)) * scale
+            attn = attn.softmax(dim=-1)
+            attn = self.dropout(attn)
+            
+            # 应用注意力
+            window_out = torch.matmul(attn, v_window)
+            x_local_attn[:, i:window_end] = window_out
+        
+        # 2. 稀疏全局连接（捕获长距离依赖）
+        if seq_len > self.window_size and self.num_global_tokens > 0:
+            # 均匀采样全局token的索引。在起始值(包含)和终值(包含)中均匀生成第三个参数数量的值
+            global_indices = torch.linspace(0, seq_len - 1, self.num_global_tokens, dtype=torch.long, device=x.device)
+            
+            # 提取全局token
+            global_tokens = x[:, global_indices] # 选中global_indices索引对应的token
+            
+            # 为每个token计算与全局token的注意力
+            # 先对query进行降维，确保维度匹配
+            q_global = self.global_token_proj(q) # 对q进行降维,将in_channels映射到in_channels//4
+            k_global = self.global_token_proj(global_tokens)
+            v_global = self.global_token_proj(global_tokens)
+            
+            # 计算全局注意力
+            scale = 1.0 / math.sqrt(in_channels // 4)  # 基于降维后的维度缩放
+            global_attn = torch.matmul(q_global, k_global.transpose(-2, -1)) * scale
+            global_attn = global_attn.softmax(dim=-1)
+            global_attn = self.dropout(global_attn)
+            
+            # 应用全局注意力
+            x_global_attn = torch.matmul(global_attn, v_global)
+            x_global_attn = self.global_out_proj(x_global_attn)  # 升维
+        else:
+            x_global_attn = torch.zeros_like(x)
+        
+        # 3. 轻量级残差卷积路径(以卷积的形式获得输入序列的每个token的权重,不涉及token之间的相互交互)
         avg_out = torch.mean(x, dim=2, keepdim=True)  # [batch_size, seq_len, 1]
         max_out, _ = torch.max(x, dim=2, keepdim=True)  # [batch_size, seq_len, 1]
+        out_conv = torch.cat([avg_out, max_out], dim=2)  # [batch_size, seq_len, 2]
+        out_conv = out_conv.transpose(1, 2)  # [batch_size, 2, seq_len]
+        out_conv = self.residual_conv(out_conv).transpose(1, 2)  # [batch_size, seq_len, 1]
+        out_conv = self.sigmoid(out_conv).expand_as(x)  # [batch_size, seq_len, in_channels]
         
-        # 拼接池化结果
-        out = torch.cat([avg_out, max_out], dim=2)  # [batch_size, seq_len, 2]
-        out = out.transpose(1, 2)  # [batch_size, 2, seq_len]
+        # 4. 融合所有路径
+        out = x + x_local_attn + x_global_attn  # 残差连接
+        out = out * out_conv  # 应用卷积注意力权重
+        out = self.out_proj(out)  # 最终投影
         
-        # 通过卷积层
-        out = self.conv(out)  # [batch_size, 1, seq_len]
-        out = self.sigmoid(out).transpose(1, 2)  # [batch_size, seq_len, 1]
-        
-        # 应用注意力权重
-        return x * out.expand_as(x)
+        return out
 
 class AttentionModule(nn.Module):
     """
@@ -76,7 +149,7 @@ class AttentionModule(nn.Module):
     def __init__(self, in_channels, reduction_ratio=16, kernel_size=7):
         super().__init__()
         self.channel_attention = ChannelAttention(in_channels, reduction_ratio)
-        self.spatial_attention = SpatialAttention(kernel_size)
+        self.spatial_attention = SpatialAttention(in_channels, kernel_size)
     
     def forward(self, x):
         # 先应用通道注意力，再应用空间注意力
