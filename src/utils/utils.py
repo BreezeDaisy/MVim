@@ -3,10 +3,65 @@ import yaml
 import torch
 import random
 import numpy as np
-import matplotlib.pyplot as plt
+import matplotlib
+# 先导入matplotlib核心，设置后端必须在导入pyplot之前
 import cv2
 from PIL import Image
 from datetime import datetime
+
+# 稍后再导入pyplot
+
+def setup_matplotlib(config):
+    """根据配置设置matplotlib参数，支持中文显示和高质量渲染
+    
+    Args:
+        config: 包含matplotlib配置的字典对象
+    """
+    # 首先设置后端
+    if 'matplotlib' in config and 'backend' in config['matplotlib']:
+        matplotlib.use(config['matplotlib']['backend'])
+    
+    # 现在可以安全地导入pyplot了
+    import matplotlib.pyplot as plt
+    
+    # 应用配置参数
+    if 'matplotlib' in config:
+        mpl_config = config['matplotlib']
+        
+        # 设置基础渲染参数
+        if 'figure_dpi' in mpl_config:
+            matplotlib.rcParams['figure.dpi'] = mpl_config['figure_dpi']
+        if 'savefig_dpi' in mpl_config:
+            matplotlib.rcParams['savefig.dpi'] = mpl_config['savefig_dpi']
+        if 'text_antialiased' in mpl_config:
+            matplotlib.rcParams['text.antialiased'] = mpl_config['text_antialiased']
+        if 'path_snap' in mpl_config:
+            matplotlib.rcParams['path.snap'] = mpl_config['path_snap']
+        if 'image_interpolation' in mpl_config:
+            matplotlib.rcParams['image.interpolation'] = mpl_config['image_interpolation']
+        if 'axes_unicode_minus' in mpl_config:
+            plt.rcParams['axes.unicode_minus'] = mpl_config['axes_unicode_minus']
+        
+        # 设置字体参数
+        if 'font' in mpl_config:
+            font_config = mpl_config['font']
+            if 'sans_serif' in font_config:
+                plt.rcParams['font.sans-serif'] = font_config['sans_serif']
+            if 'size' in font_config:
+                plt.rcParams['font.size'] = font_config['size']
+            if 'axes_titlesize' in font_config:
+                plt.rcParams['axes.titlesize'] = font_config['axes_titlesize']
+            if 'axes_labelsize' in font_config:
+                plt.rcParams['axes.labelsize'] = font_config['axes_labelsize']
+            if 'xtick_labelsize' in font_config:
+                plt.rcParams['xtick.labelsize'] = font_config['xtick_labelsize']
+            if 'ytick_labelsize' in font_config:
+                plt.rcParams['ytick.labelsize'] = font_config['ytick_labelsize']
+            if 'legend_fontsize' in font_config:
+                plt.rcParams['legend.fontsize'] = font_config['legend_fontsize']
+    
+    # 确保返回plt，方便调用者直接使用
+    return plt
 
 def set_seed(seed=42):
     """设置随机种子，确保实验可重复性"""
@@ -36,8 +91,12 @@ def get_timestamp():
     """获取当前时间戳"""
     return datetime.now().strftime('%Y%m%d_%H%M%S')
 
-def plot_images(images, labels, class_names, nrows=3, ncols=3, figsize=(12, 12)):
+def plot_images(images, labels, class_names, nrows=3, ncols=3, figsize=(12, 12), plt=None):
     """绘制图像和标签"""
+    if plt is None:
+        # 如果没有提供plt对象，导入默认的
+        import matplotlib.pyplot as plt
+    
     plt.figure(figsize=figsize)
     for i, (img, label) in enumerate(zip(images[:nrows*ncols], labels[:nrows*ncols])):
         plt.subplot(nrows, ncols, i+1)
@@ -55,8 +114,12 @@ def plot_images(images, labels, class_names, nrows=3, ncols=3, figsize=(12, 12))
     plt.tight_layout()
     return plt
 
-def visualize_prediction(image, true_label, pred_label, confidence, class_names):
+def visualize_prediction(image, true_label, pred_label, confidence, class_names, plt=None):
     """可视化单个预测结果"""
+    if plt is None:
+        # 如果没有提供plt对象，导入默认的
+        import matplotlib.pyplot as plt
+    
     plt.figure(figsize=(8, 6))
     
     # 如果图像是张量，需要转换为numpy格式
@@ -145,8 +208,12 @@ def load_image_from_bytes(image_bytes):
     image = Image.open(BytesIO(image_bytes)).convert('RGB')
     return image
 
-def plot_confidence_distribution(probabilities, class_names, figsize=(10, 6)):
+def plot_confidence_distribution(probabilities, class_names, figsize=(10, 6), plt=None):
     """绘制置信度分布"""
+    if plt is None:
+        # 如果没有提供plt对象，导入默认的
+        import matplotlib.pyplot as plt
+    
     plt.figure(figsize=figsize)
     class_indices = list(range(len(class_names)))
     class_labels = [class_names[f'c{i}'] for i in class_indices]

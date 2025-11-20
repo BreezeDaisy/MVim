@@ -17,16 +17,17 @@ model:
   depths: [2, 2, 2]  # 三阶段Mamba
   ssm_rank: 64
   dropout_rate: 0.1
-  architecture: "mamba"  # 可选: "simple"或"mamba"
+  architecture: "simple"  # 可选: "simple"或"mamba"
+  model_checkpoints: ""  # 预训练模型路径，为空时不加载，不为空时加载指定路径的模型
 
 # 训练配置
 train:
   epochs: 50
-  learning_rate: 0.0001
-  weight_decay: 0.0005
-  optimizer: "AdamW"
-  scheduler: "cosine"
-  warmup_epochs: 5
+  learning_rate: 0.0001 # 学习率
+  weight_decay: 0.0005 # 权重衰减因子
+  optimizer: "AdamW" # "AdamW"\"Adam"\"SGD"
+  scheduler: "cosine" # 学习率调度器. "cosine"或"step"或"reduce_on_plateau"
+  warmup_epochs: 5 # 预热轮数
   device: "cuda"  # "cuda"或"cpu"
 
 # 其他配置
@@ -37,5 +38,23 @@ paths:
 
 # 推理配置
 inference:
-  checkpoint_path: "checkpoints/best_model.pth"
+  checkpoint_path: "checkpoints/best_model.pth" # 根据实际的训练情况更改文件名
   confidence_threshold: 0.5
+
+# Matplotlib配置
+matplotlib:
+  backend: "Agg"
+  figure_dpi: 150
+  savefig_dpi: 300
+  text_antialiased: true
+  path_snap: false
+  image_interpolation: "bilinear"
+  font:
+    sans_serif: ["AR PL UMing CN"]
+    size: 14
+    axes_titlesize: 20
+    axes_labelsize: 16
+    xtick_labelsize: 14
+    ytick_labelsize: 14
+    legend_fontsize: 14
+  axes_unicode_minus: false

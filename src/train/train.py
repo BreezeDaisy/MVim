@@ -18,7 +18,7 @@ from src.data.dataset import get_dataloaders # get_dummy_dataloaders
 # 配置日志
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
+    format='%(asctime)s - %(levelname)s - %(message)s', # 包含时间、日志级别和消息
     handlers=[
         logging.FileHandler("logs/training.log"),
         logging.StreamHandler()
@@ -54,50 +54,53 @@ class Trainer:
         self.val_losses = []
         self.train_accs = []
         self.val_accs = []
-        self.best_val_acc = 0.0
+        self.best_score = 0.0  # 使用best_score替代best_val_acc以保持一致性
         
-        # 创建保存目录
-        os.makedirs(config['paths']['checkpoint_dir'], exist_ok=True)
+        # 创建所有必要的保存目录
+        for dir_path in ['checkpoint_dir', 'logs_dir', 'results_dir']:
+            if dir_path in config['paths']:
+                os.makedirs(config['paths'][dir_path], exist_ok=True)
+
         os.makedirs(config['paths']['results_dir'], exist_ok=True)
     
     def _create_optimizer(self):
         """创建优化器"""
-        if self.config['train']['optimizer'] == 'AdamW':
+        if self.config['train']['optimizer'] == 'AdamW': # AdamW优化器
             optimizer = optim.AdamW(
                 self.model.parameters(),
                 lr=self.config['train']['learning_rate'],
                 weight_decay=self.config['train']['weight_decay']
             )
-        elif self.config['train']['optimizer'] == 'Adam':
+        elif self.config['train']['optimizer'] == 'Adam': # Adam优化器 
             optimizer = optim.Adam(
                 self.model.parameters(),
                 lr=self.config['train']['learning_rate'],
-                weight_decay=self.config['train']['weight_decay']
+                weight_decay=self.config['train']['weight_decay'] 
             )
         else:
-            optimizer = optim.SGD(
+            optimizer = optim.SGD( # 随机梯度下降优化器
                 self.model.parameters(),
                 lr=self.config['train']['learning_rate'],
-                momentum=0.9,
+                momentum=0.9, # 动量因子
                 weight_decay=self.config['train']['weight_decay']
             )
         return optimizer
     
     def _create_scheduler(self):
         """创建学习率调度器"""
-        if self.config['train']['scheduler'] == 'cosine':
+        if self.config['train']['scheduler'] == 'cosine': # 余弦退火学习率调度器
             scheduler = optim.lr_scheduler.CosineAnnealingLR(
                 self.optimizer,
                 T_max=self.config['train']['epochs'],
                 eta_min=0
             )
-        elif self.config['train']['scheduler'] == 'step':
+        elif self.config['train']['scheduler'] == 'step': # 步长学习率调度器
             scheduler = optim.lr_scheduler.StepLR(
                 self.optimizer,
                 step_size=30,
                 gamma=0.1
             )
-        elif self.config['train']['scheduler'] == 'reduce_on_plateau':
+        elif self.config['train']['scheduler'] == 'reduce_on_plateau': # 基于验证损失的学习率衰减
             scheduler = optim.lr_scheduler.ReduceLROnPlateau(
                 self.optimizer,
                 mode='max',
@@ -115,10 +118,10 @@ class Trainer:
             self.train_loader, self.val_loader, self.test_loader, self.class_names = get_dataloaders(self.config)
             logger.info(f"成功加载真实数据集，训练集大小: {len(self.train_loader.dataset)}, 验证集大小: {len(self.val_loader.dataset)}, 测试集大小: {len(self.test_loader.dataset)}")
         except Exception as e:
-            logger.warning(f"加载真实数据失败: {e}，使用虚拟数据集进行演示")
-            # 使用虚拟数据集
-            self.train_loader, self.val_loader, self.test_loader, self.class_names = get_dummy_dataloaders(self.config)
-            logger.info(f"已创建虚拟数据集用于演示，训练集大小: {len(self.train_loader.dataset)}, 验证集大小: {len(self.val_loader.dataset)}")
+            logger.warning(f"加载真实数据失败: {e}，数据集不存在")
+            # # 使用虚拟数据集
+            # self.train_loader, self.val_loader, self.test_loader, self.class_names = get_dummy_dataloaders(self.config)
+            # logger.info(f"已创建虚拟数据集用于演示，训练集大小: {len(self.train_loader.dataset)}, 验证集大小: {len(self.val_loader.dataset)}")
     
     def train_one_epoch(self, epoch):
         """训练一个epoch"""
@@ -181,7 +184,7 @@ class Trainer:
                 
                 running_loss += loss.item() * inputs.size(0)
                 _, predicted = torch.max(outputs, 1)
-                total += labels.size(0)
+                total += labels.size(0) # 统计总样本数
                 correct += (predicted == labels).sum().item()
                 
                 # 保存所有标签和预测结果用于混淆矩阵
@@ -288,16 +291,26 @@ class Trainer:
             'optimizer_state_dict': self.optimizer.state_dict(),
             'scheduler_state_dict': self.scheduler.state_dict() if self.scheduler else None,
             'val_acc': self.val_accs[-1],
-            'config': self.config
+            'config': self.config,
+            'best_score': self.val_accs[-1] if is_best else (getattr(self, 'best_score', 0.0))
         }
         
+        # 创建checkpoints目录
+        checkpoint_dir = self.config['paths']['checkpoint_dir']
+        os.makedirs(checkpoint_dir, exist_ok=True)
+        
         # 保存最新模型
-        torch.save(checkpoint, os.path.join(self.config['paths']['checkpoint_dir'], 'latest_model.pth'))
+        latest_path = os.path.join(checkpoint_dir, 'latest_model.pth')
+        torch.save(checkpoint, latest_path)
+        logger.info(f"保存最新模型到: {latest_path}")
         
         # 保存最佳模型
         if is_best:
-            torch.save(checkpoint, os.path.join(self.config['paths']['checkpoint_dir'], 'best_model.pth'))
-            logger.info(f"保存最佳模型，验证准确率: {self.val_accs[-1]:.4f}")
+            best_path = os.path.join(checkpoint_dir, 'best_model.pth')
+            torch.save(checkpoint, best_path)
+            logger.info(f"保存最佳模型，验证准确率: {self.val_accs[-1]:.4f}，路径: {best_path}")
+            # 更新最佳分数
+            self.best_score = self.val_accs[-1]
     
     def load_model(self, checkpoint_path):
         """加载模型"""
@@ -308,10 +321,15 @@ class Trainer:
             if self.scheduler and 'scheduler_state_dict' in checkpoint:
                 self.scheduler.load_state_dict(checkpoint['scheduler_state_dict'])
             logger.info(f"成功加载模型: {checkpoint_path}")
-            return True
+            # 返回加载信息，包含epoch和best_score
+            return {
+                'success': True,
+                'epoch': checkpoint.get('epoch', 0),
+                'best_score': checkpoint.get('best_score', checkpoint.get('val_acc', 0.0))
+            }
         else:
             logger.info(f"模型文件不存在: {checkpoint_path}，重新训练模型")
-            return False
+            return {'success': False}
     
     def plot_training_history(self):
         """绘制训练历史"""
@@ -343,10 +361,25 @@ class Trainer:
         """训练主循环"""
         start_time = time.time()
         
-        # 尝试加载最新模型继续训练
-        self.load_model(os.path.join(self.config['paths']['checkpoint_dir'], 'latest_model.pth'))
+        # 初始化最佳分数
+        self.best_score = 0.0
+        start_epoch = 0
         
-        for epoch in range(self.config['train']['epochs']):
+        # 检查是否需要加载预训练模型
+        checkpoint_path = self.config['model'].get('model_checkpoints', '')
+        if checkpoint_path:
+            load_info = self.load_model(checkpoint_path)
+            if load_info and isinstance(load_info, dict) and load_info.get('success'):
+                logger.info(f"从检查点恢复训练: {checkpoint_path}")
+                # 恢复训练轮数和最佳分数
+                start_epoch = load_info.get('epoch', 0)
+                self.best_score = max(load_info.get('best_score', 0.0), self.best_score)
+            else:
+                logger.info("预训练模型加载失败，开始新的训练")
+        else:
+            logger.info("未指定预训练模型路径，开始新的训练")
+        
+        for epoch in range(start_epoch, self.config['train']['epochs']):
             # 训练一个epoch
             train_loss, train_acc = self.train_one_epoch(epoch)
             
@@ -366,9 +399,9 @@ class Trainer:
                         f'Val Loss: {val_loss:.4f}, Val Acc: {val_acc:.4f}')
             
             # 保存模型
-            is_best = val_acc > self.best_val_acc
+            is_best = val_acc > self.best_score
             if is_best:
-                self.best_val_acc = val_acc
+                self.best_score = val_acc
             self.save_model(epoch, is_best)
             
             # 绘制训练历史
@@ -377,7 +410,7 @@ class Trainer:
         
         end_time = time.time()
         logger.info(f"训练完成！总耗时: {(end_time - start_time) / 3600:.2f} 小时")
-        logger.info(f"最佳验证准确率: {self.best_val_acc:.4f}")
+        logger.info(f"最佳验证准确率: {self.best_score:.4f}")
         
         # 最终测试
         logger.info("开始测试模型性能...")
