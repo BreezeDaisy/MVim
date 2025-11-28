@@ -13,8 +13,8 @@ def test_data_loading():
     # 更新配置以适应FER-2013数据集
     config['data']['dataset_name'] = 'FER-2013'
     config['data']['root_dir'] = 'data/FER_2013'  # 使用实际的数据集路径
-    config['data']['image_size'] = 48  # 数据集实际图像尺寸为48x48
-    config['data']['batch_size'] = 8  # 使用小批量进行测试
+    config['data']['image_size'] = 64  # 数据集实际图像尺寸为48x48
+    config['data']['batch_size'] = 16  # 使用小批量进行测试
     config['data']['num_workers'] = 2
     
     print("正在加载数据集...")

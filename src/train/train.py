@@ -251,19 +251,38 @@ class Trainer:
         return test_loss, test_acc
     
     def _plot_confusion_matrix(self, true_labels, pred_labels):
-        """生成混淆矩阵"""
+        """生成混淆矩阵，左侧为原始混淆矩阵，右侧为归一化后的混淆矩阵"""
+        # 计算原始混淆矩阵和归一化混淆矩阵
         cm = confusion_matrix(true_labels, pred_labels)
-        plt.figure(figsize=(12, 10))
-        sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
-        plt.xlabel('Predicted')
-        plt.ylabel('True')
-        plt.title('Confusion Matrix')
+        # 按行归一化
+        cm_normalized = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
+        
+        # 创建2列子图布局
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 10))
         
         # 添加类别名称（使用原始类别标签）
         class_indices = list(range(len(self.class_names)))
         class_labels = [f'c{i}' for i in class_indices]  # 使用原始类别标签如c0, c1等
-        plt.xticks(class_indices, class_labels, rotation=45, ha='right')
-        plt.yticks(class_indices, class_labels, rotation=0)
+        
+        # 左侧：原始混淆矩阵
+        sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', ax=ax1)
+        ax1.set_xlabel('Predicted')
+        ax1.set_ylabel('True')
+        ax1.set_title('Confusion Matrix (Raw Counts)')
+        ax1.set_xticks(class_indices)
+        ax1.set_xticklabels(class_labels, rotation=45, ha='right')
+        ax1.set_yticks(class_indices)
+        ax1.set_yticklabels(class_labels, rotation=0)
+        
+        # 右侧：归一化后的混淆矩阵
+        sns.heatmap(cm_normalized, annot=True, fmt='.2f', cmap='Blues', ax=ax2)
+        ax2.set_xlabel('Predicted')
+        ax2.set_ylabel('True')
+        ax2.set_title('Confusion Matrix (Normalized)')
+        ax2.set_xticks(class_indices)
+        ax2.set_xticklabels(class_labels, rotation=45, ha='right')
+        ax2.set_yticks(class_indices)
+        ax2.set_yticklabels(class_labels, rotation=0)
         
         plt.tight_layout()
         plt.savefig(os.path.join(self.config['paths']['results_dir'], 'confusion_matrix.png'))

@@ -26,12 +26,12 @@ git add 文件名1 文件名2  # 提交指定文件
 git add .
 
 ### 提交修改
-git commit -m "功能/修复：具体说明，例如“新增用户登录模块”或“修复首页加载bug”"
+`git commit -m "功能/修复：具体说明，例如“新增用户登录模块”或“修复首页加载bug”"`
 
 ## 开发完成
 ### 推送本地当前分支到远程 main 分支
-git push origin main
-
+`git push origin main`
+`git push`
 ### 若需要代理
 https_proxy=http://172.28.238.143:6500 git push origin main
 

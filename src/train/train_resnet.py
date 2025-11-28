@@ -7,17 +7,16 @@ import torchvision.transforms as transforms
 from torch.utils.data import DataLoader, random_split
 import yaml
 import logging
-import time
 from tqdm import tqdm
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.metrics import confusion_matrix, classification_report
 import seaborn as sns
 import pandas as pd
-from datetime import datetime
 
 # 导入自定义模块
-from src.models.resnet_model import create_resnet_model
+# from src.models.resnet_model import ResEmotionNet
+from src.models.ResEmoteNet import ResEmoteNet as ResEmotionNet
 from src.utils.utils import load_config, setup_matplotlib
 
 # 配置日志
@@ -39,45 +38,32 @@ class FER2013Dataset(torch.utils.data.Dataset):
     def __init__(self, csv_file, transform=None):
         """
         初始化数据集
-        
         Args:
-            csv_file: CSV文件路径，包含图像数据和标签
+            csv_file: CSV文件路径,包含图像数据和标签
             transform: 应用于图像的转换
         """
         self.data = pd.read_csv(csv_file)
         self.transform = transform
         # FER-2013数据集的情绪标签映射
         self.emotion_map = {
-            0: '愤怒',
-            1: '厌恶',
-            2: '恐惧',
-            3: '开心',
-            4: '难过',
-            5: '惊讶',
-            6: '中性'
+            0: 'angry',
+            1: 'disgust',
+            2: 'fear',
+            3: 'happy',
+            4: 'sad',
+            5: 'surprise',
+            6: 'neutral'
         }
     
     def __len__(self):
-        """
-        返回数据集长度
-        """
         return len(self.data)
     
     def __getitem__(self, idx):
-        """
-        获取单个样本
-        
-        Args:
-            idx: 样本索引
-            
-        Returns:
-            图像和标签的元组
-        """
         # 获取情绪标签
         emotion = self.data.iloc[idx, 0]
         # 获取像素数据并重塑为图像
         pixels = self.data.iloc[idx, 1].split(' ')
-        image = np.array(pixels, dtype=np.uint8).reshape(48, 48)
+        image = np.array(pixels, dtype=np.uint8).reshape(64, 64)
         # 扩展为RGB格式
         image = np.stack([image, image, image], axis=0)
         # 转换为张量
@@ -90,12 +76,11 @@ class FER2013Dataset(torch.utils.data.Dataset):
 class FER2013FolderDataset(torchvision.datasets.ImageFolder):
     """
     基于文件夹结构的FER-2013数据集类
-    使用ImageFolder加载按情绪分类的图像
+    使用ImageFolder加载按情绪分类的图像,自动将文件夹名称作为类别标签
     """
     def __init__(self, root, transform=None, target_transform=None):
         """
         初始化数据集
-        
         Args:
             root: 数据集根目录路径
             transform: 应用于图像的转换
@@ -124,27 +109,13 @@ class FER2013FolderDataset(torchvision.datasets.ImageFolder):
         }
 
 def get_fer2013_dataloaders(config):
-    """
-    获取FER-2013数据集的数据加载器
-    Args:
-        config: 配置字典
-    Returns:
-        训练、验证和测试数据加载器的元组
-    """
-    # 定义训练集变换 - 增强版本以提高泛化能力
+    # 定义训练集变换 - 优化版本，减少过度增强
     train_transform = transforms.Compose([
         transforms.Resize((config['data']['image_size'], config['data']['image_size'])),
-        transforms.RandomHorizontalFlip(p=0.5),
-        transforms.RandomRotation(15),
-        transforms.RandomAffine(degrees=0, translate=(0.1, 0.1)),  # 随机平移
-        transforms.RandomResizedCrop(config['data']['image_size'], scale=(0.9, 1.0)),  # 随机裁剪
-        transforms.ColorJitter(
-            brightness=0.3,
-            contrast=0.3,
-            saturation=0.2,
-            hue=0.1
-        ),  # 更强烈的颜色变换
-        transforms.RandomApply([transforms.GaussianBlur(kernel_size=3)], p=0.2),  # 高斯模糊
+        transforms.Grayscale(num_output_channels=3), # 转换为3通道灰度图
+        transforms.RandomHorizontalFlip(),
+        transforms.RandomRotation(5),  # 减少旋转角度
+        transforms.ColorJitter(brightness=0.1, contrast=0.1, saturation=0.1, hue=0.05),  # 降低颜色变换幅度
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     ])
@@ -152,6 +123,8 @@ def get_fer2013_dataloaders(config):
     # 定义验证集和测试集变换（不包含数据增强）
     val_test_transform = transforms.Compose([
         transforms.Resize((config['data']['image_size'], config['data']['image_size'])),
+        transforms.Grayscale(num_output_channels=3), # 转换为3通道灰度图
+        transforms.RandomHorizontalFlip(),
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     ])
@@ -183,7 +156,7 @@ def get_fer2013_dataloaders(config):
     val_loader = DataLoader(
         val_dataset,
         batch_size=config['data']['batch_size'],
-        shuffle=False,
+        shuffle=True,
         num_workers=config['data']['num_workers'],
         pin_memory=True
     )
@@ -195,7 +168,37 @@ def get_fer2013_dataloaders(config):
         num_workers=config['data']['num_workers'],
         pin_memory=True
     )
+
+    # 输出数据集样本数量
+    print("\n=== 数据集信息 ===")
+    print(f"训练集样本数量: {len(train_dataset)}")
+    print(f"验证集样本数量: {len(val_dataset)}")
+    print(f"测试集样本数量: {len(test_dataset)}")
     
+    # 输出单个样本张量维度
+    print("\n=== 单个样本张量维度 ===")
+    # 训练集单个样本
+    train_sample, train_label = train_dataset[0]
+    print(f"训练集单个样本形状: {train_sample.shape}")
+    print(f"训练集单个样本标签: {train_label}")
+    
+    # 验证集单个样本
+    val_sample, val_label = all_test_dataset[0]  # 从原始测试集获取，因为val_dataset是random_split的结果
+    print(f"验证集单个样本形状: {val_sample.shape}")
+    print(f"验证集单个样本标签: {val_label}")
+    
+    # 测试集单个样本
+    test_sample, test_label = all_test_dataset[val_size]  # 从原始测试集获取，因为test_dataset是random_split的结果
+    print(f"测试集单个样本形状: {test_sample.shape}")
+    print(f"测试集单个样本标签: {test_label}")
+    
+    # 获取训练集的一个批次并打印形状
+    print("\n=== 训练集批次形状 ===")
+    for images, labels in train_loader:
+        print(f"图像形状: {images.shape}")  # 应该是 [batch_size, 3, image_size, image_size]
+        print(f"标签形状: {labels.shape}")  # 应该是 [batch_size]
+        break  # 只检查一个批次
+
     return train_loader, val_loader, test_loader
 
 class ResNetTrainer:
@@ -204,18 +207,15 @@ class ResNetTrainer:
     用于训练和评估ResNet模型在FER-2013数据集上的性能
     """
     def __init__(self, config):
-        """
-        初始化训练器
-        
-        Args:
-            config: 配置字典
-        """
         self.config = config
         self.device = torch.device(config['train']['device'] if torch.cuda.is_available() else 'cpu')
         
         # 创建模型
-        self.model = create_resnet_model(config).to(self.device)
-        
+        self.model = ResEmotionNet().to(self.device)
+        # Print the number of parameters
+        total_params = sum(p.numel() for p in self.model.parameters())
+        print(f'{total_params:,} total parameters.')
+
         # 创建损失函数
         self.criterion = nn.CrossEntropyLoss()
         
@@ -246,24 +246,20 @@ class ResNetTrainer:
                 os.makedirs(config['paths'][dir_path], exist_ok=True)
     
     def _create_optimizer(self):
-        """
-        创建优化器
-        
-        Returns:
-            优化器对象
-        """
         if self.config['train']['optimizer'] == 'AdamW':
             optimizer = optim.AdamW(
                 self.model.parameters(),
                 lr=self.config['train']['learning_rate'],
                 weight_decay=self.config['train']['weight_decay']
             )
+            print(f"Using AdamW optimizer with lr={self.config['train']['learning_rate']} and weight_decay={self.config['train']['weight_decay']}")
         elif self.config['train']['optimizer'] == 'Adam':
             optimizer = optim.Adam(
                 self.model.parameters(),
                 lr=self.config['train']['learning_rate'],
                 weight_decay=self.config['train']['weight_decay']
             )
+            print(f"Using Adam optimizer with lr={self.config['train']['learning_rate']} and weight_decay={self.config['train']['weight_decay']}")              
         else:
             optimizer = optim.SGD(
                 self.model.parameters(),
@@ -271,27 +267,24 @@ class ResNetTrainer:
                 momentum=0.9,
                 weight_decay=self.config['train']['weight_decay']
             )
+            print(f"Using SGD optimizer with lr={self.config['train']['learning_rate']} and weight_decay={self.config['train']['weight_decay']}")              
         return optimizer
     
     def _create_scheduler(self):
-        """
-        创建学习率调度器
-        
-        Returns:
-            学习率调度器对象
-        """
         if self.config['train']['scheduler'] == 'cosine':
             scheduler = optim.lr_scheduler.CosineAnnealingLR(
                 self.optimizer,
                 T_max=self.config['train']['epochs'],
                 eta_min=0
             )
+            print(f"Using CosineAnnealingLR scheduler with T_max={self.config['train']['epochs']} and eta_min=0")
         elif self.config['train']['scheduler'] == 'step':
             scheduler = optim.lr_scheduler.StepLR(
                 self.optimizer,
                 step_size=30,
                 gamma=0.1
             )
+            print(f"Using StepLR scheduler with step_size=30 and gamma=0.1")
         elif self.config['train']['scheduler'] == 'reduce_on_plateau':
             scheduler = optim.lr_scheduler.ReduceLROnPlateau(
                 self.optimizer,
@@ -300,24 +293,20 @@ class ResNetTrainer:
                 patience=10,
                 verbose=True
             )
+            print(f"Using ReduceLROnPlateau scheduler with mode='min', factor=0.1, patience=10, verbose=True")
         else:
             scheduler = None
+            print(f"Not using any learning rate scheduler")
         return scheduler
     
     def train_epoch(self):
-        """
-        训练一个epoch
-        
-        Returns:
-            平均训练损失和准确率
-        """
         self.model.train()
         running_loss = 0.0
         correct = 0
         total = 0
         
         with tqdm(self.train_loader, desc='Training') as pbar:
-            for inputs, labels in pbar:
+            for inputs, labels in pbar: 
                 inputs, labels = inputs.to(self.device), labels.to(self.device)
                 
                 # 梯度清零
@@ -395,9 +384,10 @@ class ResNetTrainer:
         """
         测试模型
         Returns:
-            测试准确率、混淆矩阵和分类报告
+            测试损失、测试准确率、混淆矩阵和分类报告
         """
         self.model.eval()
+        running_loss = 0.0
         correct = 0
         total = 0
         all_preds = []
@@ -409,14 +399,23 @@ class ResNetTrainer:
                     inputs, labels = inputs.to(self.device), labels.to(self.device)
                     # 前向传播
                     outputs = self.model(inputs)
+                    loss = self.criterion(outputs, labels)
                     _, predicted = outputs.max(1)
                     # 统计
+                    running_loss += loss.item()
                     total += labels.size(0)
                     correct += predicted.eq(labels).sum().item()
                     # 保存预测和真实标签用于混淆矩阵
                     all_preds.extend(predicted.cpu().numpy())
                     all_labels.extend(labels.cpu().numpy())
+                    
+                    # 更新进度条
+                    pbar.set_postfix({
+                        'loss': running_loss / (pbar.n + 1),
+                        'acc': 100. * correct / total
+                    })
         
+        test_loss = running_loss / len(self.test_loader)
         test_acc = 100. * correct / total
         
         # 计算混淆矩阵
@@ -424,10 +423,10 @@ class ResNetTrainer:
         # 计算分类报告
         report = classification_report(
             all_labels, all_preds,
-            target_names=['愤怒', '厌恶', '恐惧', '开心', '难过', '惊讶', '中性'],
+            target_names=['angry', 'disgust', 'fear', 'happy', 'sad', 'surprise', 'neutral'],
             output_dict=True
         )
-        return test_acc, cm, report
+        return test_loss, test_acc, cm, report
     
     def save_model(self, epoch, is_best=False):
         """
@@ -491,19 +490,44 @@ class ResNetTrainer:
     
     def plot_confusion_matrix(self, cm):
         plt = setup_matplotlib(self.config)
-        plt.figure(figsize=(10, 8))
+        # 计算归一化混淆矩阵（按行归一化）
+        cm_normalized = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
+        
+        # 创建2列子图布局
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 10))
+        
+        # 设置类别标签
+        class_labels = ['angry', 'disgust', 'fear', 'happy', 'sad', 'surprise', 'neutral']
+        
+        # 左侧：原始混淆矩阵
         sns.heatmap(
             cm, 
             annot=True, 
             fmt='d', 
             cmap='Blues',
-            xticklabels=['愤怒', '厌恶', '恐惧', '开心', '难过', '惊讶', '中性'],
-            yticklabels=['愤怒', '厌恶', '恐惧', '开心', '难过', '惊讶', '中性']
+            xticklabels=class_labels,
+            yticklabels=class_labels,
+            ax=ax1
         )
-        plt.xlabel('Predicted')
-        plt.ylabel('True')
-        plt.title('Confusion Matrix')
+        ax1.set_xlabel('Predicted')
+        ax1.set_ylabel('True')
+        ax1.set_title('Confusion Matrix (Raw Counts)')
         
+        # 右侧：归一化后的混淆矩阵
+        sns.heatmap(
+            cm_normalized, 
+            annot=True, 
+            fmt='.2f', 
+            cmap='Blues',
+            xticklabels=class_labels,
+            yticklabels=class_labels,
+            ax=ax2
+        )
+        ax2.set_xlabel('Predicted')
+        ax2.set_ylabel('True')
+        ax2.set_title('Confusion Matrix (Normalized)')
+        
+        plt.tight_layout()
         # 保存图像
         cm_path = os.path.join(self.config['paths']['results_dir'], 'resnet_confusion_matrix.png')
         plt.savefig(cm_path)
@@ -570,8 +594,8 @@ class ResNetTrainer:
         self.plot_training_history()
         # 测试模型
         logger.info("Testing model...")
-        test_acc, cm, report = self.test()
-        logger.info(f"Test Accuracy: {test_acc:.2f}%")
+        test_loss, test_acc, cm, report = self.test()
+        logger.info(f"Test Loss: {test_loss:.4f}, Test Accuracy: {test_acc:.2f}%")
         # 绘制混淆矩阵
         self.plot_confusion_matrix(cm)
         # 保存分类报告
@@ -590,19 +614,20 @@ def main():
     # 更新配置以适应FER-2013数据集
     config['data']['dataset_name'] = 'FER-2013'
     config['data']['root_dir'] = 'data/FER_2013'  # 使用实际的数据集路径
-    config['data']['image_size'] = 48  # 数据集实际图像尺寸为48x48
-    config['data']['batch_size'] = 32
+    config['data']['image_size'] = 64  # 数据集实际图像尺寸为64x64
+    config['data']['batch_size'] = 16
     config['data']['num_workers'] = 8
-    config['model']['name'] = 'ResNet18'
+    # config['model']['name'] = 'ResNet18'
     config['model']['num_classes'] = 7  # FER-2013有7个情绪类别
-    config['model']['depth'] = '34'  # 使用ResNet-18，或者ResNet-34
-    config['model']['zero_init_residual'] = True # 零初始化残差块的最后一个BN层
+    config['model']['zero_init_residual'] = False # 零初始化残差块的最后一个BN层
     
     # 增加权重衰减以减少过拟合
-    config['train']['weight_decay'] = 0.01  # 从默认的较小值增加到0.01
-    config['train']['optimizer'] = 'AdamW'  # 确保使用AdamW优化器
-    config['train']['early_stopping_patience'] = 15  # 启用早停机制
-    config['model']['dropout_rate'] = 0.5  # 设置Dropout率
+    config['train']['weight_decay'] = 1e-4  # 从默认的较小值增加到0.01
+    config['train']['learning_rate'] = 0.001  # 从默认的较小值增加到0.01
+    config['train']['optimizer'] = 'SGD'  # 确保使用AdamW优化器
+    config['train']['scheduler'] = 'None'  # 不使用学习率调度器
+    config['train']['early_stopping_patience'] = 0  # 启用早停机制,0则禁止
+    # config['model']['dropout_rate'] = 0.1  # 设置Dropout率
     
     # 创建训练器
     trainer = ResNetTrainer(config)
