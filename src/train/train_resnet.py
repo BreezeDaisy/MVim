@@ -109,22 +109,21 @@ class FER2013FolderDataset(torchvision.datasets.ImageFolder):
         }
 
 def get_fer2013_dataloaders(config):
-    # 定义训练集变换 - 优化版本，减少过度增强
+    # 定义训练集变换 - 与优秀模型保持一致
     train_transform = transforms.Compose([
         transforms.Resize((config['data']['image_size'], config['data']['image_size'])),
         transforms.Grayscale(num_output_channels=3), # 转换为3通道灰度图
         transforms.RandomHorizontalFlip(),
-        transforms.RandomRotation(5),  # 减少旋转角度
-        transforms.ColorJitter(brightness=0.1, contrast=0.1, saturation=0.1, hue=0.05),  # 降低颜色变换幅度
+        # 移除RandomRotation和ColorJitter，与优秀模型保持一致
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     ])
 
-    # 定义验证集和测试集变换（不包含数据增强）
+    # 定义验证集和测试集变换（与训练集保持一致）
     val_test_transform = transforms.Compose([
         transforms.Resize((config['data']['image_size'], config['data']['image_size'])),
         transforms.Grayscale(num_output_channels=3), # 转换为3通道灰度图
-        transforms.RandomHorizontalFlip(),
+        transforms.RandomHorizontalFlip(),  # 添加随机水平翻转，与优秀模型保持一致
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     ])
@@ -134,15 +133,40 @@ def get_fer2013_dataloaders(config):
     test_dir = os.path.join(config['data']['root_dir'], 'test')
     
     # 创建数据集
-    train_dataset = FER2013FolderDataset(train_dir, transform=train_transform)
+    train_dataset = FER2013FolderDataset(train_dir, transform=train_transform) 
     
-    # 加载测试集并将其分为验证集和测试集（50%:50%）
+    # 加载测试集
     all_test_dataset = FER2013FolderDataset(test_dir, transform=val_test_transform)
-    val_size = len(all_test_dataset) // 2
-    test_size = len(all_test_dataset) - val_size
-    val_dataset, test_dataset = random_split(
-        all_test_dataset, [val_size, test_size]
-    )
+    
+    # 按类别进行1:1划分，确保类别分布一致
+    # 1. 获取所有样本的索引和标签
+    indices = list(range(len(all_test_dataset)))
+    labels = [all_test_dataset[i][1] for i in indices]
+    
+    # 2. 按标签分组
+    from collections import defaultdict
+    label_to_indices = defaultdict(list)
+    for idx, label in zip(indices, labels):
+        label_to_indices[label].append(idx)
+    
+    # 3. 对每个类别按1:1划分
+    val_indices = []
+    test_indices = []
+    
+    for label, idxs in label_to_indices.items():
+        # 打乱该类别的索引
+        import random
+        random.shuffle(idxs)
+        # 计算划分点
+        split_point = len(idxs) // 2
+        # 分配到验证集和测试集
+        val_indices.extend(idxs[:split_point])
+        test_indices.extend(idxs[split_point:])
+    
+    # 4. 使用Subset创建数据集
+    from torch.utils.data import Subset
+    val_dataset = Subset(all_test_dataset, val_indices)
+    test_dataset = Subset(all_test_dataset, test_indices)
     
     # 创建数据加载器
     train_loader = DataLoader(
@@ -183,12 +207,14 @@ def get_fer2013_dataloaders(config):
     print(f"训练集单个样本标签: {train_label}")
     
     # 验证集单个样本
-    val_sample, val_label = all_test_dataset[0]  # 从原始测试集获取，因为val_dataset是random_split的结果
+    # val_sample, val_label = all_test_dataset[0]  # 从原始测试集获取，因为val_dataset是random_split的结果.更改
+    val_sample, val_label = val_dataset[0]
     print(f"验证集单个样本形状: {val_sample.shape}")
     print(f"验证集单个样本标签: {val_label}")
     
     # 测试集单个样本
-    test_sample, test_label = all_test_dataset[val_size]  # 从原始测试集获取，因为test_dataset是random_split的结果
+    # test_sample, test_label = all_test_dataset[val_size]  # 从原始测试集获取，因为test_dataset是random_split的结果.更改
+    test_sample, test_label = test_dataset[0]
     print(f"测试集单个样本形状: {test_sample.shape}")
     print(f"测试集单个样本标签: {test_label}")
     
@@ -231,8 +257,10 @@ class ResNetTrainer:
         # 初始化训练记录
         self.train_losses = []
         self.val_losses = []
+        self.test_losses = []  # 添加测试损失记录
         self.train_accs = []
         self.val_accs = []
+        self.test_accs = []  # 添加测试准确率记录
         self.best_score = 0.0
         
         # 早停机制参数
@@ -271,7 +299,10 @@ class ResNetTrainer:
         return optimizer
     
     def _create_scheduler(self):
-        if self.config['train']['scheduler'] == 'cosine':
+        if self.config['train']['scheduler'] == 'none':
+            scheduler = None  # 不使用学习率调度器，与优秀模型保持一致
+            print(f"Not using any learning rate scheduler (fixed lr)")
+        elif self.config['train']['scheduler'] == 'cosine':
             scheduler = optim.lr_scheduler.CosineAnnealingLR(
                 self.optimizer,
                 T_max=self.config['train']['epochs'],
@@ -335,8 +366,9 @@ class ResNetTrainer:
         train_loss = running_loss / len(self.train_loader)
         train_acc = 100. * correct / total
         
-        self.train_losses.append(train_loss)
-        self.train_accs.append(train_acc)
+        # 移除内部记录，改为在train方法中统一记录
+        # self.train_losses.append(train_loss)
+        # self.train_accs.append(train_acc)
         
         return train_loss, train_acc
     
@@ -375,8 +407,9 @@ class ResNetTrainer:
         val_loss = running_loss / len(self.val_loader)
         val_acc = 100. * correct / total
         
-        self.val_losses.append(val_loss)
-        self.val_accs.append(val_acc)
+        # 移除内部记录，改为在train方法中统一记录
+        # self.val_losses.append(val_loss)
+        # self.val_accs.append(val_acc)
         
         return val_loss, val_acc
     
@@ -424,7 +457,8 @@ class ResNetTrainer:
         report = classification_report(
             all_labels, all_preds,
             target_names=['angry', 'disgust', 'fear', 'happy', 'sad', 'surprise', 'neutral'],
-            output_dict=True
+            output_dict=True,
+            zero_division=1.0  # 或 0.0，根据需求选择
         )
         return test_loss, test_acc, cm, report
     
@@ -444,8 +478,10 @@ class ResNetTrainer:
             'optimizer_state_dict': self.optimizer.state_dict(),
             'train_losses': self.train_losses,
             'val_losses': self.val_losses,
+            'test_losses': self.test_losses,
             'train_accs': self.train_accs,
             'val_accs': self.val_accs,
+            'test_accs': self.test_accs,
             'best_score': self.best_score
         }
         
@@ -467,18 +503,20 @@ class ResNetTrainer:
         plt.subplot(1, 2, 1)
         plt.plot(self.train_losses, label='Training Loss')
         plt.plot(self.val_losses, label='Validation Loss')
+        plt.plot(self.test_losses, label='Test Loss')
         plt.xlabel('Epoch')
         plt.ylabel('Loss')
-        plt.title('Training and Validation Loss')
+        plt.title('Training, Validation and Test Loss')
         plt.legend()
         
         # 绘制准确率曲线
         plt.subplot(1, 2, 2)
         plt.plot(self.train_accs, label='Training Accuracy')
         plt.plot(self.val_accs, label='Validation Accuracy')
+        plt.plot(self.test_accs, label='Test Accuracy')
         plt.xlabel('Epoch')
         plt.ylabel('Accuracy (%)')
-        plt.title('Training and Validation Accuracy')
+        plt.title('Training, Validation and Test Accuracy')
         plt.legend()
         
         # 保存图像
@@ -564,6 +602,16 @@ class ResNetTrainer:
             # 验证
             val_loss, val_acc = self.validate()
             logger.info(f"Val Loss: {val_loss:.4f}, Val Acc: {val_acc:.2f}%")
+            # 测试
+            test_loss, test_acc, _, _ = self.test()
+            logger.info(f"Test Loss: {test_loss:.4f}, Test Acc: {test_acc:.2f}%")
+            # 记录所有指标
+            self.train_losses.append(train_loss)
+            self.val_losses.append(val_loss)
+            self.test_losses.append(test_loss)
+            self.train_accs.append(train_acc)
+            self.val_accs.append(val_acc)
+            self.test_accs.append(test_acc)
             # 检查是否为最佳模型
             is_best = val_acc > self.best_score
             if is_best:
@@ -594,6 +642,13 @@ class ResNetTrainer:
         self.plot_training_history()
         # 测试模型
         logger.info("Testing model...")
+        # 加载最佳模型
+        best_model_path = os.path.join(self.config['paths']['checkpoint_dir'], 'best_resnet_model.pth')
+        if os.path.exists(best_model_path):
+            checkpoint = torch.load(best_model_path)
+            self.model.load_state_dict(checkpoint['model_state_dict'])
+            logger.info(f"Loaded best model from {best_model_path}")
+        # 进行测试
         test_loss, test_acc, cm, report = self.test()
         logger.info(f"Test Loss: {test_loss:.4f}, Test Accuracy: {test_acc:.2f}%")
         # 绘制混淆矩阵
@@ -619,7 +674,6 @@ def main():
     config['data']['num_workers'] = 8
     # config['model']['name'] = 'ResNet18'
     config['model']['num_classes'] = 7  # FER-2013有7个情绪类别
-    config['model']['zero_init_residual'] = False # 零初始化残差块的最后一个BN层
     
     # 增加权重衰减以减少过拟合
     config['train']['weight_decay'] = 1e-4  # 从默认的较小值增加到0.01

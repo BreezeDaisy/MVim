@@ -1,3 +1,7 @@
 data/
 pkg/
 checkpoints/
+Face_Pose/Emotion_dataset/
+Face_Pose/Constructed_Emotion_Dataset/
+Face_Pose/checkpoints/
+Face_Pose/models/face/

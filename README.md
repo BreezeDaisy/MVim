@@ -111,9 +111,12 @@ data/SFDDD/annotations/driver_images_list.csv
 运行以下命令开始训练：
 
 ```bash
-python src/train/train.py
+python src/train/train.py # 缺少参数-m(指在项目根目录下运行)时会缺少路径而找不到src/文件
 python -m src.train.train
 ```
+
+修改echo $LD_LIBRARY_PATH 的地址，匹配激活的conda环境的lib路径
+export LD_LIBRARY_PATH=/home/zdx/anaconda3/envs/manager/lib:$LD_LIBRARY_PATH
 
 训练过程中会：
 - 在训练集上训练模型

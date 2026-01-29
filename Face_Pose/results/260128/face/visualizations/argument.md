@@ -1,0 +1,11 @@
+params:
+ - lr: 0.001
+ - decay:5e-4
+ - optimizer: Adam
+   - weight_decay: 5e-4
+- scheduler: StepLR
+  - step_size: 5
+  - gamma: 0.5
+- Dropout: 0.3
+- batch_size: 64
+- epochs: 30

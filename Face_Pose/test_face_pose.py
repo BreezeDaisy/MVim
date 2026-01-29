@@ -1,18 +1,5 @@
-import torch
-import torch.nn as nn
-from ultralytics import YOLO
-import torch.nn.functional as F
-# from deepface import DeepFace
-import yaml
-import cv2
-import os
-import numpy as np
-import matplotlib.pyplot as plt
-from src.data.dataset import get_dataloaders 
+# 首先配置日志，确保在所有导入和使用之前初始化
 import logging
-from Face.FaceEmotionRecognizer import FaceEmotionRecognizer
-from src.models.mamba_model import create_mamba_model
-
 
 # 配置日志
 logging.basicConfig(
@@ -25,37 +12,32 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__) # 获取当前模块的日志记录器
 
+# 然后导入其他模块
+import torch
+import torch.nn as nn
+from ultralytics import YOLO
+import torch.nn.functional as F
+# from deepface import DeepFace
+import yaml
+import cv2
+import os
+import numpy as np
+import matplotlib.pyplot as plt
+from src.data.dataset import get_dataloaders # 数据集划分
+from Face_Pose.FaceEmotionRecognizer import FaceEmotionRecognizer # 情绪识别模型
+from src.models.mamba_model import create_mamba_model # 行为识别模型
+
 """
 Dataloader -> images [B,3,H,W] |---> Face Branch: face detect -> face crop -> face net -> emotion recognizer : face latent
                                L-- > Pose Branch: pose detect -> pose regressor : pose latent
 """
-#=================================================================#
-# 基于DeepFace对提取的驾驶员面部区域进行情绪伪标签标注
-# 支持的情绪类别：angry, disgust, fear, happy, sad, surprise, neutral
-# 仅用于预实验训练情绪识别网络，集成模型中不包含情绪识别的下游任务
-#=================================================================#
-def pseudo_label_face_emotion(face_images):
-    """
-    对一批人脸图像进行情绪伪标签标注.
-    face_images: 输入人脸图像 batch, 形状为 [B, 3, H, W]
-    返回: 情绪伪标签 batch, 形状为 [B, 7]
-    """
-    labels, scores = [], []
-    for img in face_images:
-        result = DeepFace.analyze(img, actions=['emotion'], enforce_detection=False)
-        emo = result[0]['dominant_emotion']
-        conf = result[0]['emotion'][emo]
-        
-        labels.append(emo)
-        scores.append(conf)
-
-    return labels, scores
 
 """
 Face detector and batch crop based on YOLOv8-Face
 """
 def load_face_detector(weight_path, device='cuda'):
   model = YOLO(weight_path)
+  logger.info(f"人脸检测模型加载完成: {weight_path}")
   model = model.to(device).eval()
   return model
 
@@ -69,17 +51,32 @@ def batch_face_crop(images,weight_path,size=224,conf=0.5): # conf表示置信度
   返回: 剪裁后的face框, 形状为[B, 3, size, size]
   """
   face_detector = load_face_detector(weight_path) 
+  
+  # 对标准化后的图像进行反标准化处理
+  mean = torch.tensor([0.485, 0.456, 0.406], device=images.device).view(1, 3, 1, 1)
+  std = torch.tensor([0.229, 0.224, 0.225], device=images.device).view(1, 3, 1, 1)
+  images_denorm = images * std + mean # 反标准化至[0,1]
+  
+  # 确保图像在[0, 1]范围内
+  images_denorm = torch.clamp(images_denorm, 0, 1)
+
   # 准备数据加载器
-  results = face_detector(images,conf=conf,verbose=False)
+  results = face_detector(images_denorm, conf=conf, verbose=False)
+  
+  # 统计检测结果
+  total_faces_detected = sum(1 for r in results if r.boxes is not None and len(r.boxes) > 0)
+  logger.info(f"人脸检测结果统计 - 总图像数: {len(images)}, 检测到人脸的图像数: {total_faces_detected}")
 
   faces = []
   for i, r in enumerate(results):
     if r.boxes is None or len(r.boxes) == 0:
       # 如果没有检测到人脸, 则返回1通道的全零张量。处理方式暂定，为了保证批次数量的稳定
+      logger.warning(f"未检测到人脸，样本索引: {i}")
       faces.append(torch.zeros((1, size, size), dtype=torch.float32))
       continue
     boxes = r.boxes.xyxy
     scores = r.boxes.conf
+    # logger.info(f"检测到人脸数量: {len(boxes)}, 最高置信度: {scores.max():.4f}")
     idx = scores.argmax() # 取置信度最高的框。模型检测的不一定是单人脸，但是输入只有一个人，所以取置信度最高的框即可
     x1, y1, x2, y2 = boxes[idx].long() # 转换为整数坐标
     
@@ -120,60 +117,10 @@ def batch_face_crop(images,weight_path,size=224,conf=0.5): # conf表示置信度
     gray_face = gray_face.unsqueeze(0)
 
     faces.append(gray_face) 
-    print("人脸图像的灰度图像形状:", gray_face.shape)
+    # logger.info(f"人脸图像的灰度图像形状: {gray_face.shape}")
 
   # 将列表转换为PyTorch张量，形状为[B, 1, size, size]
   return torch.stack(faces)
-
-# 废弃，使用先重塑检测框再裁剪图像的方式
-def resize_faces(faces,size=224):
-  """
-  对一批人脸图像进行resize.
-  faces: 输入人脸 batch, 形状为 [B, 3, H, W]
-  size: 输出图像大小, 默认值为 224
-  返回: resize后的人脸 batch, 形状为 [B, 3, size, size]
-  """
-  out = []
-  for f in faces:
-    if f is None:
-      out.append(torch.zeros(3,size,size)) # 处理None值，填充为全零张量，保持batch数量稳定
-    else:
-       f = F.interpolate( 
-        f.unsqueeze(0), # 添加维度，从[3, H, W] → [1, 3, H, W]
-        size=(size,size),  # 目标大小为[1, 3, size, size]
-        mode='bilinear',  # 双线性插值模式
-        align_corners=False # 保持角点对齐，避免插值时引入偏移
-       ).squeeze(0)
-       out.append(f)
-  return torch.stack(out)
-
-class FaceBackbone(nn.Module):
-  def __init__(self):
-    super().__init__()
-    base = torchvision.models.resnet18(pretrained=True)
-    self.net = nn.Sequential(*list(base.children())[:-1]) # 去掉最后一层全连接层
-    
-  def forward(self,x):
-      x = self.net(x)
-      return x.flatten(1)
-
-class FaceHead(nn.Module):
-  def __init__(self,in_dim=512,latent_dim=128,num_classes=7):
-    super().__init__()
-    self.proj = nn.Sequential(
-      nn.Linear(in_dim,latent_dim),
-      nn.ReLU(),
-      nn.Dropout(0.5),
-      nn.LayerNorm(latent_dim)
-    )
-    self.cls = nn.Linear(latent_dim,num_classes)
-    
-  def forward(self,x, return_latent=False):
-    latent = self.proj(x)
-    logits = self.cls(latent)
-    if return_latent:
-      return logits, latent
-    return logits
 
 """
 Face分支: 人脸检测+情绪识别
@@ -224,36 +171,7 @@ class FaceBranch(nn.Module):
             # 使用概率作为latent特征的一部分
             # 设计从模型中获取latent feature的方法
           
-    return logits
-
-
-class PoseBackbone(nn.Module):
-  def __init__(self):
-    super().__init__()
-    base = torchvision.models.resnet18(pretrained=True)
-    self.net = nn.Sequential(*list(base.children())[:-1]) # 去掉最后一层全连接层
-    
-  def forward(self,x):
-      x = self.net(x)
-      return x.flatten(1)
-
-class PoseHead(nn.Module):
-  def __init__(self,in_dim=512,latent_dim=128,num_classes=7):
-    super().__init__()
-    self.proj = nn.Sequential(
-      nn.Linear(in_dim,latent_dim),
-      nn.ReLU(),
-      nn.Dropout(0.5),
-      nn.LayerNorm(latent_dim)
-    )
-    self.cls = nn.Linear(latent_dim,num_classes)
-    
-  def forward(self,x, return_latent=False):
-    latent = self.proj(x)
-    logits = self.cls(latent)
-    if return_latent:
-      return logits, latent
-    return logits
+    return logits, faces
 
 class PoseBranch(nn.Module):
   def __init__(self,config):
@@ -267,10 +185,8 @@ class PoseBranch(nn.Module):
   def load_model(self):
     """加载训练好的模型权重"""
     self.model = create_mamba_model(self.config).to(self.device)
-    
     # 加载checkpoint
     checkpoint = torch.load(self.pose_model_weights, map_location=self.device)
-    
     # 检查是否是完整的checkpoint（包含model_state_dict等）
     if 'model_state_dict' in checkpoint:
         self.model.load_state_dict(checkpoint['model_state_dict'])
@@ -293,11 +209,9 @@ class PoseBranch(nn.Module):
       # 将处理后的图像输入模型
       logits = self.model(processed_images)
 
-
       # 使用概率作为latent特征的一部分
       # 设计从模型中获取latent feature的方法
             
-    
     return logits
 
 #===================================================#
@@ -331,14 +245,14 @@ class DriverPerceptionModel(nn.Module):
   def forward(self,images):
     # face_logits, face_intent = self.face_branch(images)
     # pose_logits, pose_intent = self.pose_branch(images)
-    face_logits = self.face_branch(images)
+    face_logits, faces = self.face_branch(images)
     pose_logits = self.pose_branch(images)
-
     # intent = self.intent_encoder(face_intent.detach(),pose_intent.detach())
 
     return {
       'face_logits': face_logits,
       'pose_logits': pose_logits,
+      'faces': faces,
       # 'face_intent': face_intent,
       # 'pose_intent': pose_intent,
       # 'intent': intent  
@@ -347,7 +261,7 @@ class DriverPerceptionModel(nn.Module):
 if __name__ == '__main__':
   
   # 创建results目录
-  results_dir = '/home/zdx/python_daima/MVim/MVim/Face/results'
+  results_dir = '/home/zdx/python_daima/MVim/MVim/Face_Pose/results/260123'
   os.makedirs(results_dir, exist_ok=True)
   
   # 情绪类别和姿态类别
@@ -369,18 +283,25 @@ if __name__ == '__main__':
   # 3. 进行推理并可视化
   with torch.no_grad():
     for batch_idx, (images, labels) in enumerate(test_loader):
-      print(f"输入图像批次形状: {images.shape}")
+      logger.info(f"输入图像批次形状: {images.shape}")
       
       # 执行推理
       results = model(images)
       
       # 打印结果形状
-      print(f"人脸logits形状: {results['face_logits'].shape}")
-      print(f"姿态logits形状: {results['pose_logits'].shape}")
+      logger.info(f"人脸logits形状: {results['face_logits'].shape}")
+      logger.info(f"姿态logits形状: {results['pose_logits'].shape}")
+      logger.info(f"提取的面部区域形状: {results['faces'].shape}")
       
-      # 选择5张图像进行可视化
+      # 选择5张随机图像进行可视化
       visualize_count = 5
-      for i in range(min(visualize_count, len(images))):
+      num_images = len(images)
+      if num_images > visualize_count:
+          random_indices = np.random.choice(num_images, visualize_count, replace=False)
+      else:
+          random_indices = range(num_images)
+      
+      for i in random_indices:
         # 获取原始图像
         img = images[i].cpu().numpy().transpose(1, 2, 0)  # [C, H, W] -> [H, W, C]
         
@@ -405,26 +326,56 @@ if __name__ == '__main__':
         # 真实标签
         true_label = labels[i].item()
         
-        # 创建可视化图像
-        plt.figure(figsize=(12, 6))
+        # 获取人脸提取区域
+        face_img = results['faces'][i]  # 形状为 [1, H, W]
+        face_img = face_img.squeeze(0).cpu().numpy()  # 转换为 [H, W]
         
-        # 显示图像
-        plt.subplot(1, 3, 1)
-        plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
-        plt.title(f"Sample {i+1}")
-        plt.axis('off')
+        # 对人脸图像进行归一化处理，确保在[0, 1]范围内显示
+        if face_img.max() > face_img.min():
+            # 归一化到[0, 1]范围
+            face_img_normalized = (face_img - face_img.min()) / (face_img.max() - face_img.min())
+        else:
+            # 如果所有值都相同（包括全零），保持不变
+            face_img_normalized = face_img.copy()
         
-        # 显示情绪预测结果
-        plt.subplot(1, 3, 2)
-        plt.barh(emotion_classes, face_probs)
-        plt.title(f"Emotion Prediction\n{emotion_classes[predicted_face]} ({face_probs[predicted_face]:.2f})")
-        plt.xlabel('Probability')
+        # 创建可视化图像（修改为三列布局：原图+人脸 | 情绪识别 | 行为识别）
+        plt.figure(figsize=(15, 8))
         
-        # 显示姿态预测结果
-        plt.subplot(1, 3, 3)
-        plt.barh(pose_classes, pose_probs)
-        plt.title(f"Pose Prediction\n{pose_classes[predicted_pose]} ({pose_probs[predicted_pose]:.2f})\nTrue: {pose_classes[true_label]}")
-        plt.xlabel('Probability')
+        # 列1：原图和人脸（按真实比例显示）
+        # 创建子图网格，增加原图与人脸的高度比例
+        grid = plt.GridSpec(2, 3, width_ratios=[1, 1, 1], height_ratios=[4, 1])
+        
+        # 显示原图
+        ax1 = plt.subplot(grid[0, 0])
+        ax1.imshow(img)
+        ax1.set_title(f"Sample {i+1}")
+        ax1.axis('off') # 关闭坐标轴
+        # ax1.set_aspect('equal')  # 保持正方形比例
+        
+        # 显示人脸提取区域
+        ax2 = plt.subplot(grid[1, 0])
+        ax2.imshow(face_img_normalized, cmap='gray', extent=[0, 12, 0, 12])
+        ax2.set_title("Extracted Face")
+        ax2.axis('off') # 关闭坐标轴
+        # 设置人脸区域的aspect ratio为原始比例
+        # ax2.set_aspect('equal')
+        # 设置x和y轴的范围，确保人脸按真实大小显示
+        # ax2.set_xlim(0, 24)
+        # ax2.set_ylim(0, 24)
+        
+        # 列2：情绪识别结果
+        ax3 = plt.subplot(grid[:, 1])
+        ax3.barh(emotion_classes, face_probs)
+        ax3.set_title(f"Emotion Prediction\n{emotion_classes[predicted_face]} ({face_probs[predicted_face]:.2f})")
+        ax3.set_xlabel('Probability')
+        ax3.set_xlim(0, 1)
+        
+        # 列3：姿态预测结果
+        ax4 = plt.subplot(grid[:, 2])
+        ax4.barh(pose_classes, pose_probs)
+        ax4.set_title(f"Pose Prediction\n{pose_classes[predicted_pose]} ({pose_probs[predicted_pose]:.2f})\nTrue: {pose_classes[true_label]}")
+        ax4.set_xlabel('Probability')
+        ax4.set_xlim(0, 1)
         
         plt.tight_layout()
         
@@ -439,6 +390,7 @@ if __name__ == '__main__':
       batch_results = {
           'images': images.cpu().numpy(),
           'labels': labels.cpu().numpy(),
+          'faces': results['faces'].cpu().numpy(),
           'face_logits': results['face_logits'].cpu().numpy(),
           'pose_logits': results['pose_logits'].cpu().numpy()
       }
@@ -446,7 +398,7 @@ if __name__ == '__main__':
       # 保存推理结果为npz文件
       npz_save_path = os.path.join(results_dir, f"batch_{batch_idx}_results.npz")
       np.savez_compressed(npz_save_path, **batch_results)
-      print(f"保存推理结果: {npz_save_path}")
+      logger.info(f"保存推理结果: {npz_save_path}")
       
       break  # 只处理一个批次
   
@@ -455,6 +407,7 @@ if __name__ == '__main__':
   # 注意：这里可以添加完整的评估逻辑，如计算准确率、混淆矩阵等
   print("评估完成！")
   print(f"所有可视化结果已保存到: {results_dir}")
+  logger.info(f"所有可视化结果已保存到: {results_dir}")
 
   
 

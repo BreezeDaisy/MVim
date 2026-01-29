@@ -51,7 +51,7 @@ class SFDataset(Dataset):
                     transforms.RandomRotation(10), # 随机旋转角度的范围
                     transforms.ColorJitter(brightness=0.2, contrast=0.2,saturation=0.2), # 亮度(0.8,1.2)\对比度(0.8,1.2)\饱和度(0.8,1.2)随机调整
                     transforms.ToTensor(), # 将输入转换为Tensor对象,将通道从[H,W,C]转换为[C,H,W],归一化至[0.0,1.0]
-                    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+                    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]) # 标准化至[-2.1,2.6]
                 ])
             else:
                 self.transform = transforms.Compose([

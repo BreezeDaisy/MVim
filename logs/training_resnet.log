@@ -5508,3 +5508,1909 @@
 2025-11-28 18:40:04,512 - INFO - Confusion matrix saved at results/resnet_confusion_matrix.png
 2025-11-28 18:40:04,516 - INFO - Classification report saved at results/resnet_classification_report.csv
 2025-11-28 18:40:04,516 - INFO - Training completed!
+2025-12-01 16:25:06,830 - INFO - Starting training...
+2025-12-01 16:25:06,830 - INFO - Epoch 1/50
+2025-12-01 16:41:53,198 - INFO - Starting training...
+2025-12-01 16:41:53,199 - INFO - Epoch 1/50
+2025-12-01 16:42:26,884 - INFO - Train Loss: 1.9432, Train Acc: 15.89%
+2025-12-01 16:42:28,739 - INFO - Val Loss: 1.9281, Val Acc: 21.84%
+2025-12-01 16:42:28,739 - INFO - New best validation accuracy: 21.84%
+2025-12-01 16:42:32,279 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 16:42:35,813 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 16:42:35,814 - INFO - Epoch 2/50
+2025-12-01 16:43:09,077 - INFO - Train Loss: 1.8238, Train Acc: 24.26%
+2025-12-01 16:43:10,855 - INFO - Val Loss: 1.7822, Val Acc: 24.71%
+2025-12-01 16:43:10,855 - INFO - New best validation accuracy: 24.71%
+2025-12-01 16:43:14,420 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 16:43:18,060 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 16:43:18,061 - INFO - Epoch 3/50
+2025-12-01 16:43:51,004 - INFO - Train Loss: 1.6832, Train Acc: 31.91%
+2025-12-01 16:43:52,769 - INFO - Val Loss: 1.5573, Val Acc: 39.91%
+2025-12-01 16:43:52,769 - INFO - New best validation accuracy: 39.91%
+2025-12-01 16:43:56,437 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 16:43:59,966 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 16:43:59,967 - INFO - Epoch 4/50
+2025-12-01 16:44:43,994 - INFO - Train Loss: 1.5368, Train Acc: 39.80%
+2025-12-01 16:44:45,738 - INFO - Val Loss: 1.4186, Val Acc: 45.37%
+2025-12-01 16:44:45,739 - INFO - New best validation accuracy: 45.37%
+2025-12-01 16:44:49,919 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 16:44:54,587 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 16:44:54,587 - INFO - Epoch 5/50
+2025-12-01 16:45:28,172 - INFO - Train Loss: 1.4404, Train Acc: 44.55%
+2025-12-01 16:45:29,935 - INFO - Val Loss: 1.3556, Val Acc: 47.80%
+2025-12-01 16:45:29,935 - INFO - New best validation accuracy: 47.80%
+2025-12-01 16:45:35,446 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 16:45:40,697 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 16:45:40,698 - INFO - Epoch 6/50
+2025-12-01 16:46:13,910 - INFO - Train Loss: 1.3734, Train Acc: 47.42%
+2025-12-01 16:46:15,716 - INFO - Val Loss: 1.2834, Val Acc: 50.75%
+2025-12-01 16:46:15,716 - INFO - New best validation accuracy: 50.75%
+2025-12-01 16:46:21,194 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 16:46:26,723 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 16:46:26,723 - INFO - Epoch 7/50
+2025-12-01 16:46:59,920 - INFO - Train Loss: 1.2925, Train Acc: 51.52%
+2025-12-01 16:47:01,792 - INFO - Val Loss: 1.2168, Val Acc: 53.40%
+2025-12-01 16:47:01,792 - INFO - New best validation accuracy: 53.40%
+2025-12-01 16:47:08,138 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 16:47:13,581 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 16:47:13,582 - INFO - Epoch 8/50
+2025-12-01 16:47:46,723 - INFO - Train Loss: 1.2378, Train Acc: 53.81%
+2025-12-01 16:47:48,532 - INFO - Val Loss: 1.1888, Val Acc: 54.72%
+2025-12-01 16:47:48,532 - INFO - New best validation accuracy: 54.72%
+2025-12-01 16:47:54,031 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 16:47:59,407 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 16:47:59,408 - INFO - Epoch 9/50
+2025-12-01 16:48:32,493 - INFO - Train Loss: 1.1846, Train Acc: 55.89%
+2025-12-01 16:48:34,446 - INFO - Val Loss: 1.1494, Val Acc: 56.76%
+2025-12-01 16:48:34,447 - INFO - New best validation accuracy: 56.76%
+2025-12-01 16:48:39,796 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 16:48:45,173 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 16:48:45,174 - INFO - Epoch 10/50
+2025-12-01 16:49:18,574 - INFO - Train Loss: 1.1350, Train Acc: 58.07%
+2025-12-01 16:49:20,378 - INFO - Val Loss: 1.1384, Val Acc: 57.23%
+2025-12-01 16:49:20,379 - INFO - New best validation accuracy: 57.23%
+2025-12-01 16:49:25,631 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 16:49:30,811 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 16:49:30,811 - INFO - Epoch 11/50
+2025-12-01 16:50:03,975 - INFO - Train Loss: 1.0851, Train Acc: 60.10%
+2025-12-01 16:50:05,829 - INFO - Val Loss: 1.1389, Val Acc: 56.58%
+2025-12-01 16:50:10,755 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 16:50:10,755 - INFO - Epoch 12/50
+2025-12-01 16:50:43,834 - INFO - Train Loss: 1.0367, Train Acc: 61.77%
+2025-12-01 16:50:45,665 - INFO - Val Loss: 1.1097, Val Acc: 58.19%
+2025-12-01 16:50:45,665 - INFO - New best validation accuracy: 58.19%
+2025-12-01 16:50:50,884 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 16:50:56,088 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 16:50:56,088 - INFO - Epoch 13/50
+2025-12-01 16:51:29,350 - INFO - Train Loss: 1.0013, Train Acc: 63.30%
+2025-12-01 16:51:31,129 - INFO - Val Loss: 1.1443, Val Acc: 57.97%
+2025-12-01 16:51:36,248 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 16:51:36,248 - INFO - Epoch 14/50
+2025-12-01 16:52:09,503 - INFO - Train Loss: 0.9567, Train Acc: 65.04%
+2025-12-01 16:52:11,357 - INFO - Val Loss: 1.0911, Val Acc: 58.85%
+2025-12-01 16:52:11,357 - INFO - New best validation accuracy: 58.85%
+2025-12-01 16:52:16,450 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 16:52:21,353 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 16:52:21,353 - INFO - Epoch 15/50
+2025-12-01 16:52:54,773 - INFO - Train Loss: 0.9182, Train Acc: 66.54%
+2025-12-01 16:52:56,544 - INFO - Val Loss: 1.1049, Val Acc: 59.29%
+2025-12-01 16:52:56,544 - INFO - New best validation accuracy: 59.29%
+2025-12-01 16:52:59,809 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 16:53:03,464 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 16:53:03,464 - INFO - Epoch 16/50
+2025-12-01 16:53:36,742 - INFO - Train Loss: 0.8702, Train Acc: 68.31%
+2025-12-01 16:53:38,584 - INFO - Val Loss: 1.1306, Val Acc: 59.50%
+2025-12-01 16:53:38,584 - INFO - New best validation accuracy: 59.50%
+2025-12-01 16:53:41,753 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 16:53:45,282 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 16:53:45,283 - INFO - Epoch 17/50
+2025-12-01 16:54:18,330 - INFO - Train Loss: 0.8257, Train Acc: 70.24%
+2025-12-01 16:54:20,082 - INFO - Val Loss: 1.1248, Val Acc: 59.21%
+2025-12-01 16:54:23,422 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 16:54:23,422 - INFO - Epoch 18/50
+2025-12-01 16:54:56,461 - INFO - Train Loss: 0.7849, Train Acc: 71.71%
+2025-12-01 16:54:58,330 - INFO - Val Loss: 1.1467, Val Acc: 59.99%
+2025-12-01 16:54:58,330 - INFO - New best validation accuracy: 59.99%
+2025-12-01 16:55:01,871 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 16:55:05,371 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 16:55:05,372 - INFO - Epoch 19/50
+2025-12-01 16:55:38,612 - INFO - Train Loss: 0.7504, Train Acc: 73.33%
+2025-12-01 16:55:40,355 - INFO - Val Loss: 1.1482, Val Acc: 59.85%
+2025-12-01 16:55:43,952 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 16:55:43,953 - INFO - Epoch 20/50
+2025-12-01 16:56:22,958 - INFO - Train Loss: 0.7094, Train Acc: 74.66%
+2025-12-01 16:56:24,757 - INFO - Val Loss: 1.1584, Val Acc: 60.35%
+2025-12-01 16:56:24,757 - INFO - New best validation accuracy: 60.35%
+2025-12-01 16:56:28,477 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 16:56:32,432 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 16:56:32,433 - INFO - Epoch 21/50
+2025-12-01 16:57:06,251 - INFO - Train Loss: 0.6691, Train Acc: 76.35%
+2025-12-01 16:57:08,073 - INFO - Val Loss: 1.1535, Val Acc: 60.69%
+2025-12-01 16:57:08,073 - INFO - New best validation accuracy: 60.69%
+2025-12-01 16:57:11,753 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 16:57:15,476 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 16:57:15,477 - INFO - Epoch 22/50
+2025-12-01 16:57:48,829 - INFO - Train Loss: 0.6267, Train Acc: 78.03%
+2025-12-01 16:57:50,746 - INFO - Val Loss: 1.2273, Val Acc: 59.68%
+2025-12-01 16:57:54,471 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 16:57:54,471 - INFO - Epoch 23/50
+2025-12-01 16:58:27,879 - INFO - Train Loss: 0.5968, Train Acc: 79.34%
+2025-12-01 16:58:29,734 - INFO - Val Loss: 1.1940, Val Acc: 60.74%
+2025-12-01 16:58:29,735 - INFO - New best validation accuracy: 60.74%
+2025-12-01 16:58:33,760 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 16:58:37,644 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 16:58:37,645 - INFO - Epoch 24/50
+2025-12-01 16:59:10,844 - INFO - Train Loss: 0.5628, Train Acc: 80.23%
+2025-12-01 16:59:12,658 - INFO - Val Loss: 1.2750, Val Acc: 59.57%
+2025-12-01 16:59:16,552 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 16:59:16,552 - INFO - Epoch 25/50
+2025-12-01 16:59:50,057 - INFO - Train Loss: 0.5259, Train Acc: 81.68%
+2025-12-01 16:59:51,835 - INFO - Val Loss: 1.2900, Val Acc: 60.56%
+2025-12-01 16:59:56,110 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 16:59:56,111 - INFO - Epoch 26/50
+2025-12-01 17:00:29,332 - INFO - Train Loss: 0.4974, Train Acc: 82.93%
+2025-12-01 17:00:31,220 - INFO - Val Loss: 1.2921, Val Acc: 60.18%
+2025-12-01 17:00:35,168 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 17:00:35,169 - INFO - Epoch 27/50
+2025-12-01 17:01:08,220 - INFO - Train Loss: 0.4654, Train Acc: 83.98%
+2025-12-01 17:01:10,108 - INFO - Val Loss: 1.2895, Val Acc: 60.27%
+2025-12-01 17:01:14,102 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 17:01:14,103 - INFO - Epoch 28/50
+2025-12-01 17:01:47,627 - INFO - Train Loss: 0.4361, Train Acc: 85.17%
+2025-12-01 17:01:49,416 - INFO - Val Loss: 1.3802, Val Acc: 58.97%
+2025-12-01 17:01:53,105 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 17:01:53,106 - INFO - Epoch 29/50
+2025-12-01 17:02:26,478 - INFO - Train Loss: 0.4076, Train Acc: 86.26%
+2025-12-01 17:02:28,351 - INFO - Val Loss: 1.3681, Val Acc: 60.38%
+2025-12-01 17:02:32,221 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 17:02:32,222 - INFO - Epoch 30/50
+2025-12-01 17:03:05,473 - INFO - Train Loss: 0.3767, Train Acc: 87.16%
+2025-12-01 17:03:07,334 - INFO - Val Loss: 1.4087, Val Acc: 60.24%
+2025-12-01 17:03:11,833 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 17:03:11,833 - INFO - Epoch 31/50
+2025-12-01 17:03:45,303 - INFO - Train Loss: 0.3553, Train Acc: 87.86%
+2025-12-01 17:03:47,161 - INFO - Val Loss: 1.4377, Val Acc: 61.27%
+2025-12-01 17:03:47,161 - INFO - New best validation accuracy: 61.27%
+2025-12-01 17:03:51,693 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 17:03:55,767 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 17:03:55,767 - INFO - Epoch 32/50
+2025-12-01 17:06:53,358 - INFO - Train Loss: 0.3351, Train Acc: 88.90%
+2025-12-01 17:06:55,212 - INFO - Val Loss: 1.4635, Val Acc: 61.34%
+2025-12-01 17:06:55,212 - INFO - New best validation accuracy: 61.34%
+2025-12-01 17:06:59,855 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 17:07:03,369 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 17:07:03,369 - INFO - Epoch 33/50
+2025-12-01 17:07:36,327 - INFO - Train Loss: 0.3148, Train Acc: 89.56%
+2025-12-01 17:07:38,141 - INFO - Val Loss: 1.5392, Val Acc: 61.24%
+2025-12-01 17:07:41,691 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 17:07:41,692 - INFO - Epoch 34/50
+2025-12-01 17:08:14,676 - INFO - Train Loss: 0.2968, Train Acc: 89.95%
+2025-12-01 17:08:16,565 - INFO - Val Loss: 1.5326, Val Acc: 61.51%
+2025-12-01 17:08:16,566 - INFO - New best validation accuracy: 61.51%
+2025-12-01 17:08:20,082 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 17:08:23,617 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 17:08:23,618 - INFO - Epoch 35/50
+2025-12-01 17:08:57,124 - INFO - Train Loss: 0.2789, Train Acc: 90.71%
+2025-12-01 17:08:58,911 - INFO - Val Loss: 1.5205, Val Acc: 60.80%
+2025-12-01 17:09:02,746 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 17:09:02,746 - INFO - Epoch 36/50
+2025-12-01 17:09:36,011 - INFO - Train Loss: 0.2641, Train Acc: 91.08%
+2025-12-01 17:09:37,901 - INFO - Val Loss: 1.5127, Val Acc: 61.49%
+2025-12-01 17:09:41,521 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 17:09:41,521 - INFO - Epoch 37/50
+2025-12-01 17:10:14,449 - INFO - Train Loss: 0.2480, Train Acc: 91.76%
+2025-12-01 17:10:16,193 - INFO - Val Loss: 1.6287, Val Acc: 60.48%
+2025-12-01 17:10:19,771 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 17:10:19,772 - INFO - Epoch 38/50
+2025-12-01 17:10:53,051 - INFO - Train Loss: 0.2278, Train Acc: 92.49%
+2025-12-01 17:10:54,808 - INFO - Val Loss: 1.6034, Val Acc: 60.48%
+2025-12-01 17:10:58,280 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 17:10:58,280 - INFO - Epoch 39/50
+2025-12-01 17:11:31,495 - INFO - Train Loss: 0.2214, Train Acc: 92.55%
+2025-12-01 17:11:33,325 - INFO - Val Loss: 1.6696, Val Acc: 60.46%
+2025-12-01 17:11:36,945 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 17:11:36,946 - INFO - Epoch 40/50
+2025-12-01 17:12:10,533 - INFO - Train Loss: 0.2119, Train Acc: 93.15%
+2025-12-01 17:12:12,358 - INFO - Val Loss: 1.6143, Val Acc: 61.79%
+2025-12-01 17:12:12,358 - INFO - New best validation accuracy: 61.79%
+2025-12-01 17:12:15,852 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 17:12:19,389 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 17:12:19,390 - INFO - Epoch 41/50
+2025-12-01 17:12:52,684 - INFO - Train Loss: 0.2040, Train Acc: 93.44%
+2025-12-01 17:12:54,527 - INFO - Val Loss: 1.6204, Val Acc: 61.37%
+2025-12-01 17:12:58,025 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 17:12:58,026 - INFO - Epoch 42/50
+2025-12-01 17:13:30,964 - INFO - Train Loss: 0.1857, Train Acc: 93.91%
+2025-12-01 17:13:32,730 - INFO - Val Loss: 1.7250, Val Acc: 61.23%
+2025-12-01 17:13:36,216 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 17:13:36,217 - INFO - Epoch 43/50
+2025-12-01 17:14:09,244 - INFO - Train Loss: 0.1810, Train Acc: 94.19%
+2025-12-01 17:14:11,032 - INFO - Val Loss: 1.7422, Val Acc: 61.91%
+2025-12-01 17:14:11,032 - INFO - New best validation accuracy: 61.91%
+2025-12-01 17:14:14,708 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 17:14:19,608 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 17:14:19,608 - INFO - Epoch 44/50
+2025-12-01 17:14:52,670 - INFO - Train Loss: 0.1670, Train Acc: 94.43%
+2025-12-01 17:14:54,431 - INFO - Val Loss: 1.7780, Val Acc: 60.98%
+2025-12-01 17:14:57,981 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 17:14:57,981 - INFO - Epoch 45/50
+2025-12-01 17:15:31,236 - INFO - Train Loss: 0.1548, Train Acc: 94.87%
+2025-12-01 17:15:33,088 - INFO - Val Loss: 1.8070, Val Acc: 62.43%
+2025-12-01 17:15:33,088 - INFO - New best validation accuracy: 62.43%
+2025-12-01 17:15:36,665 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 17:15:40,274 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 17:15:40,275 - INFO - Epoch 46/50
+2025-12-01 17:16:13,511 - INFO - Train Loss: 0.1514, Train Acc: 94.89%
+2025-12-01 17:16:15,315 - INFO - Val Loss: 1.7868, Val Acc: 61.37%
+2025-12-01 17:16:18,848 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 17:16:18,848 - INFO - Epoch 47/50
+2025-12-01 17:16:51,760 - INFO - Train Loss: 0.1441, Train Acc: 95.25%
+2025-12-01 17:16:53,572 - INFO - Val Loss: 1.8165, Val Acc: 61.69%
+2025-12-01 17:16:57,313 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 17:16:57,313 - INFO - Epoch 48/50
+2025-12-01 17:17:30,753 - INFO - Train Loss: 0.1359, Train Acc: 95.59%
+2025-12-01 17:17:32,627 - INFO - Val Loss: 1.9329, Val Acc: 60.67%
+2025-12-01 17:17:36,142 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 17:17:36,142 - INFO - Epoch 49/50
+2025-12-01 17:18:09,677 - INFO - Train Loss: 0.1351, Train Acc: 95.53%
+2025-12-01 17:18:11,581 - INFO - Val Loss: 1.9069, Val Acc: 60.39%
+2025-12-01 17:18:15,048 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 17:18:15,049 - INFO - Epoch 50/50
+2025-12-01 17:18:48,723 - INFO - Train Loss: 0.1288, Train Acc: 95.87%
+2025-12-01 17:18:50,496 - INFO - Val Loss: 1.8783, Val Acc: 61.16%
+2025-12-01 17:18:54,027 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 17:18:54,349 - INFO - Training history saved at results/resnet_training_history.png
+2025-12-01 17:18:54,349 - INFO - Testing model...
+2025-12-01 17:18:56,175 - INFO - Test Loss: 1.8389, Test Accuracy: 61.90%
+2025-12-01 17:18:57,415 - INFO - Confusion matrix saved at results/resnet_confusion_matrix.png
+2025-12-01 17:18:57,418 - INFO - Classification report saved at results/resnet_classification_report.csv
+2025-12-01 17:18:57,418 - INFO - Training completed!
+2025-12-01 19:41:16,931 - INFO - Starting training...
+2025-12-01 19:41:16,931 - INFO - Epoch 1/50
+2025-12-01 19:41:50,555 - INFO - Train Loss: 1.9370, Train Acc: 17.78%
+2025-12-01 19:41:51,705 - INFO - Val Loss: 1.9227, Val Acc: 24.73%
+2025-12-01 19:41:51,705 - INFO - New best validation accuracy: 24.73%
+2025-12-01 19:41:55,257 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 19:41:58,804 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 19:41:58,804 - INFO - Epoch 2/50
+2025-12-01 19:42:32,091 - INFO - Train Loss: 1.8211, Train Acc: 24.63%
+2025-12-01 19:42:33,093 - INFO - Val Loss: 1.7683, Val Acc: 24.87%
+2025-12-01 19:42:33,093 - INFO - New best validation accuracy: 24.87%
+2025-12-01 19:42:36,641 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 19:42:40,181 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 19:42:40,181 - INFO - Epoch 3/50
+2025-12-01 19:43:13,342 - INFO - Train Loss: 1.6721, Train Acc: 32.66%
+2025-12-01 19:43:14,354 - INFO - Val Loss: 1.5599, Val Acc: 40.14%
+2025-12-01 19:43:14,355 - INFO - New best validation accuracy: 40.14%
+2025-12-01 19:43:17,919 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 19:43:21,429 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 19:43:21,430 - INFO - Epoch 4/50
+2025-12-01 19:43:54,557 - INFO - Train Loss: 1.5260, Train Acc: 40.70%
+2025-12-01 19:43:55,638 - INFO - Val Loss: 1.4458, Val Acc: 43.30%
+2025-12-01 19:43:55,638 - INFO - New best validation accuracy: 43.30%
+2025-12-01 19:43:59,262 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 19:44:02,775 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 19:44:02,776 - INFO - Epoch 5/50
+2025-12-01 19:44:36,284 - INFO - Train Loss: 1.4319, Train Acc: 44.91%
+2025-12-01 19:44:37,314 - INFO - Val Loss: 1.3220, Val Acc: 48.79%
+2025-12-01 19:44:37,314 - INFO - New best validation accuracy: 48.79%
+2025-12-01 19:44:40,612 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 19:44:44,097 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 19:44:44,097 - INFO - Epoch 6/50
+2025-12-01 19:45:17,389 - INFO - Train Loss: 1.3632, Train Acc: 47.87%
+2025-12-01 19:45:18,759 - INFO - Val Loss: 1.2743, Val Acc: 50.54%
+2025-12-01 19:45:18,760 - INFO - New best validation accuracy: 50.54%
+2025-12-01 19:45:22,007 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 19:45:25,627 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 19:45:25,627 - INFO - Epoch 7/50
+2025-12-01 19:46:05,002 - INFO - Train Loss: 1.2927, Train Acc: 51.29%
+2025-12-01 19:46:06,393 - INFO - Val Loss: 1.2099, Val Acc: 51.58%
+2025-12-01 19:46:06,393 - INFO - New best validation accuracy: 51.58%
+2025-12-01 19:46:10,007 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 19:46:13,496 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 19:46:13,496 - INFO - Epoch 8/50
+2025-12-01 19:46:52,104 - INFO - Train Loss: 1.2282, Train Acc: 53.70%
+2025-12-01 19:46:53,468 - INFO - Val Loss: 1.1708, Val Acc: 53.47%
+2025-12-01 19:46:53,468 - INFO - New best validation accuracy: 53.47%
+2025-12-01 19:46:56,972 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 19:47:00,559 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 19:47:00,560 - INFO - Epoch 9/50
+2025-12-01 19:47:39,063 - INFO - Train Loss: 1.1780, Train Acc: 55.74%
+2025-12-01 19:47:40,373 - INFO - Val Loss: 1.1510, Val Acc: 55.48%
+2025-12-01 19:47:40,373 - INFO - New best validation accuracy: 55.48%
+2025-12-01 19:47:43,837 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 19:47:47,383 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 19:47:47,383 - INFO - Epoch 10/50
+2025-12-01 19:48:27,526 - INFO - Train Loss: 1.1278, Train Acc: 58.19%
+2025-12-01 19:48:28,927 - INFO - Val Loss: 1.1223, Val Acc: 57.15%
+2025-12-01 19:48:28,927 - INFO - New best validation accuracy: 57.15%
+2025-12-01 19:48:32,316 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 19:48:35,851 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 19:48:35,851 - INFO - Epoch 11/50
+2025-12-01 19:49:14,862 - INFO - Train Loss: 1.0822, Train Acc: 59.78%
+2025-12-01 19:49:16,218 - INFO - Val Loss: 1.1013, Val Acc: 58.82%
+2025-12-01 19:49:16,218 - INFO - New best validation accuracy: 58.82%
+2025-12-01 19:49:19,772 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 19:49:23,348 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 19:49:23,349 - INFO - Epoch 12/50
+2025-12-01 19:50:02,180 - INFO - Train Loss: 1.0334, Train Acc: 61.74%
+2025-12-01 19:50:03,516 - INFO - Val Loss: 1.1099, Val Acc: 56.90%
+2025-12-01 19:50:07,051 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 19:50:07,052 - INFO - Epoch 13/50
+2025-12-01 19:50:47,272 - INFO - Train Loss: 0.9954, Train Acc: 63.16%
+2025-12-01 19:50:48,700 - INFO - Val Loss: 1.1687, Val Acc: 56.43%
+2025-12-01 19:50:52,154 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 19:50:52,155 - INFO - Epoch 14/50
+2025-12-01 19:51:30,837 - INFO - Train Loss: 0.9490, Train Acc: 65.07%
+2025-12-01 19:51:32,195 - INFO - Val Loss: 1.1522, Val Acc: 57.82%
+2025-12-01 19:51:35,722 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 19:51:35,722 - INFO - Epoch 15/50
+2025-12-01 19:52:14,786 - INFO - Train Loss: 0.9042, Train Acc: 66.85%
+2025-12-01 19:52:16,174 - INFO - Val Loss: 1.1221, Val Acc: 59.46%
+2025-12-01 19:52:16,174 - INFO - New best validation accuracy: 59.46%
+2025-12-01 19:52:19,754 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 19:52:23,503 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 19:52:23,503 - INFO - Epoch 16/50
+2025-12-01 19:53:03,671 - INFO - Train Loss: 0.8579, Train Acc: 68.75%
+2025-12-01 19:53:05,015 - INFO - Val Loss: 1.1098, Val Acc: 59.21%
+2025-12-01 19:53:08,578 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 19:53:08,579 - INFO - Epoch 17/50
+2025-12-01 19:53:47,499 - INFO - Train Loss: 0.8219, Train Acc: 70.10%
+2025-12-01 19:53:48,878 - INFO - Val Loss: 1.1576, Val Acc: 59.72%
+2025-12-01 19:53:48,878 - INFO - New best validation accuracy: 59.72%
+2025-12-01 19:53:52,229 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 19:53:55,821 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 19:53:55,822 - INFO - Epoch 18/50
+2025-12-01 19:54:34,717 - INFO - Train Loss: 0.7788, Train Acc: 71.96%
+2025-12-01 19:54:36,076 - INFO - Val Loss: 1.1730, Val Acc: 58.82%
+2025-12-01 19:54:39,588 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 19:54:39,588 - INFO - Epoch 19/50
+2025-12-01 19:55:19,949 - INFO - Train Loss: 0.7404, Train Acc: 73.65%
+2025-12-01 19:55:21,268 - INFO - Val Loss: 1.1604, Val Acc: 60.69%
+2025-12-01 19:55:21,268 - INFO - New best validation accuracy: 60.69%
+2025-12-01 19:55:24,770 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 19:55:28,340 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 19:55:28,341 - INFO - Epoch 20/50
+2025-12-01 19:56:07,517 - INFO - Train Loss: 0.6999, Train Acc: 75.28%
+2025-12-01 19:56:08,882 - INFO - Val Loss: 1.1745, Val Acc: 59.55%
+2025-12-01 19:56:12,413 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 19:56:12,413 - INFO - Epoch 21/50
+2025-12-01 19:56:51,786 - INFO - Train Loss: 0.6567, Train Acc: 76.62%
+2025-12-01 19:56:52,884 - INFO - Val Loss: 1.2228, Val Acc: 58.54%
+2025-12-01 19:56:57,526 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 19:56:57,526 - INFO - Epoch 22/50
+2025-12-01 19:57:37,691 - INFO - Train Loss: 0.6191, Train Acc: 78.24%
+2025-12-01 19:57:39,009 - INFO - Val Loss: 1.2436, Val Acc: 59.69%
+2025-12-01 19:57:42,580 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 19:57:42,580 - INFO - Epoch 23/50
+2025-12-01 19:58:21,519 - INFO - Train Loss: 0.5879, Train Acc: 79.27%
+2025-12-01 19:58:22,920 - INFO - Val Loss: 1.2391, Val Acc: 60.50%
+2025-12-01 19:58:28,607 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 19:58:28,607 - INFO - Epoch 24/50
+2025-12-01 19:59:08,889 - INFO - Train Loss: 0.5506, Train Acc: 80.63%
+2025-12-01 19:59:09,986 - INFO - Val Loss: 1.2780, Val Acc: 60.91%
+2025-12-01 19:59:09,986 - INFO - New best validation accuracy: 60.91%
+2025-12-01 19:59:13,571 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 19:59:17,735 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 19:59:17,735 - INFO - Epoch 25/50
+2025-12-01 19:59:41,247 - INFO - Starting training...
+2025-12-01 19:59:41,247 - INFO - Epoch 1/50
+2025-12-01 20:00:33,311 - INFO - Train Loss: 1.9370, Train Acc: 17.69%
+2025-12-01 20:00:34,344 - INFO - Val Loss: 1.9272, Val Acc: 24.73%
+2025-12-01 20:00:34,344 - INFO - New best validation accuracy: 24.73%
+2025-12-01 20:00:37,853 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:00:41,342 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:00:41,343 - INFO - Epoch 2/50
+2025-12-01 20:01:14,596 - INFO - Train Loss: 1.8223, Train Acc: 24.64%
+2025-12-01 20:01:15,676 - INFO - Val Loss: 1.7769, Val Acc: 24.76%
+2025-12-01 20:01:15,676 - INFO - New best validation accuracy: 24.76%
+2025-12-01 20:01:20,711 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:01:26,333 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:01:26,334 - INFO - Epoch 3/50
+2025-12-01 20:01:58,832 - INFO - Train Loss: 1.6745, Train Acc: 32.31%
+2025-12-01 20:01:59,876 - INFO - Val Loss: 1.5748, Val Acc: 39.42%
+2025-12-01 20:01:59,876 - INFO - New best validation accuracy: 39.42%
+2025-12-01 20:02:03,358 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:02:06,824 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:02:06,825 - INFO - Epoch 4/50
+2025-12-01 20:02:39,763 - INFO - Train Loss: 1.5137, Train Acc: 41.22%
+2025-12-01 20:02:40,794 - INFO - Val Loss: 1.3992, Val Acc: 46.81%
+2025-12-01 20:02:40,794 - INFO - New best validation accuracy: 46.81%
+2025-12-01 20:02:44,283 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:02:47,827 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:02:47,828 - INFO - Epoch 5/50
+2025-12-01 20:03:21,407 - INFO - Train Loss: 1.4332, Train Acc: 44.63%
+2025-12-01 20:03:22,395 - INFO - Val Loss: 1.3117, Val Acc: 48.82%
+2025-12-01 20:03:22,395 - INFO - New best validation accuracy: 48.82%
+2025-12-01 20:03:25,757 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:03:29,240 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:03:29,240 - INFO - Epoch 6/50
+2025-12-01 20:04:02,211 - INFO - Train Loss: 1.3633, Train Acc: 47.76%
+2025-12-01 20:04:03,232 - INFO - Val Loss: 1.2812, Val Acc: 50.79%
+2025-12-01 20:04:03,232 - INFO - New best validation accuracy: 50.79%
+2025-12-01 20:04:06,808 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:04:10,311 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:04:10,311 - INFO - Epoch 7/50
+2025-12-01 20:04:43,449 - INFO - Train Loss: 1.2851, Train Acc: 51.34%
+2025-12-01 20:04:44,564 - INFO - Val Loss: 1.2535, Val Acc: 52.52%
+2025-12-01 20:04:44,564 - INFO - New best validation accuracy: 52.52%
+2025-12-01 20:04:48,097 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:04:51,685 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:04:51,685 - INFO - Epoch 8/50
+2025-12-01 20:05:24,791 - INFO - Train Loss: 1.2264, Train Acc: 53.95%
+2025-12-01 20:05:25,810 - INFO - Val Loss: 1.1880, Val Acc: 54.89%
+2025-12-01 20:05:25,811 - INFO - New best validation accuracy: 54.89%
+2025-12-01 20:05:29,422 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:05:32,992 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:05:32,992 - INFO - Epoch 9/50
+2025-12-01 20:06:06,357 - INFO - Train Loss: 1.1696, Train Acc: 56.40%
+2025-12-01 20:06:07,414 - INFO - Val Loss: 1.1567, Val Acc: 56.06%
+2025-12-01 20:06:07,414 - INFO - New best validation accuracy: 56.06%
+2025-12-01 20:06:10,855 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:06:14,388 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:06:14,389 - INFO - Epoch 10/50
+2025-12-01 20:06:47,456 - INFO - Train Loss: 1.1194, Train Acc: 58.06%
+2025-12-01 20:06:48,455 - INFO - Val Loss: 1.1559, Val Acc: 55.84%
+2025-12-01 20:06:51,993 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:06:51,993 - INFO - Epoch 11/50
+2025-12-01 20:07:24,890 - INFO - Train Loss: 1.0755, Train Acc: 60.00%
+2025-12-01 20:07:25,882 - INFO - Val Loss: 1.1326, Val Acc: 57.23%
+2025-12-01 20:07:25,882 - INFO - New best validation accuracy: 57.23%
+2025-12-01 20:07:29,496 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:07:33,024 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:07:33,024 - INFO - Epoch 12/50
+2025-12-01 20:08:06,431 - INFO - Train Loss: 1.0341, Train Acc: 61.55%
+2025-12-01 20:08:07,472 - INFO - Val Loss: 1.1269, Val Acc: 58.07%
+2025-12-01 20:08:07,472 - INFO - New best validation accuracy: 58.07%
+2025-12-01 20:08:10,997 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:08:14,842 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:08:14,842 - INFO - Epoch 13/50
+2025-12-01 20:08:47,759 - INFO - Train Loss: 0.9877, Train Acc: 63.66%
+2025-12-01 20:08:48,768 - INFO - Val Loss: 1.1453, Val Acc: 58.24%
+2025-12-01 20:08:48,768 - INFO - New best validation accuracy: 58.24%
+2025-12-01 20:08:52,740 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:08:56,450 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:08:56,450 - INFO - Epoch 14/50
+2025-12-01 20:09:29,782 - INFO - Train Loss: 0.9366, Train Acc: 65.57%
+2025-12-01 20:09:30,862 - INFO - Val Loss: 1.1466, Val Acc: 57.71%
+2025-12-01 20:09:34,895 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:09:34,895 - INFO - Epoch 15/50
+2025-12-01 20:10:08,548 - INFO - Train Loss: 0.8988, Train Acc: 67.10%
+2025-12-01 20:10:09,540 - INFO - Val Loss: 1.1274, Val Acc: 58.91%
+2025-12-01 20:10:09,540 - INFO - New best validation accuracy: 58.91%
+2025-12-01 20:10:13,599 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:10:17,939 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:10:17,940 - INFO - Epoch 16/50
+2025-12-01 20:10:51,459 - INFO - Train Loss: 0.8679, Train Acc: 68.46%
+2025-12-01 20:10:52,494 - INFO - Val Loss: 1.1515, Val Acc: 58.54%
+2025-12-01 20:10:56,549 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:10:56,549 - INFO - Epoch 17/50
+2025-12-01 20:11:29,941 - INFO - Train Loss: 0.8228, Train Acc: 70.20%
+2025-12-01 20:11:30,967 - INFO - Val Loss: 1.1481, Val Acc: 59.10%
+2025-12-01 20:11:30,967 - INFO - New best validation accuracy: 59.10%
+2025-12-01 20:11:34,555 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:11:38,074 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:11:38,074 - INFO - Epoch 18/50
+2025-12-01 20:12:11,324 - INFO - Train Loss: 0.7751, Train Acc: 72.07%
+2025-12-01 20:12:12,307 - INFO - Val Loss: 1.1360, Val Acc: 60.52%
+2025-12-01 20:12:12,307 - INFO - New best validation accuracy: 60.52%
+2025-12-01 20:12:15,876 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:12:19,377 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:12:19,377 - INFO - Epoch 19/50
+2025-12-01 20:12:52,607 - INFO - Train Loss: 0.7387, Train Acc: 73.66%
+2025-12-01 20:12:53,597 - INFO - Val Loss: 1.1411, Val Acc: 60.47%
+2025-12-01 20:12:57,181 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:12:57,182 - INFO - Epoch 20/50
+2025-12-01 20:13:38,805 - INFO - Train Loss: 0.6956, Train Acc: 75.02%
+2025-12-01 20:13:39,855 - INFO - Val Loss: 1.1625, Val Acc: 60.47%
+2025-12-01 20:13:43,363 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:13:43,363 - INFO - Epoch 21/50
+2025-12-01 20:14:16,514 - INFO - Train Loss: 0.6543, Train Acc: 76.74%
+2025-12-01 20:14:17,582 - INFO - Val Loss: 1.2107, Val Acc: 60.30%
+2025-12-01 20:14:22,425 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:14:22,425 - INFO - Epoch 22/50
+2025-12-01 20:14:55,598 - INFO - Train Loss: 0.6234, Train Acc: 78.17%
+2025-12-01 20:14:56,675 - INFO - Val Loss: 1.1654, Val Acc: 60.47%
+2025-12-01 20:15:00,240 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:15:00,240 - INFO - Epoch 23/50
+2025-12-01 20:15:33,544 - INFO - Train Loss: 0.5838, Train Acc: 79.40%
+2025-12-01 20:15:34,607 - INFO - Val Loss: 1.2736, Val Acc: 60.86%
+2025-12-01 20:15:34,608 - INFO - New best validation accuracy: 60.86%
+2025-12-01 20:15:38,253 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:15:58,557 - INFO - Starting training...
+2025-12-01 20:15:58,557 - INFO - Epoch 1/50
+2025-12-01 20:16:29,679 - INFO - Train Loss: 1.9392, Train Acc: 16.32%
+2025-12-01 20:16:30,798 - INFO - Val Loss: 1.9295, Val Acc: 17.81%
+2025-12-01 20:16:30,798 - INFO - New best validation accuracy: 17.81%
+2025-12-01 20:16:34,323 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:16:37,884 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:16:37,885 - INFO - Epoch 2/50
+2025-12-01 20:17:08,037 - INFO - Train Loss: 1.8240, Train Acc: 24.58%
+2025-12-01 20:17:09,092 - INFO - Val Loss: 1.7815, Val Acc: 24.73%
+2025-12-01 20:17:09,093 - INFO - New best validation accuracy: 24.73%
+2025-12-01 20:17:12,650 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:17:16,395 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:17:16,396 - INFO - Epoch 3/50
+2025-12-01 20:17:46,944 - INFO - Train Loss: 1.6942, Train Acc: 31.48%
+2025-12-01 20:17:47,944 - INFO - Val Loss: 1.5499, Val Acc: 39.92%
+2025-12-01 20:17:47,944 - INFO - New best validation accuracy: 39.92%
+2025-12-01 20:17:51,746 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:17:55,189 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:17:55,190 - INFO - Epoch 4/50
+2025-12-01 20:18:25,992 - INFO - Train Loss: 1.5475, Train Acc: 39.49%
+2025-12-01 20:18:27,017 - INFO - Val Loss: 1.4094, Val Acc: 46.06%
+2025-12-01 20:18:27,017 - INFO - New best validation accuracy: 46.06%
+2025-12-01 20:18:30,543 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:18:34,371 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:18:34,371 - INFO - Epoch 5/50
+2025-12-01 20:19:05,005 - INFO - Train Loss: 1.4568, Train Acc: 43.95%
+2025-12-01 20:19:06,076 - INFO - Val Loss: 1.3492, Val Acc: 49.34%
+2025-12-01 20:19:06,076 - INFO - New best validation accuracy: 49.34%
+2025-12-01 20:19:09,451 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:19:12,978 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:19:12,978 - INFO - Epoch 6/50
+2025-12-01 20:19:43,762 - INFO - Train Loss: 1.3932, Train Acc: 46.26%
+2025-12-01 20:19:44,805 - INFO - Val Loss: 1.2792, Val Acc: 50.74%
+2025-12-01 20:19:44,805 - INFO - New best validation accuracy: 50.74%
+2025-12-01 20:19:49,637 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:19:53,199 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:19:53,199 - INFO - Epoch 7/50
+2025-12-01 20:20:23,639 - INFO - Train Loss: 1.3278, Train Acc: 49.48%
+2025-12-01 20:20:24,678 - INFO - Val Loss: 1.2386, Val Acc: 53.50%
+2025-12-01 20:20:24,679 - INFO - New best validation accuracy: 53.50%
+2025-12-01 20:20:28,270 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:20:31,984 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:20:31,984 - INFO - Epoch 8/50
+2025-12-01 20:21:02,395 - INFO - Train Loss: 1.2736, Train Acc: 52.01%
+2025-12-01 20:21:03,436 - INFO - Val Loss: 1.2106, Val Acc: 53.92%
+2025-12-01 20:21:03,436 - INFO - New best validation accuracy: 53.92%
+2025-12-01 20:21:07,872 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:21:11,390 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:21:11,390 - INFO - Epoch 9/50
+2025-12-01 20:21:41,912 - INFO - Train Loss: 1.2272, Train Acc: 53.86%
+2025-12-01 20:21:42,905 - INFO - Val Loss: 1.1755, Val Acc: 55.70%
+2025-12-01 20:21:42,905 - INFO - New best validation accuracy: 55.70%
+2025-12-01 20:21:46,702 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:21:50,886 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:21:50,887 - INFO - Epoch 10/50
+2025-12-01 20:22:21,639 - INFO - Train Loss: 1.1837, Train Acc: 55.63%
+2025-12-01 20:22:22,713 - INFO - Val Loss: 1.1389, Val Acc: 56.68%
+2025-12-01 20:22:22,713 - INFO - New best validation accuracy: 56.68%
+2025-12-01 20:22:26,345 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:22:30,985 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:22:30,986 - INFO - Epoch 11/50
+2025-12-01 20:23:01,708 - INFO - Train Loss: 1.1489, Train Acc: 57.07%
+2025-12-01 20:23:02,783 - INFO - Val Loss: 1.1414, Val Acc: 57.74%
+2025-12-01 20:23:02,783 - INFO - New best validation accuracy: 57.74%
+2025-12-01 20:23:07,531 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:23:12,795 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:23:12,795 - INFO - Epoch 12/50
+2025-12-01 20:23:43,457 - INFO - Train Loss: 1.1101, Train Acc: 58.84%
+2025-12-01 20:23:44,487 - INFO - Val Loss: 1.1180, Val Acc: 58.04%
+2025-12-01 20:23:44,487 - INFO - New best validation accuracy: 58.04%
+2025-12-01 20:23:47,883 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:23:51,767 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:23:51,767 - INFO - Epoch 13/50
+2025-12-01 20:24:22,575 - INFO - Train Loss: 1.0724, Train Acc: 60.09%
+2025-12-01 20:24:23,530 - INFO - Val Loss: 1.1204, Val Acc: 57.88%
+2025-12-01 20:24:27,036 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:24:27,037 - INFO - Epoch 14/50
+2025-12-01 20:24:58,186 - INFO - Train Loss: 1.0373, Train Acc: 61.84%
+2025-12-01 20:24:59,217 - INFO - Val Loss: 1.1201, Val Acc: 59.19%
+2025-12-01 20:24:59,217 - INFO - New best validation accuracy: 59.19%
+2025-12-01 20:25:02,771 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:25:06,329 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:25:06,329 - INFO - Epoch 15/50
+2025-12-01 20:25:36,982 - INFO - Train Loss: 1.0024, Train Acc: 62.98%
+2025-12-01 20:25:38,046 - INFO - Val Loss: 1.0633, Val Acc: 60.78%
+2025-12-01 20:25:38,046 - INFO - New best validation accuracy: 60.78%
+2025-12-01 20:25:41,594 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:25:45,118 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:25:45,118 - INFO - Epoch 16/50
+2025-12-01 20:26:15,597 - INFO - Train Loss: 0.9776, Train Acc: 64.14%
+2025-12-01 20:26:16,657 - INFO - Val Loss: 1.0912, Val Acc: 59.80%
+2025-12-01 20:26:20,143 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:26:20,144 - INFO - Epoch 17/50
+2025-12-01 20:26:50,231 - INFO - Train Loss: 0.9427, Train Acc: 65.39%
+2025-12-01 20:26:51,239 - INFO - Val Loss: 1.1082, Val Acc: 59.94%
+2025-12-01 20:26:54,733 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:26:54,733 - INFO - Epoch 18/50
+2025-12-01 20:27:24,708 - INFO - Train Loss: 0.9090, Train Acc: 66.39%
+2025-12-01 20:27:25,756 - INFO - Val Loss: 1.1098, Val Acc: 58.77%
+2025-12-01 20:27:29,167 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:27:29,167 - INFO - Epoch 19/50
+2025-12-01 20:27:59,100 - INFO - Train Loss: 0.8712, Train Acc: 67.96%
+2025-12-01 20:28:00,074 - INFO - Val Loss: 1.1118, Val Acc: 60.27%
+2025-12-01 20:28:03,606 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:28:03,607 - INFO - Epoch 20/50
+2025-12-01 20:28:33,756 - INFO - Train Loss: 0.8483, Train Acc: 69.21%
+2025-12-01 20:28:34,804 - INFO - Val Loss: 1.1263, Val Acc: 60.72%
+2025-12-01 20:28:38,357 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:28:38,358 - INFO - Epoch 21/50
+2025-12-01 20:29:08,502 - INFO - Train Loss: 0.8125, Train Acc: 70.85%
+2025-12-01 20:29:09,547 - INFO - Val Loss: 1.1271, Val Acc: 59.88%
+2025-12-01 20:29:13,170 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:29:13,170 - INFO - Epoch 22/50
+2025-12-01 20:29:43,484 - INFO - Train Loss: 0.7820, Train Acc: 71.75%
+2025-12-01 20:29:44,518 - INFO - Val Loss: 1.1117, Val Acc: 61.33%
+2025-12-01 20:29:44,518 - INFO - New best validation accuracy: 61.33%
+2025-12-01 20:29:48,101 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:29:51,586 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:29:51,586 - INFO - Epoch 23/50
+2025-12-01 20:30:22,053 - INFO - Train Loss: 0.7568, Train Acc: 72.75%
+2025-12-01 20:30:23,087 - INFO - Val Loss: 1.1485, Val Acc: 61.61%
+2025-12-01 20:30:23,087 - INFO - New best validation accuracy: 61.61%
+2025-12-01 20:30:26,542 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:30:29,992 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:30:29,993 - INFO - Epoch 24/50
+2025-12-01 20:31:00,123 - INFO - Train Loss: 0.7242, Train Acc: 73.99%
+2025-12-01 20:31:01,180 - INFO - Val Loss: 1.1599, Val Acc: 61.50%
+2025-12-01 20:31:04,554 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:31:04,555 - INFO - Epoch 25/50
+2025-12-01 20:31:35,409 - INFO - Train Loss: 0.7004, Train Acc: 74.85%
+2025-12-01 20:31:36,435 - INFO - Val Loss: 1.1704, Val Acc: 60.91%
+2025-12-01 20:31:39,937 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:31:39,938 - INFO - Epoch 26/50
+2025-12-01 20:32:10,420 - INFO - Train Loss: 0.6666, Train Acc: 75.95%
+2025-12-01 20:32:11,446 - INFO - Val Loss: 1.1697, Val Acc: 60.86%
+2025-12-01 20:32:15,001 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:32:15,002 - INFO - Epoch 27/50
+2025-12-01 20:32:45,344 - INFO - Train Loss: 0.6379, Train Acc: 77.23%
+2025-12-01 20:32:46,356 - INFO - Val Loss: 1.1699, Val Acc: 61.83%
+2025-12-01 20:32:46,357 - INFO - New best validation accuracy: 61.83%
+2025-12-01 20:32:49,834 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:32:53,413 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:32:53,413 - INFO - Epoch 28/50
+2025-12-01 20:33:23,636 - INFO - Train Loss: 0.6142, Train Acc: 78.22%
+2025-12-01 20:33:24,722 - INFO - Val Loss: 1.2209, Val Acc: 61.42%
+2025-12-01 20:33:28,280 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:33:28,280 - INFO - Epoch 29/50
+2025-12-01 20:33:58,823 - INFO - Train Loss: 0.5924, Train Acc: 79.33%
+2025-12-01 20:33:59,907 - INFO - Val Loss: 1.2358, Val Acc: 61.25%
+2025-12-01 20:34:03,531 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:34:03,532 - INFO - Epoch 30/50
+2025-12-01 20:34:34,220 - INFO - Train Loss: 0.5639, Train Acc: 80.24%
+2025-12-01 20:34:35,261 - INFO - Val Loss: 1.2311, Val Acc: 62.11%
+2025-12-01 20:34:35,261 - INFO - New best validation accuracy: 62.11%
+2025-12-01 20:34:38,719 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:34:42,253 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:34:42,254 - INFO - Epoch 31/50
+2025-12-01 20:35:12,667 - INFO - Train Loss: 0.5389, Train Acc: 81.10%
+2025-12-01 20:35:13,708 - INFO - Val Loss: 1.2793, Val Acc: 61.86%
+2025-12-01 20:35:17,020 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:35:17,021 - INFO - Epoch 32/50
+2025-12-01 20:35:47,249 - INFO - Train Loss: 0.5176, Train Acc: 81.66%
+2025-12-01 20:35:48,225 - INFO - Val Loss: 1.2951, Val Acc: 61.78%
+2025-12-01 20:35:51,766 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:35:51,766 - INFO - Epoch 33/50
+2025-12-01 20:36:22,482 - INFO - Train Loss: 0.4896, Train Acc: 82.92%
+2025-12-01 20:36:23,474 - INFO - Val Loss: 1.2764, Val Acc: 61.92%
+2025-12-01 20:36:27,005 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:36:27,006 - INFO - Epoch 34/50
+2025-12-01 20:36:57,200 - INFO - Train Loss: 0.4652, Train Acc: 84.03%
+2025-12-01 20:36:58,282 - INFO - Val Loss: 1.3767, Val Acc: 61.47%
+2025-12-01 20:37:01,889 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:37:01,890 - INFO - Epoch 35/50
+2025-12-01 20:37:32,215 - INFO - Train Loss: 0.4502, Train Acc: 84.46%
+2025-12-01 20:37:33,271 - INFO - Val Loss: 1.4259, Val Acc: 60.94%
+2025-12-01 20:37:36,887 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:37:36,888 - INFO - Epoch 36/50
+2025-12-01 20:38:07,434 - INFO - Train Loss: 0.4288, Train Acc: 85.14%
+2025-12-01 20:38:08,432 - INFO - Val Loss: 1.3890, Val Acc: 61.47%
+2025-12-01 20:38:11,967 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:38:11,968 - INFO - Epoch 37/50
+2025-12-01 20:38:43,249 - INFO - Train Loss: 0.4036, Train Acc: 86.01%
+2025-12-01 20:38:44,280 - INFO - Val Loss: 1.3674, Val Acc: 63.14%
+2025-12-01 20:38:44,280 - INFO - New best validation accuracy: 63.14%
+2025-12-01 20:38:47,893 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:38:51,563 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:38:51,564 - INFO - Epoch 38/50
+2025-12-01 20:39:22,648 - INFO - Train Loss: 0.3857, Train Acc: 86.90%
+2025-12-01 20:39:23,604 - INFO - Val Loss: 1.4573, Val Acc: 62.31%
+2025-12-01 20:39:28,029 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:39:28,029 - INFO - Epoch 39/50
+2025-12-01 20:39:59,228 - INFO - Train Loss: 0.3744, Train Acc: 87.00%
+2025-12-01 20:40:00,223 - INFO - Val Loss: 1.4509, Val Acc: 61.33%
+2025-12-01 20:40:04,307 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:40:04,308 - INFO - Epoch 40/50
+2025-12-01 20:40:35,003 - INFO - Train Loss: 0.3593, Train Acc: 87.89%
+2025-12-01 20:40:35,985 - INFO - Val Loss: 1.4757, Val Acc: 61.47%
+2025-12-01 20:40:41,980 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:40:41,981 - INFO - Epoch 41/50
+2025-12-01 20:40:59,750 - INFO - Starting training...
+2025-12-01 20:40:59,750 - INFO - Epoch 1/80
+2025-12-01 20:41:33,378 - INFO - Train Loss: 1.9472, Train Acc: 14.79%
+2025-12-01 20:41:34,429 - INFO - Val Loss: 1.9321, Val Acc: 16.89%
+2025-12-01 20:41:35,530 - INFO - Test Loss: 1.9320, Test Acc: 17.15%
+2025-12-01 20:41:35,530 - INFO - New best validation accuracy: 16.89%
+2025-12-01 20:41:39,467 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:41:43,304 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:41:43,305 - INFO - Epoch 2/80
+2025-12-01 20:42:16,644 - INFO - Train Loss: 1.8258, Train Acc: 24.21%
+2025-12-01 20:42:17,688 - INFO - Val Loss: 1.7807, Val Acc: 24.76%
+2025-12-01 20:42:18,757 - INFO - Test Loss: 1.7829, Test Acc: 24.70%
+2025-12-01 20:42:18,758 - INFO - New best validation accuracy: 24.76%
+2025-12-01 20:42:22,375 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:42:26,046 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:42:26,046 - INFO - Epoch 3/80
+2025-12-01 20:42:59,483 - INFO - Train Loss: 1.6841, Train Acc: 31.94%
+2025-12-01 20:43:00,501 - INFO - Val Loss: 1.5285, Val Acc: 40.40%
+2025-12-01 20:43:01,578 - INFO - Test Loss: 1.5258, Test Acc: 40.96%
+2025-12-01 20:43:01,579 - INFO - New best validation accuracy: 40.40%
+2025-12-01 20:43:05,073 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:43:09,128 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:43:09,129 - INFO - Epoch 4/80
+2025-12-01 20:43:42,462 - INFO - Train Loss: 1.5209, Train Acc: 40.74%
+2025-12-01 20:43:43,563 - INFO - Val Loss: 1.4319, Val Acc: 44.38%
+2025-12-01 20:43:44,732 - INFO - Test Loss: 1.4408, Test Acc: 44.39%
+2025-12-01 20:43:44,732 - INFO - New best validation accuracy: 44.38%
+2025-12-01 20:43:48,973 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:43:52,721 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:43:52,721 - INFO - Epoch 5/80
+2025-12-01 20:44:26,053 - INFO - Train Loss: 1.4378, Train Acc: 44.62%
+2025-12-01 20:44:27,092 - INFO - Val Loss: 1.3215, Val Acc: 49.26%
+2025-12-01 20:44:28,088 - INFO - Test Loss: 1.3235, Test Acc: 49.23%
+2025-12-01 20:44:28,088 - INFO - New best validation accuracy: 49.26%
+2025-12-01 20:44:31,668 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:44:35,231 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:44:35,232 - INFO - Epoch 6/80
+2025-12-01 20:45:08,638 - INFO - Train Loss: 1.3682, Train Acc: 47.57%
+2025-12-01 20:45:09,680 - INFO - Val Loss: 1.2823, Val Acc: 51.58%
+2025-12-01 20:45:10,745 - INFO - Test Loss: 1.2660, Test Acc: 51.46%
+2025-12-01 20:45:10,745 - INFO - New best validation accuracy: 51.58%
+2025-12-01 20:45:14,642 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:45:18,112 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:45:18,112 - INFO - Epoch 7/80
+2025-12-01 20:45:54,675 - INFO - Starting training...
+2025-12-01 20:45:54,676 - INFO - Epoch 1/80
+2025-12-01 20:46:27,526 - INFO - Train Loss: 1.9340, Train Acc: 16.29%
+2025-12-01 20:46:28,582 - INFO - Val Loss: 1.9235, Val Acc: 22.16%
+2025-12-01 20:46:29,649 - INFO - Test Loss: 1.9238, Test Acc: 22.14%
+2025-12-01 20:46:29,649 - INFO - New best validation accuracy: 22.16%
+2025-12-01 20:46:33,190 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:46:36,790 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:46:36,791 - INFO - Epoch 2/80
+2025-12-01 20:47:10,313 - INFO - Train Loss: 1.8178, Train Acc: 24.74%
+2025-12-01 20:47:11,339 - INFO - Val Loss: 1.7726, Val Acc: 24.73%
+2025-12-01 20:47:12,442 - INFO - Test Loss: 1.7786, Test Acc: 24.73%
+2025-12-01 20:47:12,442 - INFO - New best validation accuracy: 24.73%
+2025-12-01 20:47:16,410 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:47:19,908 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:47:19,908 - INFO - Epoch 3/80
+2025-12-01 20:47:53,383 - INFO - Train Loss: 1.6758, Train Acc: 32.53%
+2025-12-01 20:47:54,448 - INFO - Val Loss: 1.5224, Val Acc: 42.46%
+2025-12-01 20:47:55,520 - INFO - Test Loss: 1.5273, Test Acc: 42.11%
+2025-12-01 20:47:55,521 - INFO - New best validation accuracy: 42.46%
+2025-12-01 20:47:59,415 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:48:03,034 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:48:03,035 - INFO - Epoch 4/80
+2025-12-01 20:48:36,416 - INFO - Train Loss: 1.5088, Train Acc: 41.29%
+2025-12-01 20:48:37,425 - INFO - Val Loss: 1.4112, Val Acc: 46.08%
+2025-12-01 20:48:38,481 - INFO - Test Loss: 1.4096, Test Acc: 46.09%
+2025-12-01 20:48:38,481 - INFO - New best validation accuracy: 46.08%
+2025-12-01 20:48:42,222 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:48:45,947 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:48:45,947 - INFO - Epoch 5/80
+2025-12-01 20:49:19,402 - INFO - Train Loss: 1.4249, Train Acc: 44.96%
+2025-12-01 20:49:20,464 - INFO - Val Loss: 1.3134, Val Acc: 49.46%
+2025-12-01 20:49:21,533 - INFO - Test Loss: 1.3050, Test Acc: 49.62%
+2025-12-01 20:49:21,533 - INFO - New best validation accuracy: 49.46%
+2025-12-01 20:49:24,938 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:49:28,700 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:49:28,701 - INFO - Epoch 6/80
+2025-12-01 20:50:01,970 - INFO - Train Loss: 1.3584, Train Acc: 48.20%
+2025-12-01 20:50:03,124 - INFO - Val Loss: 1.3017, Val Acc: 51.49%
+2025-12-01 20:50:04,273 - INFO - Test Loss: 1.2788, Test Acc: 51.60%
+2025-12-01 20:50:04,274 - INFO - New best validation accuracy: 51.49%
+2025-12-01 20:50:07,660 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:50:11,214 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:50:11,214 - INFO - Epoch 7/80
+2025-12-01 20:50:44,317 - INFO - Train Loss: 1.2872, Train Acc: 51.59%
+2025-12-01 20:50:45,393 - INFO - Val Loss: 1.2261, Val Acc: 53.86%
+2025-12-01 20:50:46,423 - INFO - Test Loss: 1.2219, Test Acc: 52.02%
+2025-12-01 20:50:46,423 - INFO - New best validation accuracy: 53.86%
+2025-12-01 20:50:49,977 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:50:53,502 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:50:53,503 - INFO - Epoch 8/80
+2025-12-01 20:51:26,924 - INFO - Train Loss: 1.2262, Train Acc: 53.92%
+2025-12-01 20:51:27,970 - INFO - Val Loss: 1.1866, Val Acc: 54.92%
+2025-12-01 20:51:28,981 - INFO - Test Loss: 1.1757, Test Acc: 54.47%
+2025-12-01 20:51:28,981 - INFO - New best validation accuracy: 54.92%
+2025-12-01 20:51:32,453 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:51:35,917 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:51:35,918 - INFO - Epoch 9/80
+2025-12-01 20:52:09,416 - INFO - Train Loss: 1.1745, Train Acc: 56.34%
+2025-12-01 20:52:10,471 - INFO - Val Loss: 1.1771, Val Acc: 56.12%
+2025-12-01 20:52:11,536 - INFO - Test Loss: 1.1603, Test Acc: 55.05%
+2025-12-01 20:52:11,536 - INFO - New best validation accuracy: 56.12%
+2025-12-01 20:52:14,895 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:52:18,420 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:52:18,421 - INFO - Epoch 10/80
+2025-12-01 20:53:19,552 - INFO - Train Loss: 1.1215, Train Acc: 58.23%
+2025-12-01 20:53:20,688 - INFO - Val Loss: 1.1821, Val Acc: 56.04%
+2025-12-01 20:53:21,761 - INFO - Test Loss: 1.1758, Test Acc: 55.05%
+2025-12-01 20:53:25,609 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:53:25,609 - INFO - Epoch 11/80
+2025-12-01 20:53:59,139 - INFO - Train Loss: 1.0791, Train Acc: 60.08%
+2025-12-01 20:54:00,217 - INFO - Val Loss: 1.1147, Val Acc: 58.18%
+2025-12-01 20:54:01,325 - INFO - Test Loss: 1.1314, Test Acc: 57.84%
+2025-12-01 20:54:01,326 - INFO - New best validation accuracy: 58.18%
+2025-12-01 20:54:04,810 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:54:08,655 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:54:08,655 - INFO - Epoch 12/80
+2025-12-01 20:54:41,898 - INFO - Train Loss: 1.0330, Train Acc: 61.98%
+2025-12-01 20:54:42,975 - INFO - Val Loss: 1.1287, Val Acc: 58.18%
+2025-12-01 20:54:44,025 - INFO - Test Loss: 1.1489, Test Acc: 56.56%
+2025-12-01 20:54:48,003 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:54:48,003 - INFO - Epoch 13/80
+2025-12-01 20:55:21,028 - INFO - Train Loss: 0.9837, Train Acc: 63.95%
+2025-12-01 20:55:22,123 - INFO - Val Loss: 1.0942, Val Acc: 59.16%
+2025-12-01 20:55:23,193 - INFO - Test Loss: 1.0908, Test Acc: 58.65%
+2025-12-01 20:55:23,194 - INFO - New best validation accuracy: 59.16%
+2025-12-01 20:55:26,953 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:55:30,902 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:55:30,902 - INFO - Epoch 14/80
+2025-12-01 20:56:04,070 - INFO - Train Loss: 0.9450, Train Acc: 65.31%
+2025-12-01 20:56:05,078 - INFO - Val Loss: 1.1132, Val Acc: 59.55%
+2025-12-01 20:56:06,092 - INFO - Test Loss: 1.1229, Test Acc: 58.42%
+2025-12-01 20:56:06,093 - INFO - New best validation accuracy: 59.55%
+2025-12-01 20:56:11,162 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:56:14,788 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:56:14,789 - INFO - Epoch 15/80
+2025-12-01 20:56:48,072 - INFO - Train Loss: 0.9100, Train Acc: 66.91%
+2025-12-01 20:56:49,144 - INFO - Val Loss: 1.0841, Val Acc: 60.75%
+2025-12-01 20:56:50,242 - INFO - Test Loss: 1.0845, Test Acc: 60.54%
+2025-12-01 20:56:50,242 - INFO - New best validation accuracy: 60.75%
+2025-12-01 20:56:54,278 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:56:57,931 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:56:57,932 - INFO - Epoch 16/80
+2025-12-01 20:57:31,543 - INFO - Train Loss: 0.8630, Train Acc: 68.93%
+2025-12-01 20:57:32,518 - INFO - Val Loss: 1.0954, Val Acc: 60.55%
+2025-12-01 20:57:33,606 - INFO - Test Loss: 1.1132, Test Acc: 59.59%
+2025-12-01 20:57:39,352 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:57:39,352 - INFO - Epoch 17/80
+2025-12-01 20:58:12,692 - INFO - Train Loss: 0.8140, Train Acc: 70.57%
+2025-12-01 20:58:13,753 - INFO - Val Loss: 1.1314, Val Acc: 59.99%
+2025-12-01 20:58:14,825 - INFO - Test Loss: 1.1455, Test Acc: 59.87%
+2025-12-01 20:58:18,327 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:58:18,328 - INFO - Epoch 18/80
+2025-12-01 20:58:51,757 - INFO - Train Loss: 0.7846, Train Acc: 71.78%
+2025-12-01 20:58:52,739 - INFO - Val Loss: 1.1253, Val Acc: 60.86%
+2025-12-01 20:58:53,823 - INFO - Test Loss: 1.1685, Test Acc: 59.20%
+2025-12-01 20:58:53,824 - INFO - New best validation accuracy: 60.86%
+2025-12-01 20:58:57,737 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:59:02,417 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 20:59:02,417 - INFO - Epoch 19/80
+2025-12-01 20:59:35,558 - INFO - Train Loss: 0.7380, Train Acc: 73.67%
+2025-12-01 20:59:36,682 - INFO - Val Loss: 1.2364, Val Acc: 58.94%
+2025-12-01 20:59:37,747 - INFO - Test Loss: 1.2256, Test Acc: 57.81%
+2025-12-01 20:59:42,292 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 20:59:42,292 - INFO - Epoch 20/80
+2025-12-01 21:00:15,252 - INFO - Train Loss: 0.6947, Train Acc: 75.49%
+2025-12-01 21:00:16,335 - INFO - Val Loss: 1.1751, Val Acc: 60.61%
+2025-12-01 21:00:17,416 - INFO - Test Loss: 1.1814, Test Acc: 59.84%
+2025-12-01 21:00:23,344 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:00:23,345 - INFO - Epoch 21/80
+2025-12-01 21:00:56,565 - INFO - Train Loss: 0.6643, Train Acc: 76.47%
+2025-12-01 21:00:57,640 - INFO - Val Loss: 1.2111, Val Acc: 61.61%
+2025-12-01 21:00:58,783 - INFO - Test Loss: 1.2241, Test Acc: 59.82%
+2025-12-01 21:00:58,783 - INFO - New best validation accuracy: 61.61%
+2025-12-01 21:01:03,670 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:01:08,651 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:01:08,652 - INFO - Epoch 22/80
+2025-12-01 21:01:42,305 - INFO - Train Loss: 0.6149, Train Acc: 78.38%
+2025-12-01 21:01:43,359 - INFO - Val Loss: 1.2605, Val Acc: 60.27%
+2025-12-01 21:01:44,407 - INFO - Test Loss: 1.2364, Test Acc: 59.93%
+2025-12-01 21:01:49,093 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:01:49,093 - INFO - Epoch 23/80
+2025-12-01 21:02:22,466 - INFO - Train Loss: 0.5836, Train Acc: 79.38%
+2025-12-01 21:02:23,492 - INFO - Val Loss: 1.2593, Val Acc: 60.41%
+2025-12-01 21:02:24,576 - INFO - Test Loss: 1.2867, Test Acc: 59.48%
+2025-12-01 21:02:29,545 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:02:29,546 - INFO - Epoch 24/80
+2025-12-01 21:03:03,152 - INFO - Train Loss: 0.5461, Train Acc: 81.04%
+2025-12-01 21:03:04,174 - INFO - Val Loss: 1.2513, Val Acc: 60.19%
+2025-12-01 21:03:05,262 - INFO - Test Loss: 1.2852, Test Acc: 59.59%
+2025-12-01 21:03:10,264 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:03:10,264 - INFO - Epoch 25/80
+2025-12-01 21:03:43,521 - INFO - Train Loss: 0.5184, Train Acc: 81.78%
+2025-12-01 21:03:44,513 - INFO - Val Loss: 1.2419, Val Acc: 61.78%
+2025-12-01 21:03:45,613 - INFO - Test Loss: 1.2721, Test Acc: 60.15%
+2025-12-01 21:03:45,614 - INFO - New best validation accuracy: 61.78%
+2025-12-01 21:03:49,148 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:03:52,734 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:03:52,734 - INFO - Epoch 26/80
+2025-12-01 21:04:25,908 - INFO - Train Loss: 0.4849, Train Acc: 82.99%
+2025-12-01 21:04:26,886 - INFO - Val Loss: 1.3012, Val Acc: 61.44%
+2025-12-01 21:04:27,949 - INFO - Test Loss: 1.3032, Test Acc: 59.68%
+2025-12-01 21:04:31,429 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:04:31,430 - INFO - Epoch 27/80
+2025-12-01 21:05:05,060 - INFO - Train Loss: 0.4558, Train Acc: 84.41%
+2025-12-01 21:05:06,086 - INFO - Val Loss: 1.3879, Val Acc: 60.19%
+2025-12-01 21:05:07,174 - INFO - Test Loss: 1.3580, Test Acc: 59.82%
+2025-12-01 21:05:10,603 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:05:10,604 - INFO - Epoch 28/80
+2025-12-01 21:05:43,903 - INFO - Train Loss: 0.4273, Train Acc: 85.41%
+2025-12-01 21:05:45,015 - INFO - Val Loss: 1.3630, Val Acc: 60.19%
+2025-12-01 21:05:46,068 - INFO - Test Loss: 1.3973, Test Acc: 59.06%
+2025-12-01 21:05:49,706 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:05:49,706 - INFO - Epoch 29/80
+2025-12-01 21:06:23,374 - INFO - Train Loss: 0.4069, Train Acc: 86.02%
+2025-12-01 21:06:24,433 - INFO - Val Loss: 1.3357, Val Acc: 61.33%
+2025-12-01 21:06:25,486 - INFO - Test Loss: 1.3479, Test Acc: 59.82%
+2025-12-01 21:06:29,240 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:06:29,241 - INFO - Epoch 30/80
+2025-12-01 21:07:02,572 - INFO - Train Loss: 0.3691, Train Acc: 87.14%
+2025-12-01 21:07:03,577 - INFO - Val Loss: 1.4052, Val Acc: 60.75%
+2025-12-01 21:07:04,602 - INFO - Test Loss: 1.4160, Test Acc: 60.09%
+2025-12-01 21:07:08,146 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:07:08,146 - INFO - Epoch 31/80
+2025-12-01 21:07:40,969 - INFO - Train Loss: 0.3490, Train Acc: 88.06%
+2025-12-01 21:07:42,008 - INFO - Val Loss: 1.4927, Val Acc: 60.08%
+2025-12-01 21:07:43,029 - INFO - Test Loss: 1.5319, Test Acc: 58.59%
+2025-12-01 21:07:46,565 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:07:46,565 - INFO - Epoch 32/80
+2025-12-01 21:08:20,018 - INFO - Train Loss: 0.3313, Train Acc: 88.92%
+2025-12-01 21:08:21,099 - INFO - Val Loss: 1.4237, Val Acc: 60.55%
+2025-12-01 21:08:22,168 - INFO - Test Loss: 1.4559, Test Acc: 60.46%
+2025-12-01 21:08:25,515 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:08:25,515 - INFO - Epoch 33/80
+2025-12-01 21:08:59,210 - INFO - Train Loss: 0.3101, Train Acc: 89.60%
+2025-12-01 21:09:00,190 - INFO - Val Loss: 1.5322, Val Acc: 60.91%
+2025-12-01 21:09:01,224 - INFO - Test Loss: 1.5369, Test Acc: 60.51%
+2025-12-01 21:09:04,827 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:09:04,827 - INFO - Epoch 34/80
+2025-12-01 21:09:38,067 - INFO - Train Loss: 0.2871, Train Acc: 90.19%
+2025-12-01 21:09:39,129 - INFO - Val Loss: 1.5101, Val Acc: 61.75%
+2025-12-01 21:09:40,228 - INFO - Test Loss: 1.5115, Test Acc: 60.54%
+2025-12-01 21:09:43,795 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:09:43,795 - INFO - Epoch 35/80
+2025-12-01 21:10:17,503 - INFO - Train Loss: 0.2712, Train Acc: 90.91%
+2025-12-01 21:10:18,544 - INFO - Val Loss: 1.5237, Val Acc: 60.80%
+2025-12-01 21:10:19,623 - INFO - Test Loss: 1.5028, Test Acc: 61.40%
+2025-12-01 21:10:23,247 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:10:23,248 - INFO - Epoch 36/80
+2025-12-01 21:10:56,323 - INFO - Train Loss: 0.2574, Train Acc: 91.34%
+2025-12-01 21:10:57,355 - INFO - Val Loss: 1.5641, Val Acc: 61.89%
+2025-12-01 21:10:58,379 - INFO - Test Loss: 1.5687, Test Acc: 61.43%
+2025-12-01 21:10:58,379 - INFO - New best validation accuracy: 61.89%
+2025-12-01 21:11:01,949 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:11:05,469 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:11:05,470 - INFO - Epoch 37/80
+2025-12-01 21:11:38,730 - INFO - Train Loss: 0.2368, Train Acc: 92.01%
+2025-12-01 21:11:39,695 - INFO - Val Loss: 1.6801, Val Acc: 61.72%
+2025-12-01 21:11:40,745 - INFO - Test Loss: 1.6716, Test Acc: 61.35%
+2025-12-01 21:11:44,929 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:11:44,930 - INFO - Epoch 38/80
+2025-12-01 21:12:27,314 - INFO - Train Loss: 0.2258, Train Acc: 92.47%
+2025-12-01 21:12:28,402 - INFO - Val Loss: 1.6701, Val Acc: 60.47%
+2025-12-01 21:12:29,455 - INFO - Test Loss: 1.6760, Test Acc: 59.73%
+2025-12-01 21:12:33,063 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:12:33,063 - INFO - Epoch 39/80
+2025-12-01 21:13:06,145 - INFO - Train Loss: 0.2134, Train Acc: 92.93%
+2025-12-01 21:13:07,184 - INFO - Val Loss: 1.6945, Val Acc: 61.81%
+2025-12-01 21:13:08,268 - INFO - Test Loss: 1.6852, Test Acc: 60.76%
+2025-12-01 21:13:11,899 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:13:11,900 - INFO - Epoch 40/80
+2025-12-01 21:13:45,417 - INFO - Train Loss: 0.2033, Train Acc: 93.41%
+2025-12-01 21:13:46,486 - INFO - Val Loss: 1.6710, Val Acc: 61.30%
+2025-12-01 21:13:47,570 - INFO - Test Loss: 1.7213, Test Acc: 60.09%
+2025-12-01 21:13:51,238 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:13:51,239 - INFO - Epoch 41/80
+2025-12-01 21:14:24,456 - INFO - Train Loss: 0.1889, Train Acc: 93.91%
+2025-12-01 21:14:25,471 - INFO - Val Loss: 1.6622, Val Acc: 61.11%
+2025-12-01 21:14:26,532 - INFO - Test Loss: 1.7119, Test Acc: 59.82%
+2025-12-01 21:14:30,152 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:14:30,152 - INFO - Epoch 42/80
+2025-12-01 21:15:03,495 - INFO - Train Loss: 0.1829, Train Acc: 93.89%
+2025-12-01 21:15:04,476 - INFO - Val Loss: 1.6614, Val Acc: 61.75%
+2025-12-01 21:15:05,527 - INFO - Test Loss: 1.6516, Test Acc: 60.99%
+2025-12-01 21:15:09,203 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:15:09,204 - INFO - Epoch 43/80
+2025-12-01 21:15:42,427 - INFO - Train Loss: 0.1762, Train Acc: 94.25%
+2025-12-01 21:15:43,419 - INFO - Val Loss: 1.6493, Val Acc: 60.55%
+2025-12-01 21:15:44,449 - INFO - Test Loss: 1.6394, Test Acc: 61.04%
+2025-12-01 21:15:47,933 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:15:47,933 - INFO - Epoch 44/80
+2025-12-01 21:16:21,931 - INFO - Train Loss: 0.1690, Train Acc: 94.65%
+2025-12-01 21:16:23,002 - INFO - Val Loss: 1.6651, Val Acc: 61.19%
+2025-12-01 21:16:24,033 - INFO - Test Loss: 1.6808, Test Acc: 60.93%
+2025-12-01 21:16:27,945 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:16:27,946 - INFO - Epoch 45/80
+2025-12-01 21:17:01,309 - INFO - Train Loss: 0.1499, Train Acc: 94.97%
+2025-12-01 21:17:02,358 - INFO - Val Loss: 1.7937, Val Acc: 61.61%
+2025-12-01 21:17:03,384 - INFO - Test Loss: 1.8650, Test Acc: 60.93%
+2025-12-01 21:17:07,495 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:17:07,496 - INFO - Epoch 46/80
+2025-12-01 21:17:41,157 - INFO - Train Loss: 0.1377, Train Acc: 95.45%
+2025-12-01 21:17:42,171 - INFO - Val Loss: 1.8144, Val Acc: 61.89%
+2025-12-01 21:17:43,268 - INFO - Test Loss: 1.8539, Test Acc: 61.51%
+2025-12-01 21:17:47,097 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:17:47,098 - INFO - Epoch 47/80
+2025-12-01 21:18:20,536 - INFO - Train Loss: 0.1391, Train Acc: 95.44%
+2025-12-01 21:18:21,565 - INFO - Val Loss: 1.8361, Val Acc: 60.83%
+2025-12-01 21:18:22,589 - INFO - Test Loss: 1.9064, Test Acc: 60.09%
+2025-12-01 21:18:26,083 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:18:26,084 - INFO - Epoch 48/80
+2025-12-01 21:18:40,822 - INFO - Starting training...
+2025-12-01 21:18:40,823 - INFO - Epoch 1/80
+2025-12-01 21:19:14,189 - INFO - Train Loss: 1.9522, Train Acc: 14.82%
+2025-12-01 21:19:15,290 - INFO - Val Loss: 1.9336, Val Acc: 24.84%
+2025-12-01 21:19:16,424 - INFO - Test Loss: 1.9339, Test Acc: 24.67%
+2025-12-01 21:19:16,424 - INFO - New best validation accuracy: 24.84%
+2025-12-01 21:19:20,173 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:19:24,067 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:19:24,068 - INFO - Epoch 2/80
+2025-12-01 21:19:56,928 - INFO - Train Loss: 1.8229, Train Acc: 24.46%
+2025-12-01 21:19:57,980 - INFO - Val Loss: 1.7755, Val Acc: 24.73%
+2025-12-01 21:19:59,011 - INFO - Test Loss: 1.7798, Test Acc: 24.78%
+2025-12-01 21:20:03,046 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:20:03,047 - INFO - Epoch 3/80
+2025-12-01 21:20:36,452 - INFO - Train Loss: 1.6601, Train Acc: 32.98%
+2025-12-01 21:20:37,547 - INFO - Val Loss: 1.5057, Val Acc: 42.29%
+2025-12-01 21:20:38,563 - INFO - Test Loss: 1.5110, Test Acc: 41.85%
+2025-12-01 21:20:38,564 - INFO - New best validation accuracy: 42.29%
+2025-12-01 21:20:42,132 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:20:45,674 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:20:45,674 - INFO - Epoch 4/80
+2025-12-01 21:21:19,023 - INFO - Train Loss: 1.5043, Train Acc: 41.33%
+2025-12-01 21:21:20,167 - INFO - Val Loss: 1.4347, Val Acc: 44.61%
+2025-12-01 21:21:21,235 - INFO - Test Loss: 1.4448, Test Acc: 45.08%
+2025-12-01 21:21:21,235 - INFO - New best validation accuracy: 44.61%
+2025-12-01 21:21:24,742 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:21:28,329 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:21:28,330 - INFO - Epoch 5/80
+2025-12-01 21:22:01,768 - INFO - Train Loss: 1.4215, Train Acc: 45.46%
+2025-12-01 21:22:02,857 - INFO - Val Loss: 1.3214, Val Acc: 48.95%
+2025-12-01 21:22:03,917 - INFO - Test Loss: 1.3392, Test Acc: 48.40%
+2025-12-01 21:22:03,917 - INFO - New best validation accuracy: 48.95%
+2025-12-01 21:22:07,493 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:22:11,020 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:22:11,021 - INFO - Epoch 6/80
+2025-12-01 21:22:44,267 - INFO - Train Loss: 1.3506, Train Acc: 48.74%
+2025-12-01 21:22:45,318 - INFO - Val Loss: 1.2675, Val Acc: 50.26%
+2025-12-01 21:22:46,391 - INFO - Test Loss: 1.2870, Test Acc: 50.63%
+2025-12-01 21:22:46,391 - INFO - New best validation accuracy: 50.26%
+2025-12-01 21:22:49,707 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:22:53,222 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:22:53,223 - INFO - Epoch 7/80
+2025-12-01 21:23:26,703 - INFO - Train Loss: 1.2783, Train Acc: 51.54%
+2025-12-01 21:23:27,747 - INFO - Val Loss: 1.2227, Val Acc: 52.61%
+2025-12-01 21:23:28,784 - INFO - Test Loss: 1.2182, Test Acc: 53.38%
+2025-12-01 21:23:28,784 - INFO - New best validation accuracy: 52.61%
+2025-12-01 21:23:32,529 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:23:36,788 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:23:36,789 - INFO - Epoch 8/80
+2025-12-01 21:24:10,460 - INFO - Train Loss: 1.2217, Train Acc: 54.31%
+2025-12-01 21:24:11,451 - INFO - Val Loss: 1.1611, Val Acc: 55.81%
+2025-12-01 21:24:12,505 - INFO - Test Loss: 1.1666, Test Acc: 56.61%
+2025-12-01 21:24:12,505 - INFO - New best validation accuracy: 55.81%
+2025-12-01 21:24:16,244 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:24:20,418 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:24:20,419 - INFO - Epoch 9/80
+2025-12-01 21:24:53,486 - INFO - Train Loss: 1.1653, Train Acc: 56.35%
+2025-12-01 21:24:54,471 - INFO - Val Loss: 1.1441, Val Acc: 55.81%
+2025-12-01 21:24:55,475 - INFO - Test Loss: 1.1352, Test Acc: 56.08%
+2025-12-01 21:24:59,148 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:24:59,148 - INFO - Epoch 10/80
+2025-12-01 21:25:32,655 - INFO - Train Loss: 1.1171, Train Acc: 58.71%
+2025-12-01 21:25:33,703 - INFO - Val Loss: 1.1204, Val Acc: 58.07%
+2025-12-01 21:25:34,727 - INFO - Test Loss: 1.1147, Test Acc: 57.06%
+2025-12-01 21:25:34,727 - INFO - New best validation accuracy: 58.07%
+2025-12-01 21:25:38,563 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:25:42,412 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:25:42,413 - INFO - Epoch 11/80
+2025-12-01 21:26:15,139 - INFO - Train Loss: 1.0737, Train Acc: 60.35%
+2025-12-01 21:26:16,174 - INFO - Val Loss: 1.0906, Val Acc: 59.33%
+2025-12-01 21:26:17,195 - INFO - Test Loss: 1.1027, Test Acc: 58.31%
+2025-12-01 21:26:17,195 - INFO - New best validation accuracy: 59.33%
+2025-12-01 21:26:20,829 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:26:24,396 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:26:24,396 - INFO - Epoch 12/80
+2025-12-01 21:26:57,874 - INFO - Train Loss: 1.0240, Train Acc: 62.41%
+2025-12-01 21:26:58,876 - INFO - Val Loss: 1.1052, Val Acc: 59.35%
+2025-12-01 21:26:59,960 - INFO - Test Loss: 1.1000, Test Acc: 59.37%
+2025-12-01 21:26:59,960 - INFO - New best validation accuracy: 59.35%
+2025-12-01 21:27:03,638 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:27:07,413 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:27:07,414 - INFO - Epoch 13/80
+2025-12-01 21:27:40,674 - INFO - Train Loss: 0.9823, Train Acc: 63.94%
+2025-12-01 21:27:41,673 - INFO - Val Loss: 1.1179, Val Acc: 58.68%
+2025-12-01 21:27:42,798 - INFO - Test Loss: 1.1172, Test Acc: 58.59%
+2025-12-01 21:27:46,732 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:27:46,732 - INFO - Epoch 14/80
+2025-12-01 21:28:19,704 - INFO - Train Loss: 0.9453, Train Acc: 65.60%
+2025-12-01 21:28:20,731 - INFO - Val Loss: 1.1084, Val Acc: 59.66%
+2025-12-01 21:28:21,781 - INFO - Test Loss: 1.1157, Test Acc: 58.98%
+2025-12-01 21:28:21,781 - INFO - New best validation accuracy: 59.66%
+2025-12-01 21:28:25,586 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:28:29,236 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:28:29,237 - INFO - Epoch 15/80
+2025-12-01 21:29:02,210 - INFO - Train Loss: 0.9049, Train Acc: 67.01%
+2025-12-01 21:29:03,336 - INFO - Val Loss: 1.1201, Val Acc: 58.52%
+2025-12-01 21:29:04,393 - INFO - Test Loss: 1.1208, Test Acc: 59.37%
+2025-12-01 21:29:08,161 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:29:08,162 - INFO - Epoch 16/80
+2025-12-01 21:29:41,287 - INFO - Train Loss: 0.8525, Train Acc: 69.01%
+2025-12-01 21:29:42,296 - INFO - Val Loss: 1.1283, Val Acc: 59.91%
+2025-12-01 21:29:43,386 - INFO - Test Loss: 1.1242, Test Acc: 59.04%
+2025-12-01 21:29:43,386 - INFO - New best validation accuracy: 59.91%
+2025-12-01 21:29:47,022 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:29:50,632 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:29:50,632 - INFO - Epoch 17/80
+2025-12-01 21:30:23,818 - INFO - Train Loss: 0.8104, Train Acc: 70.58%
+2025-12-01 21:30:24,867 - INFO - Val Loss: 1.0990, Val Acc: 60.86%
+2025-12-01 21:30:25,862 - INFO - Test Loss: 1.1113, Test Acc: 60.15%
+2025-12-01 21:30:25,863 - INFO - New best validation accuracy: 60.86%
+2025-12-01 21:30:29,564 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:30:33,184 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:30:33,184 - INFO - Epoch 18/80
+2025-12-01 21:31:06,251 - INFO - Train Loss: 0.7774, Train Acc: 72.58%
+2025-12-01 21:31:07,251 - INFO - Val Loss: 1.1194, Val Acc: 59.74%
+2025-12-01 21:31:08,268 - INFO - Test Loss: 1.1350, Test Acc: 59.15%
+2025-12-01 21:31:11,901 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:31:11,902 - INFO - Epoch 19/80
+2025-12-01 21:31:45,026 - INFO - Train Loss: 0.7279, Train Acc: 74.28%
+2025-12-01 21:31:46,054 - INFO - Val Loss: 1.1690, Val Acc: 61.58%
+2025-12-01 21:31:47,118 - INFO - Test Loss: 1.2200, Test Acc: 59.51%
+2025-12-01 21:31:47,118 - INFO - New best validation accuracy: 61.58%
+2025-12-01 21:31:50,733 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:31:54,519 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:31:54,520 - INFO - Epoch 20/80
+2025-12-01 21:32:28,027 - INFO - Train Loss: 0.6887, Train Acc: 75.39%
+2025-12-01 21:32:29,111 - INFO - Val Loss: 1.1246, Val Acc: 61.36%
+2025-12-01 21:32:30,136 - INFO - Test Loss: 1.1780, Test Acc: 59.79%
+2025-12-01 21:32:33,945 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:32:33,945 - INFO - Epoch 21/80
+2025-12-01 21:33:07,292 - INFO - Train Loss: 0.6512, Train Acc: 76.87%
+2025-12-01 21:33:08,254 - INFO - Val Loss: 1.1753, Val Acc: 59.35%
+2025-12-01 21:33:09,309 - INFO - Test Loss: 1.1953, Test Acc: 59.84%
+2025-12-01 21:33:13,263 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:33:13,264 - INFO - Epoch 22/80
+2025-12-01 21:33:46,504 - INFO - Train Loss: 0.6161, Train Acc: 78.42%
+2025-12-01 21:33:47,591 - INFO - Val Loss: 1.1547, Val Acc: 61.17%
+2025-12-01 21:33:48,664 - INFO - Test Loss: 1.1724, Test Acc: 60.71%
+2025-12-01 21:33:52,310 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:33:52,310 - INFO - Epoch 23/80
+2025-12-01 21:34:25,400 - INFO - Train Loss: 0.5742, Train Acc: 79.86%
+2025-12-01 21:34:26,440 - INFO - Val Loss: 1.2589, Val Acc: 61.05%
+2025-12-01 21:34:27,480 - INFO - Test Loss: 1.2662, Test Acc: 60.54%
+2025-12-01 21:34:30,927 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:34:30,928 - INFO - Epoch 24/80
+2025-12-01 21:35:04,308 - INFO - Train Loss: 0.5399, Train Acc: 81.18%
+2025-12-01 21:35:05,336 - INFO - Val Loss: 1.2661, Val Acc: 60.80%
+2025-12-01 21:35:06,400 - INFO - Test Loss: 1.2754, Test Acc: 61.51%
+2025-12-01 21:35:09,911 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:35:09,912 - INFO - Epoch 25/80
+2025-12-01 21:35:42,867 - INFO - Train Loss: 0.5077, Train Acc: 82.66%
+2025-12-01 21:35:43,900 - INFO - Val Loss: 1.2282, Val Acc: 61.22%
+2025-12-01 21:35:44,955 - INFO - Test Loss: 1.2480, Test Acc: 60.87%
+2025-12-01 21:35:48,472 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:35:48,473 - INFO - Epoch 26/80
+2025-12-01 21:36:21,234 - INFO - Train Loss: 0.4760, Train Acc: 83.60%
+2025-12-01 21:36:22,294 - INFO - Val Loss: 1.2404, Val Acc: 61.81%
+2025-12-01 21:36:23,330 - INFO - Test Loss: 1.2937, Test Acc: 61.40%
+2025-12-01 21:36:23,330 - INFO - New best validation accuracy: 61.81%
+2025-12-01 21:36:26,824 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:36:30,526 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:36:30,527 - INFO - Epoch 27/80
+2025-12-01 21:37:03,881 - INFO - Train Loss: 0.4435, Train Acc: 84.58%
+2025-12-01 21:37:04,884 - INFO - Val Loss: 1.3544, Val Acc: 61.61%
+2025-12-01 21:37:05,865 - INFO - Test Loss: 1.3988, Test Acc: 59.82%
+2025-12-01 21:37:09,237 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:37:09,238 - INFO - Epoch 28/80
+2025-12-01 21:37:42,285 - INFO - Train Loss: 0.4234, Train Acc: 85.55%
+2025-12-01 21:37:43,368 - INFO - Val Loss: 1.3267, Val Acc: 61.67%
+2025-12-01 21:37:44,448 - INFO - Test Loss: 1.3635, Test Acc: 60.29%
+2025-12-01 21:37:48,530 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:37:48,530 - INFO - Epoch 29/80
+2025-12-01 21:38:21,357 - INFO - Train Loss: 0.3870, Train Acc: 87.02%
+2025-12-01 21:38:22,422 - INFO - Val Loss: 1.3682, Val Acc: 60.83%
+2025-12-01 21:38:23,484 - INFO - Test Loss: 1.4053, Test Acc: 59.87%
+2025-12-01 21:38:27,465 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:38:27,466 - INFO - Epoch 30/80
+2025-12-01 21:39:00,860 - INFO - Train Loss: 0.3602, Train Acc: 87.95%
+2025-12-01 21:39:01,791 - INFO - Val Loss: 1.4413, Val Acc: 60.44%
+2025-12-01 21:39:02,846 - INFO - Test Loss: 1.4782, Test Acc: 59.51%
+2025-12-01 21:39:06,678 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:39:06,678 - INFO - Epoch 31/80
+2025-12-01 21:39:40,158 - INFO - Train Loss: 0.3439, Train Acc: 88.37%
+2025-12-01 21:39:41,244 - INFO - Val Loss: 1.3927, Val Acc: 61.14%
+2025-12-01 21:39:42,314 - INFO - Test Loss: 1.3963, Test Acc: 60.68%
+2025-12-01 21:39:46,205 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:39:46,206 - INFO - Epoch 32/80
+2025-12-01 21:40:19,326 - INFO - Train Loss: 0.3141, Train Acc: 89.40%
+2025-12-01 21:40:20,353 - INFO - Val Loss: 1.4353, Val Acc: 61.11%
+2025-12-01 21:40:21,389 - INFO - Test Loss: 1.4448, Test Acc: 62.49%
+2025-12-01 21:40:25,376 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:40:25,377 - INFO - Epoch 33/80
+2025-12-01 21:40:58,580 - INFO - Train Loss: 0.3008, Train Acc: 89.82%
+2025-12-01 21:40:59,626 - INFO - Val Loss: 1.5273, Val Acc: 61.67%
+2025-12-01 21:41:00,636 - INFO - Test Loss: 1.5679, Test Acc: 60.40%
+2025-12-01 21:41:04,474 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:41:04,474 - INFO - Epoch 34/80
+2025-12-01 21:41:38,358 - INFO - Train Loss: 0.2778, Train Acc: 90.66%
+2025-12-01 21:41:39,390 - INFO - Val Loss: 1.5026, Val Acc: 60.80%
+2025-12-01 21:41:40,522 - INFO - Test Loss: 1.5394, Test Acc: 60.15%
+2025-12-01 21:41:43,980 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:41:43,981 - INFO - Epoch 35/80
+2025-12-01 21:42:16,996 - INFO - Train Loss: 0.2699, Train Acc: 90.82%
+2025-12-01 21:42:17,964 - INFO - Val Loss: 1.4937, Val Acc: 59.97%
+2025-12-01 21:42:18,971 - INFO - Test Loss: 1.5165, Test Acc: 60.21%
+2025-12-01 21:42:22,531 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:42:22,532 - INFO - Epoch 36/80
+2025-12-01 21:42:55,815 - INFO - Train Loss: 0.2430, Train Acc: 92.01%
+2025-12-01 21:42:56,846 - INFO - Val Loss: 1.6276, Val Acc: 60.94%
+2025-12-01 21:42:57,859 - INFO - Test Loss: 1.6954, Test Acc: 60.09%
+2025-12-01 21:43:01,415 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:43:01,416 - INFO - Epoch 37/80
+2025-12-01 21:43:34,596 - INFO - Train Loss: 0.2347, Train Acc: 92.38%
+2025-12-01 21:43:35,658 - INFO - Val Loss: 1.6548, Val Acc: 62.00%
+2025-12-01 21:43:36,741 - INFO - Test Loss: 1.7155, Test Acc: 61.57%
+2025-12-01 21:43:36,741 - INFO - New best validation accuracy: 62.00%
+2025-12-01 21:43:40,342 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:43:43,871 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:43:43,872 - INFO - Epoch 38/80
+2025-12-01 21:44:17,080 - INFO - Train Loss: 0.2263, Train Acc: 92.58%
+2025-12-01 21:44:18,109 - INFO - Val Loss: 1.6148, Val Acc: 60.97%
+2025-12-01 21:44:19,234 - INFO - Test Loss: 1.6518, Test Acc: 60.82%
+2025-12-01 21:44:22,792 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:44:22,792 - INFO - Epoch 39/80
+2025-12-01 21:44:56,202 - INFO - Train Loss: 0.2194, Train Acc: 92.85%
+2025-12-01 21:44:57,190 - INFO - Val Loss: 1.6041, Val Acc: 60.69%
+2025-12-01 21:44:58,143 - INFO - Test Loss: 1.6916, Test Acc: 60.85%
+2025-12-01 21:45:01,705 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:45:01,705 - INFO - Epoch 40/80
+2025-12-01 21:45:50,208 - INFO - Train Loss: 0.1999, Train Acc: 93.24%
+2025-12-01 21:45:51,233 - INFO - Val Loss: 1.5637, Val Acc: 61.83%
+2025-12-01 21:45:52,316 - INFO - Test Loss: 1.6054, Test Acc: 61.54%
+2025-12-01 21:45:56,037 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:45:56,038 - INFO - Epoch 41/80
+2025-12-01 21:46:42,807 - INFO - Train Loss: 0.1939, Train Acc: 93.48%
+2025-12-01 21:46:43,806 - INFO - Val Loss: 1.6331, Val Acc: 60.41%
+2025-12-01 21:46:44,852 - INFO - Test Loss: 1.6721, Test Acc: 60.07%
+2025-12-01 21:46:48,481 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:46:48,481 - INFO - Epoch 42/80
+2025-12-01 21:47:21,524 - INFO - Train Loss: 0.1808, Train Acc: 94.00%
+2025-12-01 21:47:22,600 - INFO - Val Loss: 1.6994, Val Acc: 61.86%
+2025-12-01 21:47:23,647 - INFO - Test Loss: 1.7554, Test Acc: 60.57%
+2025-12-01 21:47:27,108 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:47:27,108 - INFO - Epoch 43/80
+2025-12-01 21:48:00,452 - INFO - Train Loss: 0.1724, Train Acc: 94.35%
+2025-12-01 21:48:01,585 - INFO - Val Loss: 1.7434, Val Acc: 61.17%
+2025-12-01 21:48:02,601 - INFO - Test Loss: 1.8106, Test Acc: 60.09%
+2025-12-01 21:48:06,152 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:48:06,153 - INFO - Epoch 44/80
+2025-12-01 21:48:39,930 - INFO - Train Loss: 0.1528, Train Acc: 94.90%
+2025-12-01 21:48:40,977 - INFO - Val Loss: 1.8155, Val Acc: 60.30%
+2025-12-01 21:48:42,018 - INFO - Test Loss: 1.8220, Test Acc: 60.54%
+2025-12-01 21:48:45,555 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:48:45,556 - INFO - Epoch 45/80
+2025-12-01 21:49:18,611 - INFO - Train Loss: 0.1506, Train Acc: 95.09%
+2025-12-01 21:49:19,699 - INFO - Val Loss: 1.7097, Val Acc: 61.86%
+2025-12-01 21:49:20,744 - INFO - Test Loss: 1.8009, Test Acc: 60.62%
+2025-12-01 21:49:24,380 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:49:24,380 - INFO - Epoch 46/80
+2025-12-01 21:49:53,286 - INFO - Starting training...
+2025-12-01 21:49:53,287 - INFO - Epoch 1/80
+2025-12-01 21:50:27,168 - INFO - Train Loss: 1.9317, Train Acc: 18.36%
+2025-12-01 21:50:28,254 - INFO - Val Loss: 1.9229, Val Acc: 22.08%
+2025-12-01 21:50:29,326 - INFO - Test Loss: 1.9232, Test Acc: 21.14%
+2025-12-01 21:50:29,326 - INFO - New best validation accuracy: 22.08%
+2025-12-01 21:50:33,740 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:50:39,002 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:50:39,003 - INFO - Epoch 2/80
+2025-12-01 21:51:11,826 - INFO - Train Loss: 1.8220, Train Acc: 24.67%
+2025-12-01 21:51:12,852 - INFO - Val Loss: 1.7829, Val Acc: 24.73%
+2025-12-01 21:51:13,902 - INFO - Test Loss: 1.7797, Test Acc: 24.70%
+2025-12-01 21:51:13,903 - INFO - New best validation accuracy: 24.73%
+2025-12-01 21:51:19,099 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:51:24,338 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:51:24,339 - INFO - Epoch 3/80
+2025-12-01 21:51:57,684 - INFO - Train Loss: 1.6821, Train Acc: 31.70%
+2025-12-01 21:51:58,726 - INFO - Val Loss: 1.5890, Val Acc: 40.48%
+2025-12-01 21:51:59,756 - INFO - Test Loss: 1.5782, Test Acc: 39.63%
+2025-12-01 21:51:59,756 - INFO - New best validation accuracy: 40.48%
+2025-12-01 21:52:03,330 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:52:07,059 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:52:07,059 - INFO - Epoch 4/80
+2025-12-01 21:52:40,013 - INFO - Train Loss: 1.5190, Train Acc: 40.86%
+2025-12-01 21:52:41,076 - INFO - Val Loss: 1.4170, Val Acc: 45.97%
+2025-12-01 21:52:42,140 - INFO - Test Loss: 1.4126, Test Acc: 45.56%
+2025-12-01 21:52:42,140 - INFO - New best validation accuracy: 45.97%
+2025-12-01 21:52:45,744 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:52:49,496 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:52:49,497 - INFO - Epoch 5/80
+2025-12-01 21:53:22,755 - INFO - Train Loss: 1.4273, Train Acc: 45.21%
+2025-12-01 21:53:23,740 - INFO - Val Loss: 1.3493, Val Acc: 48.09%
+2025-12-01 21:53:24,765 - INFO - Test Loss: 1.3532, Test Acc: 47.12%
+2025-12-01 21:53:24,766 - INFO - New best validation accuracy: 48.09%
+2025-12-01 21:53:28,483 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:53:32,152 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:53:32,152 - INFO - Epoch 6/80
+2025-12-01 21:54:05,311 - INFO - Train Loss: 1.3620, Train Acc: 48.08%
+2025-12-01 21:54:06,343 - INFO - Val Loss: 1.2523, Val Acc: 51.97%
+2025-12-01 21:54:07,438 - INFO - Test Loss: 1.2671, Test Acc: 51.21%
+2025-12-01 21:54:07,439 - INFO - New best validation accuracy: 51.97%
+2025-12-01 21:54:11,181 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:54:15,098 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:54:15,098 - INFO - Epoch 7/80
+2025-12-01 21:54:48,297 - INFO - Train Loss: 1.2892, Train Acc: 51.34%
+2025-12-01 21:54:49,387 - INFO - Val Loss: 1.2129, Val Acc: 54.17%
+2025-12-01 21:54:50,472 - INFO - Test Loss: 1.2174, Test Acc: 53.63%
+2025-12-01 21:54:50,472 - INFO - New best validation accuracy: 54.17%
+2025-12-01 21:54:54,213 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:54:57,948 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:54:57,948 - INFO - Epoch 8/80
+2025-12-01 21:55:31,142 - INFO - Train Loss: 1.2250, Train Acc: 54.19%
+2025-12-01 21:55:32,167 - INFO - Val Loss: 1.1680, Val Acc: 54.86%
+2025-12-01 21:55:33,202 - INFO - Test Loss: 1.1727, Test Acc: 54.86%
+2025-12-01 21:55:33,203 - INFO - New best validation accuracy: 54.86%
+2025-12-01 21:55:37,294 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:55:41,180 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:55:41,181 - INFO - Epoch 9/80
+2025-12-01 21:56:14,519 - INFO - Train Loss: 1.1778, Train Acc: 55.87%
+2025-12-01 21:56:15,546 - INFO - Val Loss: 1.1525, Val Acc: 56.37%
+2025-12-01 21:56:16,589 - INFO - Test Loss: 1.1707, Test Acc: 55.47%
+2025-12-01 21:56:16,589 - INFO - New best validation accuracy: 56.37%
+2025-12-01 21:56:20,303 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:56:24,195 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:56:24,195 - INFO - Epoch 10/80
+2025-12-01 21:56:57,620 - INFO - Train Loss: 1.1255, Train Acc: 58.49%
+2025-12-01 21:56:58,680 - INFO - Val Loss: 1.1155, Val Acc: 57.65%
+2025-12-01 21:56:59,776 - INFO - Test Loss: 1.1210, Test Acc: 57.20%
+2025-12-01 21:56:59,776 - INFO - New best validation accuracy: 57.65%
+2025-12-01 21:57:03,890 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:57:07,712 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:57:07,712 - INFO - Epoch 11/80
+2025-12-01 21:57:41,462 - INFO - Train Loss: 1.0796, Train Acc: 59.95%
+2025-12-01 21:57:42,613 - INFO - Val Loss: 1.1181, Val Acc: 56.68%
+2025-12-01 21:57:43,709 - INFO - Test Loss: 1.1202, Test Acc: 58.17%
+2025-12-01 21:57:47,316 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:57:47,317 - INFO - Epoch 12/80
+2025-12-01 21:58:20,389 - INFO - Train Loss: 1.0324, Train Acc: 61.91%
+2025-12-01 21:58:21,464 - INFO - Val Loss: 1.1174, Val Acc: 58.41%
+2025-12-01 21:58:22,531 - INFO - Test Loss: 1.1171, Test Acc: 57.89%
+2025-12-01 21:58:22,531 - INFO - New best validation accuracy: 58.41%
+2025-12-01 21:58:26,216 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:58:30,011 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:58:30,012 - INFO - Epoch 13/80
+2025-12-01 21:59:03,156 - INFO - Train Loss: 0.9858, Train Acc: 63.74%
+2025-12-01 21:59:04,221 - INFO - Val Loss: 1.1045, Val Acc: 58.46%
+2025-12-01 21:59:05,299 - INFO - Test Loss: 1.1068, Test Acc: 58.79%
+2025-12-01 21:59:05,299 - INFO - New best validation accuracy: 58.46%
+2025-12-01 21:59:08,723 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:59:12,275 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:59:12,275 - INFO - Epoch 14/80
+2025-12-01 21:59:45,227 - INFO - Train Loss: 0.9505, Train Acc: 65.20%
+2025-12-01 21:59:46,235 - INFO - Val Loss: 1.1006, Val Acc: 59.49%
+2025-12-01 21:59:47,291 - INFO - Test Loss: 1.1113, Test Acc: 58.65%
+2025-12-01 21:59:47,291 - INFO - New best validation accuracy: 59.49%
+2025-12-01 21:59:50,716 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 21:59:54,255 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 21:59:54,256 - INFO - Epoch 15/80
+2025-12-01 22:00:27,691 - INFO - Train Loss: 0.9019, Train Acc: 67.12%
+2025-12-01 22:00:28,734 - INFO - Val Loss: 1.1146, Val Acc: 58.80%
+2025-12-01 22:00:29,740 - INFO - Test Loss: 1.1187, Test Acc: 59.12%
+2025-12-01 22:00:33,244 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:00:33,245 - INFO - Epoch 16/80
+2025-12-01 22:01:06,689 - INFO - Train Loss: 0.8571, Train Acc: 68.71%
+2025-12-01 22:01:07,699 - INFO - Val Loss: 1.1317, Val Acc: 59.52%
+2025-12-01 22:01:08,797 - INFO - Test Loss: 1.1477, Test Acc: 59.18%
+2025-12-01 22:01:08,797 - INFO - New best validation accuracy: 59.52%
+2025-12-01 22:01:12,357 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:01:16,009 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 22:01:16,010 - INFO - Epoch 17/80
+2025-12-01 22:01:49,319 - INFO - Train Loss: 0.8239, Train Acc: 70.38%
+2025-12-01 22:01:50,320 - INFO - Val Loss: 1.1269, Val Acc: 60.50%
+2025-12-01 22:01:51,414 - INFO - Test Loss: 1.1426, Test Acc: 59.48%
+2025-12-01 22:01:51,415 - INFO - New best validation accuracy: 60.50%
+2025-12-01 22:01:54,961 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:01:58,737 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 22:01:58,737 - INFO - Epoch 18/80
+2025-12-01 22:02:31,887 - INFO - Train Loss: 0.7819, Train Acc: 71.96%
+2025-12-01 22:02:32,888 - INFO - Val Loss: 1.1161, Val Acc: 60.94%
+2025-12-01 22:02:33,933 - INFO - Test Loss: 1.1339, Test Acc: 60.29%
+2025-12-01 22:02:33,933 - INFO - New best validation accuracy: 60.94%
+2025-12-01 22:02:37,443 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:02:40,955 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 22:02:40,955 - INFO - Epoch 19/80
+2025-12-01 22:03:13,782 - INFO - Train Loss: 0.7400, Train Acc: 73.70%
+2025-12-01 22:03:14,848 - INFO - Val Loss: 1.1297, Val Acc: 60.16%
+2025-12-01 22:03:15,935 - INFO - Test Loss: 1.1527, Test Acc: 58.98%
+2025-12-01 22:03:19,511 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:03:19,511 - INFO - Epoch 20/80
+2025-12-01 22:03:52,618 - INFO - Train Loss: 0.7061, Train Acc: 74.90%
+2025-12-01 22:03:53,616 - INFO - Val Loss: 1.1514, Val Acc: 59.77%
+2025-12-01 22:03:54,633 - INFO - Test Loss: 1.1722, Test Acc: 59.68%
+2025-12-01 22:03:58,022 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:03:58,022 - INFO - Epoch 21/80
+2025-12-01 22:04:30,969 - INFO - Train Loss: 0.6595, Train Acc: 76.40%
+2025-12-01 22:04:32,001 - INFO - Val Loss: 1.2061, Val Acc: 60.91%
+2025-12-01 22:04:33,053 - INFO - Test Loss: 1.2142, Test Acc: 60.15%
+2025-12-01 22:04:36,617 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:04:36,617 - INFO - Epoch 22/80
+2025-12-01 22:05:09,516 - INFO - Train Loss: 0.6229, Train Acc: 78.25%
+2025-12-01 22:05:10,554 - INFO - Val Loss: 1.2093, Val Acc: 60.22%
+2025-12-01 22:05:11,640 - INFO - Test Loss: 1.2360, Test Acc: 59.31%
+2025-12-01 22:05:15,194 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:05:15,194 - INFO - Epoch 23/80
+2025-12-01 22:05:48,557 - INFO - Train Loss: 0.5852, Train Acc: 79.72%
+2025-12-01 22:05:49,590 - INFO - Val Loss: 1.1866, Val Acc: 59.88%
+2025-12-01 22:05:50,645 - INFO - Test Loss: 1.1803, Test Acc: 60.90%
+2025-12-01 22:05:54,195 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:05:54,195 - INFO - Epoch 24/80
+2025-12-01 22:06:27,260 - INFO - Train Loss: 0.5527, Train Acc: 80.60%
+2025-12-01 22:06:28,320 - INFO - Val Loss: 1.2607, Val Acc: 60.08%
+2025-12-01 22:06:29,366 - INFO - Test Loss: 1.2634, Test Acc: 59.31%
+2025-12-01 22:06:32,591 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:06:32,592 - INFO - Epoch 25/80
+2025-12-01 22:07:05,633 - INFO - Train Loss: 0.5128, Train Acc: 82.26%
+2025-12-01 22:07:06,671 - INFO - Val Loss: 1.2708, Val Acc: 60.69%
+2025-12-01 22:07:07,741 - INFO - Test Loss: 1.3255, Test Acc: 59.65%
+2025-12-01 22:07:11,289 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:07:11,290 - INFO - Epoch 26/80
+2025-12-01 22:07:44,536 - INFO - Train Loss: 0.4911, Train Acc: 83.14%
+2025-12-01 22:07:45,500 - INFO - Val Loss: 1.2423, Val Acc: 60.89%
+2025-12-01 22:07:46,582 - INFO - Test Loss: 1.2686, Test Acc: 59.65%
+2025-12-01 22:07:50,074 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:07:50,074 - INFO - Epoch 27/80
+2025-12-01 22:08:23,551 - INFO - Train Loss: 0.4521, Train Acc: 84.42%
+2025-12-01 22:08:24,567 - INFO - Val Loss: 1.2882, Val Acc: 62.03%
+2025-12-01 22:08:25,616 - INFO - Test Loss: 1.3334, Test Acc: 59.96%
+2025-12-01 22:08:25,617 - INFO - New best validation accuracy: 62.03%
+2025-12-01 22:08:29,091 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:08:32,569 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 22:08:32,569 - INFO - Epoch 28/80
+2025-12-01 22:09:05,645 - INFO - Train Loss: 0.4216, Train Acc: 85.37%
+2025-12-01 22:09:06,711 - INFO - Val Loss: 1.3227, Val Acc: 61.86%
+2025-12-01 22:09:07,793 - INFO - Test Loss: 1.3894, Test Acc: 60.18%
+2025-12-01 22:09:11,526 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:09:11,527 - INFO - Epoch 29/80
+2025-12-01 22:09:44,996 - INFO - Train Loss: 0.4072, Train Acc: 85.87%
+2025-12-01 22:09:46,047 - INFO - Val Loss: 1.4534, Val Acc: 60.05%
+2025-12-01 22:09:47,123 - INFO - Test Loss: 1.4665, Test Acc: 59.01%
+2025-12-01 22:09:50,834 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:09:50,834 - INFO - Epoch 30/80
+2025-12-01 22:10:27,345 - INFO - Starting training...
+2025-12-01 22:10:27,345 - INFO - Epoch 1/80
+2025-12-01 22:11:00,568 - INFO - Train Loss: 1.9359, Train Acc: 16.55%
+2025-12-01 22:11:01,636 - INFO - Val Loss: 1.9252, Val Acc: 17.84%
+2025-12-01 22:11:02,694 - INFO - Test Loss: 1.9258, Test Acc: 17.60%
+2025-12-01 22:11:02,694 - INFO - New best validation accuracy: 17.84%
+2025-12-01 22:11:06,275 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:11:09,781 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 22:11:09,781 - INFO - Epoch 2/80
+2025-12-01 22:11:43,048 - INFO - Train Loss: 1.8200, Train Acc: 24.49%
+2025-12-01 22:11:44,073 - INFO - Val Loss: 1.7842, Val Acc: 24.73%
+2025-12-01 22:11:45,095 - INFO - Test Loss: 1.7883, Test Acc: 24.70%
+2025-12-01 22:11:45,095 - INFO - New best validation accuracy: 24.73%
+2025-12-01 22:11:48,495 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:11:52,060 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 22:11:52,061 - INFO - Epoch 3/80
+2025-12-01 22:12:25,410 - INFO - Train Loss: 1.6654, Train Acc: 32.94%
+2025-12-01 22:12:26,454 - INFO - Val Loss: 1.5657, Val Acc: 39.70%
+2025-12-01 22:12:27,452 - INFO - Test Loss: 1.5649, Test Acc: 39.38%
+2025-12-01 22:12:27,452 - INFO - New best validation accuracy: 39.70%
+2025-12-01 22:12:30,980 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:12:34,528 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 22:12:34,529 - INFO - Epoch 4/80
+2025-12-01 22:13:07,736 - INFO - Train Loss: 1.5142, Train Acc: 41.65%
+2025-12-01 22:13:08,751 - INFO - Val Loss: 1.3799, Val Acc: 46.33%
+2025-12-01 22:13:09,775 - INFO - Test Loss: 1.4056, Test Acc: 45.31%
+2025-12-01 22:13:09,775 - INFO - New best validation accuracy: 46.33%
+2025-12-01 22:13:13,277 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:13:16,858 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 22:13:16,858 - INFO - Epoch 5/80
+2025-12-01 22:13:49,823 - INFO - Train Loss: 1.4198, Train Acc: 45.51%
+2025-12-01 22:13:50,879 - INFO - Val Loss: 1.3213, Val Acc: 50.52%
+2025-12-01 22:13:51,908 - INFO - Test Loss: 1.3486, Test Acc: 48.48%
+2025-12-01 22:13:51,908 - INFO - New best validation accuracy: 50.52%
+2025-12-01 22:13:55,373 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:13:58,943 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 22:13:58,944 - INFO - Epoch 6/80
+2025-12-01 22:14:31,861 - INFO - Train Loss: 1.3525, Train Acc: 48.81%
+2025-12-01 22:14:32,887 - INFO - Val Loss: 1.2382, Val Acc: 52.55%
+2025-12-01 22:14:33,922 - INFO - Test Loss: 1.2638, Test Acc: 50.79%
+2025-12-01 22:14:33,922 - INFO - New best validation accuracy: 52.55%
+2025-12-01 22:14:37,396 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:14:40,955 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 22:14:40,956 - INFO - Epoch 7/80
+2025-12-01 22:15:13,961 - INFO - Train Loss: 1.2869, Train Acc: 51.50%
+2025-12-01 22:15:15,042 - INFO - Val Loss: 1.2348, Val Acc: 52.52%
+2025-12-01 22:15:16,112 - INFO - Test Loss: 1.2571, Test Acc: 51.49%
+2025-12-01 22:15:19,333 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:15:19,334 - INFO - Epoch 8/80
+2025-12-01 22:15:52,548 - INFO - Train Loss: 1.2200, Train Acc: 54.05%
+2025-12-01 22:15:53,581 - INFO - Val Loss: 1.1881, Val Acc: 55.39%
+2025-12-01 22:15:54,677 - INFO - Test Loss: 1.2113, Test Acc: 54.00%
+2025-12-01 22:15:54,678 - INFO - New best validation accuracy: 55.39%
+2025-12-01 22:15:58,173 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:16:01,672 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 22:16:01,672 - INFO - Epoch 9/80
+2025-12-01 22:16:34,990 - INFO - Train Loss: 1.1761, Train Acc: 56.26%
+2025-12-01 22:16:35,969 - INFO - Val Loss: 1.1476, Val Acc: 56.23%
+2025-12-01 22:16:37,059 - INFO - Test Loss: 1.1743, Test Acc: 54.25%
+2025-12-01 22:16:37,059 - INFO - New best validation accuracy: 56.23%
+2025-12-01 22:16:40,634 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:16:44,116 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 22:16:44,116 - INFO - Epoch 10/80
+2025-12-01 22:17:17,481 - INFO - Train Loss: 1.1232, Train Acc: 58.14%
+2025-12-01 22:17:18,523 - INFO - Val Loss: 1.1300, Val Acc: 56.82%
+2025-12-01 22:17:19,613 - INFO - Test Loss: 1.1294, Test Acc: 56.64%
+2025-12-01 22:17:19,613 - INFO - New best validation accuracy: 56.82%
+2025-12-01 22:17:22,880 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:17:26,403 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 22:17:26,404 - INFO - Epoch 11/80
+2025-12-01 22:17:59,644 - INFO - Train Loss: 1.0753, Train Acc: 60.11%
+2025-12-01 22:18:00,689 - INFO - Val Loss: 1.1152, Val Acc: 58.66%
+2025-12-01 22:18:01,723 - INFO - Test Loss: 1.1289, Test Acc: 57.42%
+2025-12-01 22:18:01,723 - INFO - New best validation accuracy: 58.66%
+2025-12-01 22:18:05,274 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:18:08,771 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 22:18:08,772 - INFO - Epoch 12/80
+2025-12-01 22:18:42,011 - INFO - Train Loss: 1.0332, Train Acc: 61.69%
+2025-12-01 22:18:43,045 - INFO - Val Loss: 1.1081, Val Acc: 58.21%
+2025-12-01 22:18:44,057 - INFO - Test Loss: 1.1329, Test Acc: 57.48%
+2025-12-01 22:18:47,578 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:18:47,578 - INFO - Epoch 13/80
+2025-12-01 22:19:21,052 - INFO - Train Loss: 0.9921, Train Acc: 63.60%
+2025-12-01 22:19:22,106 - INFO - Val Loss: 1.1075, Val Acc: 59.33%
+2025-12-01 22:19:23,203 - INFO - Test Loss: 1.1102, Test Acc: 58.31%
+2025-12-01 22:19:23,204 - INFO - New best validation accuracy: 59.33%
+2025-12-01 22:19:26,643 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:19:30,237 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 22:19:30,237 - INFO - Epoch 14/80
+2025-12-01 22:20:03,996 - INFO - Train Loss: 0.9488, Train Acc: 65.17%
+2025-12-01 22:20:04,979 - INFO - Val Loss: 1.0943, Val Acc: 60.02%
+2025-12-01 22:20:05,975 - INFO - Test Loss: 1.1217, Test Acc: 58.65%
+2025-12-01 22:20:05,975 - INFO - New best validation accuracy: 60.02%
+2025-12-01 22:20:09,432 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:20:12,984 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 22:20:12,985 - INFO - Epoch 15/80
+2025-12-01 22:20:45,831 - INFO - Train Loss: 0.8997, Train Acc: 66.74%
+2025-12-01 22:20:46,847 - INFO - Val Loss: 1.1336, Val Acc: 58.88%
+2025-12-01 22:20:47,932 - INFO - Test Loss: 1.1594, Test Acc: 57.70%
+2025-12-01 22:20:51,492 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:20:51,493 - INFO - Epoch 16/80
+2025-12-01 22:21:25,007 - INFO - Train Loss: 0.8617, Train Acc: 68.90%
+2025-12-01 22:21:25,994 - INFO - Val Loss: 1.1350, Val Acc: 59.83%
+2025-12-01 22:21:27,044 - INFO - Test Loss: 1.1627, Test Acc: 58.40%
+2025-12-01 22:21:30,219 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:21:30,219 - INFO - Epoch 17/80
+2025-12-01 22:22:03,485 - INFO - Train Loss: 0.8248, Train Acc: 70.18%
+2025-12-01 22:22:04,506 - INFO - Val Loss: 1.1300, Val Acc: 60.27%
+2025-12-01 22:22:05,597 - INFO - Test Loss: 1.1558, Test Acc: 58.90%
+2025-12-01 22:22:05,597 - INFO - New best validation accuracy: 60.27%
+2025-12-01 22:22:09,113 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:22:12,596 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 22:22:12,596 - INFO - Epoch 18/80
+2025-12-01 22:22:45,691 - INFO - Train Loss: 0.7767, Train Acc: 72.07%
+2025-12-01 22:22:46,800 - INFO - Val Loss: 1.1508, Val Acc: 60.75%
+2025-12-01 22:22:47,785 - INFO - Test Loss: 1.1750, Test Acc: 58.90%
+2025-12-01 22:22:47,785 - INFO - New best validation accuracy: 60.75%
+2025-12-01 22:22:51,362 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:22:54,869 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 22:22:54,869 - INFO - Epoch 19/80
+2025-12-01 22:23:27,995 - INFO - Train Loss: 0.7401, Train Acc: 73.53%
+2025-12-01 22:23:29,090 - INFO - Val Loss: 1.1302, Val Acc: 60.58%
+2025-12-01 22:23:30,138 - INFO - Test Loss: 1.1662, Test Acc: 59.73%
+2025-12-01 22:23:33,342 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:23:33,342 - INFO - Epoch 20/80
+2025-12-01 22:24:06,615 - INFO - Train Loss: 0.7003, Train Acc: 75.34%
+2025-12-01 22:24:07,625 - INFO - Val Loss: 1.1743, Val Acc: 60.66%
+2025-12-01 22:24:08,714 - INFO - Test Loss: 1.1875, Test Acc: 60.99%
+2025-12-01 22:24:12,221 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:24:12,221 - INFO - Epoch 21/80
+2025-12-01 22:24:45,913 - INFO - Train Loss: 0.6552, Train Acc: 76.55%
+2025-12-01 22:24:46,908 - INFO - Val Loss: 1.2048, Val Acc: 61.28%
+2025-12-01 22:24:47,965 - INFO - Test Loss: 1.1996, Test Acc: 61.15%
+2025-12-01 22:24:47,966 - INFO - New best validation accuracy: 61.28%
+2025-12-01 22:24:51,228 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:24:54,732 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 22:24:54,733 - INFO - Epoch 22/80
+2025-12-01 22:25:28,163 - INFO - Train Loss: 0.6236, Train Acc: 77.95%
+2025-12-01 22:25:29,184 - INFO - Val Loss: 1.2247, Val Acc: 59.63%
+2025-12-01 22:25:30,244 - INFO - Test Loss: 1.2356, Test Acc: 59.79%
+2025-12-01 22:25:33,835 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:25:33,836 - INFO - Epoch 23/80
+2025-12-01 22:26:07,320 - INFO - Train Loss: 0.5902, Train Acc: 79.24%
+2025-12-01 22:26:08,342 - INFO - Val Loss: 1.2255, Val Acc: 60.78%
+2025-12-01 22:26:09,410 - INFO - Test Loss: 1.2459, Test Acc: 60.43%
+2025-12-01 22:26:12,961 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:26:12,962 - INFO - Epoch 24/80
+2025-12-01 22:26:45,915 - INFO - Train Loss: 0.5558, Train Acc: 80.66%
+2025-12-01 22:26:46,923 - INFO - Val Loss: 1.2057, Val Acc: 62.11%
+2025-12-01 22:26:47,981 - INFO - Test Loss: 1.2294, Test Acc: 61.24%
+2025-12-01 22:26:47,982 - INFO - New best validation accuracy: 62.11%
+2025-12-01 22:26:51,512 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:26:55,018 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-01 22:26:55,019 - INFO - Epoch 25/80
+2025-12-01 22:27:28,300 - INFO - Train Loss: 0.5174, Train Acc: 81.81%
+2025-12-01 22:27:29,294 - INFO - Val Loss: 1.3405, Val Acc: 60.02%
+2025-12-01 22:27:30,337 - INFO - Test Loss: 1.3048, Test Acc: 60.82%
+2025-12-01 22:27:33,873 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:27:33,874 - INFO - Epoch 26/80
+2025-12-01 22:28:06,987 - INFO - Train Loss: 0.4907, Train Acc: 83.02%
+2025-12-01 22:28:07,974 - INFO - Val Loss: 1.3162, Val Acc: 58.82%
+2025-12-01 22:28:09,036 - INFO - Test Loss: 1.3082, Test Acc: 59.70%
+2025-12-01 22:28:12,299 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:28:12,300 - INFO - Epoch 27/80
+2025-12-01 22:28:45,543 - INFO - Train Loss: 0.4593, Train Acc: 83.90%
+2025-12-01 22:28:46,602 - INFO - Val Loss: 1.4160, Val Acc: 59.52%
+2025-12-01 22:28:47,606 - INFO - Test Loss: 1.3931, Test Acc: 59.82%
+2025-12-01 22:28:51,157 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:28:51,158 - INFO - Epoch 28/80
+2025-12-01 22:29:24,747 - INFO - Train Loss: 0.4257, Train Acc: 85.48%
+2025-12-01 22:29:25,809 - INFO - Val Loss: 1.3914, Val Acc: 59.46%
+2025-12-01 22:29:26,951 - INFO - Test Loss: 1.3653, Test Acc: 60.21%
+2025-12-01 22:29:30,561 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:29:30,562 - INFO - Epoch 29/80
+2025-12-01 22:30:03,850 - INFO - Train Loss: 0.4032, Train Acc: 86.20%
+2025-12-01 22:30:04,893 - INFO - Val Loss: 1.3737, Val Acc: 59.80%
+2025-12-01 22:30:05,943 - INFO - Test Loss: 1.3561, Test Acc: 58.98%
+2025-12-01 22:30:09,623 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:30:09,623 - INFO - Epoch 30/80
+2025-12-01 22:30:43,344 - INFO - Train Loss: 0.3764, Train Acc: 87.21%
+2025-12-01 22:30:44,328 - INFO - Val Loss: 1.3747, Val Acc: 60.50%
+2025-12-01 22:30:45,347 - INFO - Test Loss: 1.3564, Test Acc: 60.40%
+2025-12-01 22:30:50,333 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:30:50,333 - INFO - Epoch 31/80
+2025-12-01 22:31:23,724 - INFO - Train Loss: 0.3548, Train Acc: 87.94%
+2025-12-01 22:31:24,668 - INFO - Val Loss: 1.4993, Val Acc: 60.52%
+2025-12-01 22:31:25,707 - INFO - Test Loss: 1.4532, Test Acc: 59.57%
+2025-12-01 22:31:29,227 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:31:29,228 - INFO - Epoch 32/80
+2025-12-01 22:32:02,451 - INFO - Train Loss: 0.3385, Train Acc: 88.49%
+2025-12-01 22:32:03,524 - INFO - Val Loss: 1.4327, Val Acc: 59.99%
+2025-12-01 22:32:04,588 - INFO - Test Loss: 1.4325, Test Acc: 61.04%
+2025-12-01 22:32:08,178 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:32:08,178 - INFO - Epoch 33/80
+2025-12-01 22:32:41,563 - INFO - Train Loss: 0.3095, Train Acc: 89.48%
+2025-12-01 22:32:42,620 - INFO - Val Loss: 1.5080, Val Acc: 61.30%
+2025-12-01 22:32:43,657 - INFO - Test Loss: 1.4856, Test Acc: 61.82%
+2025-12-01 22:32:47,281 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:32:47,282 - INFO - Epoch 34/80
+2025-12-01 22:33:20,476 - INFO - Train Loss: 0.3014, Train Acc: 89.64%
+2025-12-01 22:33:21,487 - INFO - Val Loss: 1.4337, Val Acc: 61.19%
+2025-12-01 22:33:22,480 - INFO - Test Loss: 1.4644, Test Acc: 60.71%
+2025-12-01 22:33:25,842 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:33:25,843 - INFO - Epoch 35/80
+2025-12-01 22:33:59,204 - INFO - Train Loss: 0.2739, Train Acc: 90.88%
+2025-12-01 22:34:00,169 - INFO - Val Loss: 1.6025, Val Acc: 60.89%
+2025-12-01 22:34:01,209 - INFO - Test Loss: 1.6423, Test Acc: 60.60%
+2025-12-01 22:34:04,732 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:34:04,732 - INFO - Epoch 36/80
+2025-12-01 22:34:38,032 - INFO - Train Loss: 0.2544, Train Acc: 91.77%
+2025-12-01 22:34:39,107 - INFO - Val Loss: 1.6140, Val Acc: 61.08%
+2025-12-01 22:34:40,146 - INFO - Test Loss: 1.5506, Test Acc: 61.15%
+2025-12-01 22:34:43,374 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:34:43,375 - INFO - Epoch 37/80
+2025-12-01 22:35:16,655 - INFO - Train Loss: 0.2440, Train Acc: 91.70%
+2025-12-01 22:35:17,654 - INFO - Val Loss: 1.6930, Val Acc: 59.69%
+2025-12-01 22:35:18,714 - INFO - Test Loss: 1.6456, Test Acc: 60.40%
+2025-12-01 22:35:22,348 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:35:22,348 - INFO - Epoch 38/80
+2025-12-01 22:35:55,223 - INFO - Train Loss: 0.2297, Train Acc: 92.31%
+2025-12-01 22:35:56,247 - INFO - Val Loss: 1.6579, Val Acc: 60.52%
+2025-12-01 22:35:57,280 - INFO - Test Loss: 1.6279, Test Acc: 60.99%
+2025-12-01 22:36:00,763 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:36:00,764 - INFO - Epoch 39/80
+2025-12-01 22:36:34,005 - INFO - Train Loss: 0.2153, Train Acc: 92.98%
+2025-12-01 22:36:35,067 - INFO - Val Loss: 1.7370, Val Acc: 60.13%
+2025-12-01 22:36:36,147 - INFO - Test Loss: 1.6475, Test Acc: 60.57%
+2025-12-01 22:36:39,744 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:36:39,745 - INFO - Epoch 40/80
+2025-12-01 22:37:13,190 - INFO - Train Loss: 0.2031, Train Acc: 93.42%
+2025-12-01 22:37:14,195 - INFO - Val Loss: 1.6468, Val Acc: 61.58%
+2025-12-01 22:37:15,266 - INFO - Test Loss: 1.6337, Test Acc: 60.18%
+2025-12-01 22:37:18,881 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-01 22:37:18,882 - INFO - Epoch 41/80
+2025-12-02 10:01:21,108 - INFO - Train Loss: 0.2017, Train Acc: 93.18%
+2025-12-02 10:01:22,185 - INFO - Val Loss: 1.7302, Val Acc: 61.08%
+2025-12-02 10:01:23,255 - INFO - Test Loss: 1.6942, Test Acc: 61.29%
+2025-12-02 10:01:26,781 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:01:26,782 - INFO - Epoch 42/80
+2025-12-02 10:01:59,599 - INFO - Train Loss: 0.1840, Train Acc: 93.94%
+2025-12-02 10:02:00,597 - INFO - Val Loss: 1.6078, Val Acc: 61.70%
+2025-12-02 10:02:01,725 - INFO - Test Loss: 1.5907, Test Acc: 61.60%
+2025-12-02 10:02:05,326 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:02:05,327 - INFO - Epoch 43/80
+2025-12-02 10:02:38,473 - INFO - Train Loss: 0.1723, Train Acc: 94.32%
+2025-12-02 10:02:39,504 - INFO - Val Loss: 1.7123, Val Acc: 61.19%
+2025-12-02 10:02:40,537 - INFO - Test Loss: 1.7158, Test Acc: 60.87%
+2025-12-02 10:02:44,055 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:02:44,055 - INFO - Epoch 44/80
+2025-12-02 10:03:17,446 - INFO - Train Loss: 0.1630, Train Acc: 94.64%
+2025-12-02 10:03:18,419 - INFO - Val Loss: 1.8134, Val Acc: 60.22%
+2025-12-02 10:03:19,427 - INFO - Test Loss: 1.8352, Test Acc: 59.09%
+2025-12-02 10:03:22,901 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:03:22,901 - INFO - Epoch 45/80
+2025-12-02 10:03:56,258 - INFO - Train Loss: 0.1631, Train Acc: 94.73%
+2025-12-02 10:03:57,298 - INFO - Val Loss: 1.7855, Val Acc: 61.72%
+2025-12-02 10:03:58,390 - INFO - Test Loss: 1.7897, Test Acc: 61.10%
+2025-12-02 10:04:01,845 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:04:01,846 - INFO - Epoch 46/80
+2025-12-02 10:04:34,774 - INFO - Train Loss: 0.1501, Train Acc: 95.16%
+2025-12-02 10:04:35,814 - INFO - Val Loss: 1.7581, Val Acc: 60.44%
+2025-12-02 10:04:36,906 - INFO - Test Loss: 1.7346, Test Acc: 60.40%
+2025-12-02 10:04:40,747 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:04:40,747 - INFO - Epoch 47/80
+2025-12-02 10:05:13,839 - INFO - Train Loss: 0.1417, Train Acc: 95.35%
+2025-12-02 10:05:14,892 - INFO - Val Loss: 1.8582, Val Acc: 61.22%
+2025-12-02 10:05:15,951 - INFO - Test Loss: 1.8120, Test Acc: 62.32%
+2025-12-02 10:05:19,415 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:05:19,415 - INFO - Epoch 48/80
+2025-12-02 10:05:52,683 - INFO - Train Loss: 0.1331, Train Acc: 95.57%
+2025-12-02 10:05:53,705 - INFO - Val Loss: 1.8994, Val Acc: 61.08%
+2025-12-02 10:05:54,817 - INFO - Test Loss: 1.9291, Test Acc: 60.07%
+2025-12-02 10:05:58,349 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:05:58,349 - INFO - Epoch 49/80
+2025-12-02 10:06:31,562 - INFO - Train Loss: 0.1313, Train Acc: 95.83%
+2025-12-02 10:06:32,535 - INFO - Val Loss: 1.8214, Val Acc: 60.78%
+2025-12-02 10:06:33,550 - INFO - Test Loss: 1.8292, Test Acc: 60.93%
+2025-12-02 10:06:37,150 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:06:37,150 - INFO - Epoch 50/80
+2025-12-02 10:07:10,350 - INFO - Train Loss: 0.1246, Train Acc: 96.03%
+2025-12-02 10:07:11,399 - INFO - Val Loss: 1.8858, Val Acc: 60.80%
+2025-12-02 10:07:12,461 - INFO - Test Loss: 1.8573, Test Acc: 59.98%
+2025-12-02 10:07:16,019 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:07:16,020 - INFO - Epoch 51/80
+2025-12-02 10:07:49,089 - INFO - Train Loss: 0.1254, Train Acc: 96.02%
+2025-12-02 10:07:50,126 - INFO - Val Loss: 1.8809, Val Acc: 60.69%
+2025-12-02 10:07:51,150 - INFO - Test Loss: 1.8054, Test Acc: 61.46%
+2025-12-02 10:07:54,713 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:07:54,714 - INFO - Epoch 52/80
+2025-12-02 10:08:27,572 - INFO - Train Loss: 0.1106, Train Acc: 96.31%
+2025-12-02 10:08:28,601 - INFO - Val Loss: 1.9059, Val Acc: 61.53%
+2025-12-02 10:08:29,676 - INFO - Test Loss: 1.8983, Test Acc: 62.27%
+2025-12-02 10:08:33,127 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:08:33,128 - INFO - Epoch 53/80
+2025-12-02 10:09:06,297 - INFO - Train Loss: 0.1133, Train Acc: 96.26%
+2025-12-02 10:09:07,322 - INFO - Val Loss: 1.8984, Val Acc: 61.33%
+2025-12-02 10:09:08,290 - INFO - Test Loss: 1.8629, Test Acc: 62.29%
+2025-12-02 10:09:11,906 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:09:11,907 - INFO - Epoch 54/80
+2025-12-02 10:09:45,065 - INFO - Train Loss: 0.1083, Train Acc: 96.53%
+2025-12-02 10:09:46,094 - INFO - Val Loss: 1.9145, Val Acc: 60.52%
+2025-12-02 10:09:47,117 - INFO - Test Loss: 1.8669, Test Acc: 61.26%
+2025-12-02 10:09:50,406 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:09:50,406 - INFO - Epoch 55/80
+2025-12-02 10:10:23,583 - INFO - Train Loss: 0.0956, Train Acc: 96.95%
+2025-12-02 10:10:24,593 - INFO - Val Loss: 1.9382, Val Acc: 59.94%
+2025-12-02 10:10:25,656 - INFO - Test Loss: 1.8555, Test Acc: 60.09%
+2025-12-02 10:10:29,144 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:10:29,145 - INFO - Epoch 56/80
+2025-12-02 10:11:02,078 - INFO - Train Loss: 0.0996, Train Acc: 96.73%
+2025-12-02 10:11:03,073 - INFO - Val Loss: 1.9740, Val Acc: 62.14%
+2025-12-02 10:11:04,112 - INFO - Test Loss: 1.9294, Test Acc: 61.46%
+2025-12-02 10:11:04,113 - INFO - New best validation accuracy: 62.14%
+2025-12-02 10:11:07,603 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:11:11,227 - INFO - Best model saved at checkpoints/best_resnet_model.pth
+2025-12-02 10:11:11,228 - INFO - Epoch 57/80
+2025-12-02 10:11:44,091 - INFO - Train Loss: 0.0982, Train Acc: 96.90%
+2025-12-02 10:11:45,116 - INFO - Val Loss: 1.9669, Val Acc: 62.09%
+2025-12-02 10:11:46,113 - INFO - Test Loss: 1.9364, Test Acc: 61.15%
+2025-12-02 10:11:49,612 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:11:49,612 - INFO - Epoch 58/80
+2025-12-02 10:12:23,139 - INFO - Train Loss: 0.0960, Train Acc: 96.86%
+2025-12-02 10:12:24,185 - INFO - Val Loss: 2.0367, Val Acc: 60.22%
+2025-12-02 10:12:25,240 - INFO - Test Loss: 1.9815, Test Acc: 60.85%
+2025-12-02 10:12:28,762 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:12:28,762 - INFO - Epoch 59/80
+2025-12-02 10:13:01,766 - INFO - Train Loss: 0.0889, Train Acc: 97.13%
+2025-12-02 10:13:02,767 - INFO - Val Loss: 1.9787, Val Acc: 61.50%
+2025-12-02 10:13:03,804 - INFO - Test Loss: 1.9911, Test Acc: 60.87%
+2025-12-02 10:13:07,452 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:13:07,452 - INFO - Epoch 60/80
+2025-12-02 10:13:40,593 - INFO - Train Loss: 0.0892, Train Acc: 97.08%
+2025-12-02 10:13:41,624 - INFO - Val Loss: 1.9198, Val Acc: 61.05%
+2025-12-02 10:13:42,626 - INFO - Test Loss: 1.8909, Test Acc: 61.38%
+2025-12-02 10:13:46,255 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:13:46,255 - INFO - Epoch 61/80
+2025-12-02 10:14:19,520 - INFO - Train Loss: 0.0837, Train Acc: 97.20%
+2025-12-02 10:14:20,524 - INFO - Val Loss: 2.1592, Val Acc: 61.50%
+2025-12-02 10:14:21,609 - INFO - Test Loss: 2.0742, Test Acc: 61.68%
+2025-12-02 10:14:25,113 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:14:25,114 - INFO - Epoch 62/80
+2025-12-02 10:14:58,324 - INFO - Train Loss: 0.0889, Train Acc: 97.15%
+2025-12-02 10:14:59,362 - INFO - Val Loss: 1.9933, Val Acc: 61.56%
+2025-12-02 10:15:00,416 - INFO - Test Loss: 1.9587, Test Acc: 62.29%
+2025-12-02 10:15:03,935 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:15:03,935 - INFO - Epoch 63/80
+2025-12-02 10:15:36,840 - INFO - Train Loss: 0.0850, Train Acc: 97.28%
+2025-12-02 10:15:37,955 - INFO - Val Loss: 1.9130, Val Acc: 61.30%
+2025-12-02 10:15:39,044 - INFO - Test Loss: 1.9097, Test Acc: 62.10%
+2025-12-02 10:15:42,536 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:15:42,536 - INFO - Epoch 64/80
+2025-12-02 10:16:15,875 - INFO - Train Loss: 0.0770, Train Acc: 97.49%
+2025-12-02 10:16:16,915 - INFO - Val Loss: 2.0522, Val Acc: 60.97%
+2025-12-02 10:16:17,999 - INFO - Test Loss: 2.0081, Test Acc: 61.57%
+2025-12-02 10:16:21,462 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:16:21,462 - INFO - Epoch 65/80
+2025-12-02 10:16:54,714 - INFO - Train Loss: 0.0732, Train Acc: 97.57%
+2025-12-02 10:16:55,707 - INFO - Val Loss: 2.0750, Val Acc: 61.95%
+2025-12-02 10:16:56,738 - INFO - Test Loss: 2.0538, Test Acc: 62.02%
+2025-12-02 10:17:00,291 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:17:00,291 - INFO - Epoch 66/80
+2025-12-02 10:17:33,498 - INFO - Train Loss: 0.0703, Train Acc: 97.70%
+2025-12-02 10:17:34,575 - INFO - Val Loss: 2.1754, Val Acc: 61.67%
+2025-12-02 10:17:35,613 - INFO - Test Loss: 2.1071, Test Acc: 61.93%
+2025-12-02 10:17:39,146 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:17:39,146 - INFO - Epoch 67/80
+2025-12-02 10:18:12,122 - INFO - Train Loss: 0.0809, Train Acc: 97.40%
+2025-12-02 10:18:13,171 - INFO - Val Loss: 1.9565, Val Acc: 61.39%
+2025-12-02 10:18:14,219 - INFO - Test Loss: 1.9846, Test Acc: 61.04%
+2025-12-02 10:18:17,713 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:18:17,714 - INFO - Epoch 68/80
+2025-12-02 10:18:51,097 - INFO - Train Loss: 0.0746, Train Acc: 97.56%
+2025-12-02 10:18:52,078 - INFO - Val Loss: 2.0927, Val Acc: 61.36%
+2025-12-02 10:18:53,175 - INFO - Test Loss: 2.1054, Test Acc: 60.57%
+2025-12-02 10:18:56,703 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:18:56,703 - INFO - Epoch 69/80
+2025-12-02 10:19:29,397 - INFO - Train Loss: 0.0716, Train Acc: 97.67%
+2025-12-02 10:19:30,433 - INFO - Val Loss: 2.1704, Val Acc: 62.00%
+2025-12-02 10:19:31,499 - INFO - Test Loss: 2.1888, Test Acc: 61.51%
+2025-12-02 10:19:35,232 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:19:35,233 - INFO - Epoch 70/80
+2025-12-02 10:20:08,879 - INFO - Train Loss: 0.0657, Train Acc: 97.85%
+2025-12-02 10:20:09,882 - INFO - Val Loss: 2.2195, Val Acc: 61.33%
+2025-12-02 10:20:10,977 - INFO - Test Loss: 2.1995, Test Acc: 61.43%
+2025-12-02 10:20:14,215 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:20:14,215 - INFO - Epoch 71/80
+2025-12-02 10:20:47,266 - INFO - Train Loss: 0.0591, Train Acc: 98.07%
+2025-12-02 10:20:48,383 - INFO - Val Loss: 2.1955, Val Acc: 61.17%
+2025-12-02 10:20:49,430 - INFO - Test Loss: 2.1693, Test Acc: 62.35%
+2025-12-02 10:20:53,446 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:20:53,446 - INFO - Epoch 72/80
+2025-12-02 10:21:26,502 - INFO - Train Loss: 0.0616, Train Acc: 97.96%
+2025-12-02 10:21:27,575 - INFO - Val Loss: 2.2145, Val Acc: 61.83%
+2025-12-02 10:21:28,654 - INFO - Test Loss: 2.1817, Test Acc: 62.18%
+2025-12-02 10:21:32,571 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:21:32,571 - INFO - Epoch 73/80
+2025-12-02 10:22:05,434 - INFO - Train Loss: 0.0611, Train Acc: 97.95%
+2025-12-02 10:22:06,472 - INFO - Val Loss: 2.1402, Val Acc: 61.33%
+2025-12-02 10:22:07,564 - INFO - Test Loss: 2.1402, Test Acc: 60.99%
+2025-12-02 10:22:11,361 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:22:11,362 - INFO - Epoch 74/80
+2025-12-02 10:22:44,644 - INFO - Train Loss: 0.0612, Train Acc: 97.94%
+2025-12-02 10:22:45,737 - INFO - Val Loss: 2.2475, Val Acc: 61.17%
+2025-12-02 10:22:46,784 - INFO - Test Loss: 2.2146, Test Acc: 62.16%
+2025-12-02 10:22:50,326 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:22:50,327 - INFO - Epoch 75/80
+2025-12-02 10:23:23,495 - INFO - Train Loss: 0.0624, Train Acc: 98.01%
+2025-12-02 10:23:24,543 - INFO - Val Loss: 2.2326, Val Acc: 61.67%
+2025-12-02 10:23:25,653 - INFO - Test Loss: 2.1975, Test Acc: 62.80%
+2025-12-02 10:23:29,221 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:23:29,222 - INFO - Epoch 76/80
+2025-12-02 10:24:02,671 - INFO - Train Loss: 0.0585, Train Acc: 98.07%
+2025-12-02 10:24:03,711 - INFO - Val Loss: 2.3321, Val Acc: 60.27%
+2025-12-02 10:24:04,754 - INFO - Test Loss: 2.3200, Test Acc: 60.82%
+2025-12-02 10:24:08,211 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:24:08,211 - INFO - Epoch 77/80
+2025-12-02 10:24:41,183 - INFO - Train Loss: 0.0553, Train Acc: 98.17%
+2025-12-02 10:24:42,235 - INFO - Val Loss: 2.2353, Val Acc: 61.95%
+2025-12-02 10:24:43,342 - INFO - Test Loss: 2.1870, Test Acc: 61.71%
+2025-12-02 10:24:46,856 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:24:46,857 - INFO - Epoch 78/80
+2025-12-02 10:25:20,235 - INFO - Train Loss: 0.0574, Train Acc: 98.02%
+2025-12-02 10:25:21,282 - INFO - Val Loss: 2.2832, Val Acc: 61.58%
+2025-12-02 10:25:22,331 - INFO - Test Loss: 2.2173, Test Acc: 61.18%
+2025-12-02 10:25:25,927 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:25:25,928 - INFO - Epoch 79/80
+2025-12-02 10:25:59,117 - INFO - Train Loss: 0.0608, Train Acc: 97.94%
+2025-12-02 10:26:00,130 - INFO - Val Loss: 2.1121, Val Acc: 61.14%
+2025-12-02 10:26:01,165 - INFO - Test Loss: 2.0699, Test Acc: 61.54%
+2025-12-02 10:26:04,515 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:26:04,515 - INFO - Epoch 80/80
+2025-12-02 10:26:37,801 - INFO - Train Loss: 0.0497, Train Acc: 98.34%
+2025-12-02 10:26:38,894 - INFO - Val Loss: 2.2510, Val Acc: 62.00%
+2025-12-02 10:26:39,985 - INFO - Test Loss: 2.2186, Test Acc: 61.51%
+2025-12-02 10:26:43,524 - INFO - Model saved at checkpoints/latest_resnet_epoch.pth
+2025-12-02 10:26:43,832 - INFO - Training history saved at results/resnet_training_history.png
+2025-12-02 10:26:43,833 - INFO - Testing model...
+2025-12-02 10:26:44,194 - INFO - Loaded best model from checkpoints/best_resnet_model.pth
+2025-12-02 10:26:45,290 - INFO - Test Loss: 1.9123, Test Accuracy: 61.88%
+2025-12-02 10:26:46,562 - INFO - Confusion matrix saved at results/resnet_confusion_matrix.png
+2025-12-02 10:26:46,565 - INFO - Classification report saved at results/resnet_classification_report.csv
+2025-12-02 10:26:46,565 - INFO - Training completed!

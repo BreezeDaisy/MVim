@@ -720,3 +720,205 @@
 2025-11-17 16:19:27,765 - INFO - 开始测试模型性能...
 2025-11-17 16:19:27,863 - INFO - 成功加载模型: checkpoints/best_model.pth
 2025-11-17 16:19:48,826 - INFO - Test Loss: 0.0291, Test Acc: 0.9941
+2026-01-14 21:14:54,745 - INFO - 成功加载真实数据集，训练集大小: 15695, 验证集大小: 3365, 测试集大小: 3364
+2026-01-14 21:14:54,746 - INFO - 未指定预训练模型路径，开始新的训练
+2026-01-14 22:02:05,815 - INFO - 成功加载真实数据集，训练集大小: 15695, 验证集大小: 3365, 测试集大小: 3364
+2026-01-14 22:02:05,837 - INFO - 未指定预训练模型路径，开始新的训练
+2026-01-14 22:02:35,082 - INFO - 成功加载真实数据集，训练集大小: 15695, 验证集大小: 3365, 测试集大小: 3364
+2026-01-14 22:02:35,082 - INFO - 未指定预训练模型路径，开始新的训练
+2026-01-14 22:05:46,361 - INFO - 成功加载真实数据集，训练集大小: 15695, 验证集大小: 3365, 测试集大小: 3364
+2026-01-14 22:05:46,361 - INFO - 未指定预训练模型路径，开始新的训练
+2026-01-14 22:35:02,657 - INFO - 成功加载真实数据集，训练集大小: 15695, 验证集大小: 3365, 测试集大小: 3364
+2026-01-14 22:35:02,657 - INFO - 未指定预训练模型路径，开始新的训练
+2026-01-14 22:42:23,753 - INFO - 成功加载真实数据集，训练集大小: 15695, 验证集大小: 3365, 测试集大小: 3364
+2026-01-14 22:42:23,754 - INFO - 未指定预训练模型路径，开始新的训练
+2026-01-14 22:44:34,711 - INFO - 成功加载真实数据集，训练集大小: 15695, 验证集大小: 3365, 测试集大小: 3364
+2026-01-14 22:44:34,711 - INFO - 未指定预训练模型路径，开始新的训练
+2026-01-14 22:45:07,419 - INFO - 成功加载真实数据集，训练集大小: 15695, 验证集大小: 3365, 测试集大小: 3364
+2026-01-14 22:45:07,419 - INFO - 未指定预训练模型路径，开始新的训练
+2026-01-14 22:46:55,982 - INFO - Epoch [1/80], Train Loss: 2.2812, Train Acc: 0.1432, Val Loss: 2.2336, Val Acc: 0.1736
+2026-01-14 22:46:56,102 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 22:46:56,160 - INFO - 保存最佳模型，验证准确率: 0.1736，路径: checkpoints/best_model.pth
+2026-01-14 22:47:53,442 - INFO - Epoch [2/80], Train Loss: 2.2060, Train Acc: 0.1933, Val Loss: 2.1516, Val Acc: 0.1881
+2026-01-14 22:47:53,716 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 22:47:53,943 - INFO - 保存最佳模型，验证准确率: 0.1881，路径: checkpoints/best_model.pth
+2026-01-14 22:48:51,404 - INFO - Epoch [3/80], Train Loss: 2.1275, Train Acc: 0.2231, Val Loss: 2.2292, Val Acc: 0.1706
+2026-01-14 22:48:51,628 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 22:49:48,895 - INFO - Epoch [4/80], Train Loss: 2.0521, Train Acc: 0.2563, Val Loss: 2.2487, Val Acc: 0.1786
+2026-01-14 22:49:49,196 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 22:50:46,514 - INFO - Epoch [5/80], Train Loss: 1.9861, Train Acc: 0.2820, Val Loss: 2.2472, Val Acc: 0.1744
+2026-01-14 22:50:46,795 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 22:51:44,406 - INFO - Epoch [6/80], Train Loss: 1.9111, Train Acc: 0.3176, Val Loss: 2.1333, Val Acc: 0.2125
+2026-01-14 22:51:44,677 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 22:51:44,942 - INFO - 保存最佳模型，验证准确率: 0.2125，路径: checkpoints/best_model.pth
+2026-01-14 22:52:42,091 - INFO - Epoch [7/80], Train Loss: 1.8336, Train Acc: 0.3525, Val Loss: 1.8810, Val Acc: 0.2606
+2026-01-14 22:52:42,291 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 22:52:42,523 - INFO - 保存最佳模型，验证准确率: 0.2606，路径: checkpoints/best_model.pth
+2026-01-14 22:53:40,398 - INFO - Epoch [8/80], Train Loss: 1.7565, Train Acc: 0.3812, Val Loss: 1.6974, Val Acc: 0.4056
+2026-01-14 22:53:40,661 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 22:53:40,925 - INFO - 保存最佳模型，验证准确率: 0.4056，路径: checkpoints/best_model.pth
+2026-01-14 22:54:38,551 - INFO - Epoch [9/80], Train Loss: 1.6880, Train Acc: 0.4118, Val Loss: 1.7163, Val Acc: 0.3343
+2026-01-14 22:54:38,811 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 22:55:36,413 - INFO - Epoch [10/80], Train Loss: 1.6140, Train Acc: 0.4362, Val Loss: 2.5075, Val Acc: 0.2452
+2026-01-14 22:55:36,596 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 22:56:34,799 - INFO - Epoch [11/80], Train Loss: 1.5322, Train Acc: 0.4670, Val Loss: 1.9867, Val Acc: 0.2847
+2026-01-14 22:56:35,036 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 22:57:32,681 - INFO - Epoch [12/80], Train Loss: 1.4569, Train Acc: 0.4927, Val Loss: 1.9209, Val Acc: 0.2808
+2026-01-14 22:57:32,896 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 22:58:30,459 - INFO - Epoch [13/80], Train Loss: 1.3621, Train Acc: 0.5244, Val Loss: 2.0825, Val Acc: 0.2704
+2026-01-14 22:58:30,686 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 22:59:28,199 - INFO - Epoch [14/80], Train Loss: 1.2702, Train Acc: 0.5541, Val Loss: 1.7287, Val Acc: 0.3492
+2026-01-14 22:59:28,426 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:00:26,241 - INFO - Epoch [15/80], Train Loss: 1.1953, Train Acc: 0.5790, Val Loss: 1.4347, Val Acc: 0.4380
+2026-01-14 23:00:26,478 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:00:26,750 - INFO - 保存最佳模型，验证准确率: 0.4380，路径: checkpoints/best_model.pth
+2026-01-14 23:01:24,888 - INFO - Epoch [16/80], Train Loss: 1.0915, Train Acc: 0.6159, Val Loss: 0.9352, Val Acc: 0.6722
+2026-01-14 23:01:25,158 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:01:25,403 - INFO - 保存最佳模型，验证准确率: 0.6722，路径: checkpoints/best_model.pth
+2026-01-14 23:02:23,110 - INFO - Epoch [17/80], Train Loss: 0.9880, Train Acc: 0.6596, Val Loss: 1.0600, Val Acc: 0.5780
+2026-01-14 23:02:23,356 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:03:20,853 - INFO - Epoch [18/80], Train Loss: 0.8989, Train Acc: 0.6863, Val Loss: 0.8813, Val Acc: 0.6585
+2026-01-14 23:03:21,105 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:04:18,680 - INFO - Epoch [19/80], Train Loss: 0.8179, Train Acc: 0.7186, Val Loss: 1.6473, Val Acc: 0.4758
+2026-01-14 23:04:18,926 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:05:16,057 - INFO - Epoch [20/80], Train Loss: 0.6995, Train Acc: 0.7687, Val Loss: 0.7571, Val Acc: 0.7218
+2026-01-14 23:05:16,300 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:05:16,572 - INFO - 保存最佳模型，验证准确率: 0.7218，路径: checkpoints/best_model.pth
+2026-01-14 23:06:14,353 - INFO - Epoch [21/80], Train Loss: 0.6291, Train Acc: 0.7887, Val Loss: 0.7651, Val Acc: 0.7162
+2026-01-14 23:06:14,591 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:07:11,978 - INFO - Epoch [22/80], Train Loss: 0.5317, Train Acc: 0.8254, Val Loss: 1.1667, Val Acc: 0.6199
+2026-01-14 23:07:12,204 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:08:09,535 - INFO - Epoch [23/80], Train Loss: 0.4855, Train Acc: 0.8396, Val Loss: 1.6447, Val Acc: 0.4897
+2026-01-14 23:08:09,779 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:09:07,414 - INFO - Epoch [24/80], Train Loss: 0.4413, Train Acc: 0.8542, Val Loss: 0.6959, Val Acc: 0.7548
+2026-01-14 23:09:07,694 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:09:07,956 - INFO - 保存最佳模型，验证准确率: 0.7548，路径: checkpoints/best_model.pth
+2026-01-14 23:10:05,855 - INFO - Epoch [25/80], Train Loss: 0.3891, Train Acc: 0.8736, Val Loss: 1.5036, Val Acc: 0.5750
+2026-01-14 23:10:06,153 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:11:04,239 - INFO - Epoch [26/80], Train Loss: 0.3405, Train Acc: 0.8942, Val Loss: 0.5624, Val Acc: 0.8006
+2026-01-14 23:11:04,481 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:11:04,758 - INFO - 保存最佳模型，验证准确率: 0.8006，路径: checkpoints/best_model.pth
+2026-01-14 23:12:02,317 - INFO - Epoch [27/80], Train Loss: 0.3202, Train Acc: 0.8974, Val Loss: 0.4405, Val Acc: 0.8618
+2026-01-14 23:12:02,561 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:12:02,873 - INFO - 保存最佳模型，验证准确率: 0.8618，路径: checkpoints/best_model.pth
+2026-01-14 23:13:00,597 - INFO - Epoch [28/80], Train Loss: 0.2897, Train Acc: 0.9076, Val Loss: 0.1957, Val Acc: 0.9453
+2026-01-14 23:13:00,937 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:13:01,303 - INFO - 保存最佳模型，验证准确率: 0.9453，路径: checkpoints/best_model.pth
+2026-01-14 23:13:59,860 - INFO - Epoch [29/80], Train Loss: 0.5663, Train Acc: 0.8263, Val Loss: 0.3984, Val Acc: 0.8684
+2026-01-14 23:14:00,058 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:14:57,579 - INFO - Epoch [30/80], Train Loss: 0.3334, Train Acc: 0.8923, Val Loss: 0.2536, Val Acc: 0.9212
+2026-01-14 23:14:57,742 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:15:55,963 - INFO - Epoch [31/80], Train Loss: 0.2689, Train Acc: 0.9129, Val Loss: 0.2662, Val Acc: 0.9239
+2026-01-14 23:15:56,209 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:16:53,639 - INFO - Epoch [32/80], Train Loss: 0.2457, Train Acc: 0.9205, Val Loss: 0.2529, Val Acc: 0.9192
+2026-01-14 23:16:53,897 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:17:51,481 - INFO - Epoch [33/80], Train Loss: 0.2058, Train Acc: 0.9346, Val Loss: 0.4983, Val Acc: 0.8550
+2026-01-14 23:17:51,778 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:18:50,256 - INFO - Epoch [34/80], Train Loss: 0.1984, Train Acc: 0.9366, Val Loss: 0.1900, Val Acc: 0.9403
+2026-01-14 23:18:50,542 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:19:48,361 - INFO - Epoch [35/80], Train Loss: 0.1907, Train Acc: 0.9413, Val Loss: 0.2514, Val Acc: 0.9177
+2026-01-14 23:19:48,584 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:20:46,928 - INFO - Epoch [36/80], Train Loss: 0.1759, Train Acc: 0.9464, Val Loss: 0.1281, Val Acc: 0.9679
+2026-01-14 23:20:47,179 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:20:47,441 - INFO - 保存最佳模型，验证准确率: 0.9679，路径: checkpoints/best_model.pth
+2026-01-14 23:21:45,094 - INFO - Epoch [37/80], Train Loss: 0.1599, Train Acc: 0.9520, Val Loss: 0.1289, Val Acc: 0.9661
+2026-01-14 23:21:45,330 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:22:43,137 - INFO - Epoch [38/80], Train Loss: 0.1421, Train Acc: 0.9557, Val Loss: 0.1701, Val Acc: 0.9566
+2026-01-14 23:22:43,354 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:23:41,043 - INFO - Epoch [39/80], Train Loss: 0.1415, Train Acc: 0.9541, Val Loss: 0.2169, Val Acc: 0.9322
+2026-01-14 23:23:41,325 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:24:39,181 - INFO - Epoch [40/80], Train Loss: 0.1311, Train Acc: 0.9589, Val Loss: 0.1704, Val Acc: 0.9551
+2026-01-14 23:24:39,425 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:25:37,565 - INFO - Epoch [41/80], Train Loss: 0.1322, Train Acc: 0.9577, Val Loss: 0.1437, Val Acc: 0.9608
+2026-01-14 23:25:37,767 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:26:34,563 - INFO - Epoch [42/80], Train Loss: 0.1205, Train Acc: 0.9637, Val Loss: 0.1430, Val Acc: 0.9602
+2026-01-14 23:26:34,848 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:27:32,732 - INFO - Epoch [43/80], Train Loss: 0.1072, Train Acc: 0.9653, Val Loss: 0.1292, Val Acc: 0.9637
+2026-01-14 23:27:32,957 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:28:30,938 - INFO - Epoch [44/80], Train Loss: 0.1058, Train Acc: 0.9681, Val Loss: 0.1210, Val Acc: 0.9646
+2026-01-14 23:28:31,183 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:29:28,261 - INFO - Epoch [45/80], Train Loss: 0.1042, Train Acc: 0.9688, Val Loss: 0.1706, Val Acc: 0.9548
+2026-01-14 23:29:28,466 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:30:26,532 - INFO - Epoch [46/80], Train Loss: 0.0982, Train Acc: 0.9690, Val Loss: 0.1492, Val Acc: 0.9602
+2026-01-14 23:30:26,767 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:31:24,492 - INFO - Epoch [47/80], Train Loss: 0.0998, Train Acc: 0.9686, Val Loss: 0.1318, Val Acc: 0.9658
+2026-01-14 23:31:24,756 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:32:22,427 - INFO - Epoch [48/80], Train Loss: 0.0945, Train Acc: 0.9716, Val Loss: 0.1013, Val Acc: 0.9730
+2026-01-14 23:32:22,682 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:32:22,949 - INFO - 保存最佳模型，验证准确率: 0.9730，路径: checkpoints/best_model.pth
+2026-01-14 23:33:21,087 - INFO - Epoch [49/80], Train Loss: 0.0887, Train Acc: 0.9737, Val Loss: 0.1003, Val Acc: 0.9747
+2026-01-14 23:33:21,365 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:33:21,583 - INFO - 保存最佳模型，验证准确率: 0.9747，路径: checkpoints/best_model.pth
+2026-01-14 23:34:19,114 - INFO - Epoch [50/80], Train Loss: 0.0806, Train Acc: 0.9743, Val Loss: 0.1085, Val Acc: 0.9697
+2026-01-14 23:34:19,316 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:35:16,606 - INFO - Epoch [51/80], Train Loss: 0.0850, Train Acc: 0.9748, Val Loss: 0.1120, Val Acc: 0.9715
+2026-01-14 23:35:16,870 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:36:14,843 - INFO - Epoch [52/80], Train Loss: 0.0745, Train Acc: 0.9776, Val Loss: 0.1141, Val Acc: 0.9727
+2026-01-14 23:36:15,042 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:37:12,976 - INFO - Epoch [53/80], Train Loss: 0.0813, Train Acc: 0.9759, Val Loss: 0.0792, Val Acc: 0.9777
+2026-01-14 23:37:13,330 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:37:13,579 - INFO - 保存最佳模型，验证准确率: 0.9777，路径: checkpoints/best_model.pth
+2026-01-14 23:38:10,864 - INFO - Epoch [54/80], Train Loss: 0.0840, Train Acc: 0.9732, Val Loss: 0.1219, Val Acc: 0.9655
+2026-01-14 23:38:11,084 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:39:08,649 - INFO - Epoch [55/80], Train Loss: 0.0695, Train Acc: 0.9796, Val Loss: 0.0993, Val Acc: 0.9744
+2026-01-14 23:39:08,917 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:40:06,608 - INFO - Epoch [56/80], Train Loss: 0.0687, Train Acc: 0.9777, Val Loss: 0.0876, Val Acc: 0.9780
+2026-01-14 23:40:06,848 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:40:07,112 - INFO - 保存最佳模型，验证准确率: 0.9780，路径: checkpoints/best_model.pth
+2026-01-14 23:41:04,862 - INFO - Epoch [57/80], Train Loss: 0.0649, Train Acc: 0.9790, Val Loss: 0.1219, Val Acc: 0.9694
+2026-01-14 23:41:05,122 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:42:02,614 - INFO - Epoch [58/80], Train Loss: 0.0624, Train Acc: 0.9800, Val Loss: 0.1397, Val Acc: 0.9620
+2026-01-14 23:42:02,832 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:43:00,586 - INFO - Epoch [59/80], Train Loss: 0.0631, Train Acc: 0.9795, Val Loss: 0.0724, Val Acc: 0.9831
+2026-01-14 23:43:00,902 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:43:01,159 - INFO - 保存最佳模型，验证准确率: 0.9831，路径: checkpoints/best_model.pth
+2026-01-14 23:43:58,570 - INFO - Epoch [60/80], Train Loss: 0.0586, Train Acc: 0.9818, Val Loss: 0.0758, Val Acc: 0.9798
+2026-01-14 23:43:58,860 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:44:56,403 - INFO - Epoch [61/80], Train Loss: 0.0613, Train Acc: 0.9806, Val Loss: 0.0801, Val Acc: 0.9795
+2026-01-14 23:44:56,626 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:45:54,011 - INFO - Epoch [62/80], Train Loss: 0.0510, Train Acc: 0.9839, Val Loss: 0.0966, Val Acc: 0.9762
+2026-01-14 23:45:54,246 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:46:51,770 - INFO - Epoch [63/80], Train Loss: 0.0557, Train Acc: 0.9822, Val Loss: 0.0655, Val Acc: 0.9845
+2026-01-14 23:46:52,017 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:46:52,276 - INFO - 保存最佳模型，验证准确率: 0.9845，路径: checkpoints/best_model.pth
+2026-01-14 23:47:50,174 - INFO - Epoch [64/80], Train Loss: 0.0475, Train Acc: 0.9850, Val Loss: 0.1003, Val Acc: 0.9762
+2026-01-14 23:47:50,420 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:48:47,687 - INFO - Epoch [65/80], Train Loss: 0.0508, Train Acc: 0.9839, Val Loss: 0.0713, Val Acc: 0.9828
+2026-01-14 23:48:47,936 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:49:46,018 - INFO - Epoch [66/80], Train Loss: 0.0550, Train Acc: 0.9832, Val Loss: 0.1333, Val Acc: 0.9664
+2026-01-14 23:49:46,282 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:50:43,950 - INFO - Epoch [67/80], Train Loss: 0.0452, Train Acc: 0.9857, Val Loss: 0.0719, Val Acc: 0.9837
+2026-01-14 23:50:44,176 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:51:41,713 - INFO - Epoch [68/80], Train Loss: 0.0433, Train Acc: 0.9857, Val Loss: 0.0846, Val Acc: 0.9777
+2026-01-14 23:51:42,002 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:52:40,022 - INFO - Epoch [69/80], Train Loss: 0.0530, Train Acc: 0.9827, Val Loss: 0.0662, Val Acc: 0.9848
+2026-01-14 23:52:40,270 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:52:40,517 - INFO - 保存最佳模型，验证准确率: 0.9848，路径: checkpoints/best_model.pth
+2026-01-14 23:53:37,870 - INFO - Epoch [70/80], Train Loss: 0.0405, Train Acc: 0.9882, Val Loss: 0.0514, Val Acc: 0.9896
+2026-01-14 23:53:38,081 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:53:38,320 - INFO - 保存最佳模型，验证准确率: 0.9896，路径: checkpoints/best_model.pth
+2026-01-14 23:54:36,173 - INFO - Epoch [71/80], Train Loss: 0.0418, Train Acc: 0.9874, Val Loss: 0.0820, Val Acc: 0.9762
+2026-01-14 23:54:36,448 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:55:34,324 - INFO - Epoch [72/80], Train Loss: 0.0385, Train Acc: 0.9881, Val Loss: 0.0929, Val Acc: 0.9783
+2026-01-14 23:55:34,563 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:56:32,099 - INFO - Epoch [73/80], Train Loss: 0.0442, Train Acc: 0.9843, Val Loss: 0.1075, Val Acc: 0.9736
+2026-01-14 23:56:32,329 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:57:29,841 - INFO - Epoch [74/80], Train Loss: 0.0474, Train Acc: 0.9843, Val Loss: 0.0690, Val Acc: 0.9854
+2026-01-14 23:57:30,073 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:58:27,961 - INFO - Epoch [75/80], Train Loss: 0.0397, Train Acc: 0.9876, Val Loss: 0.0520, Val Acc: 0.9896
+2026-01-14 23:58:28,193 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-14 23:59:25,838 - INFO - Epoch [76/80], Train Loss: 0.0303, Train Acc: 0.9905, Val Loss: 0.0675, Val Acc: 0.9863
+2026-01-14 23:59:26,078 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-15 00:00:23,643 - INFO - Epoch [77/80], Train Loss: 0.0364, Train Acc: 0.9888, Val Loss: 0.0704, Val Acc: 0.9831
+2026-01-15 00:00:23,866 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-15 00:01:21,373 - INFO - Epoch [78/80], Train Loss: 0.0333, Train Acc: 0.9897, Val Loss: 0.0629, Val Acc: 0.9857
+2026-01-15 00:01:21,605 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-15 00:02:18,998 - INFO - Epoch [79/80], Train Loss: 0.0397, Train Acc: 0.9873, Val Loss: 0.0630, Val Acc: 0.9863
+2026-01-15 00:02:19,201 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-15 00:03:16,956 - INFO - Epoch [80/80], Train Loss: 0.0302, Train Acc: 0.9902, Val Loss: 0.0693, Val Acc: 0.9831
+2026-01-15 00:03:17,185 - INFO - 保存最新模型到: checkpoints/latest_model.pth
+2026-01-15 00:03:17,636 - INFO - 训练完成！总耗时: 1.30 小时
+2026-01-15 00:03:17,636 - INFO - 最佳验证准确率: 0.9896
+2026-01-15 00:03:17,636 - INFO - 开始测试模型性能...
+2026-01-15 00:03:17,702 - INFO - 成功加载模型: checkpoints/best_model.pth
+2026-01-15 00:03:38,529 - INFO - Test Loss: 0.0422, Test Acc: 0.9875

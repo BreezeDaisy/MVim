@@ -9,7 +9,7 @@ import logging
 from pathlib import Path
 
 # 导入ResEmoteNetV2模型结构
-from Face.resemotenet import ResEmoteNetV2
+from Face_Pose.resemotenet import ResEmoteNetV2 # 情绪识别模型
 
 # 配置日志
 logging.basicConfig(level=logging.INFO)
