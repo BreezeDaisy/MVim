@@ -8,12 +8,19 @@ from tqdm import tqdm
 # ======================================================
 
 # 原始数据集路径
-ORIGINAL_DATASET_DIR = "Face_Pose/Emotion_dataset"
+ORIGINAL_DATASET_DIR = "Face_Pose/Small_sample_0.85"
 
 # 新数据集输出路径
-NEW_DATASET_DIR = "Face_Pose/Constructed_Emotion_Dataset"
+NEW_DATASET_DIR = "Face_Pose/Constructed_Small_sample_0.85"
 
-# 抽取比例
+# # 抽取比例。置信度为0.6时的抽取比例
+# EXTRACTION_RATIOS = {
+#     "happy": 0.25,    # 1/4
+#     "neutral": 1/3,    # 1/3
+#     "sad": 0.5         # 1/2
+# }
+
+# 抽取比例。置信度为0.85时的抽取比例
 EXTRACTION_RATIOS = {
     "happy": 0.25,    # 1/4
     "neutral": 1/3,    # 1/3

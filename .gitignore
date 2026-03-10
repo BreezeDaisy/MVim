@@ -5,3 +5,6 @@ Face_Pose/Emotion_dataset/
 Face_Pose/Constructed_Emotion_Dataset/
 Face_Pose/checkpoints/
 Face_Pose/models/face/
+Face_Pose/Constructed_Small_sample_0.85/
+Face_Pose/Small_sample_0.85/
+Face_Pose/small_data/

@@ -12,6 +12,8 @@ from Face_Pose import face_network
 import matplotlib.pyplot as plt
 import numpy as np
 
+
+
 # ======================================================
 # 配置日志
 # ======================================================
@@ -57,13 +59,13 @@ logger = setup_logger()
 # ======================================================
 
 # 数据集路径
-DATASET_DIR = "Face_Pose/Constructed_Emotion_Dataset"
+DATASET_DIR = "Face_Pose/small_data"
 
 # 模型保存路径
-MODEL_SAVE_DIR = "Face_Pose/models/face"
+MODEL_SAVE_DIR = "Face_Pose/models/small_data"
 
 # 可视化保存路径
-VISUAL_SAVE_DIR = "Face_Pose/results/260129/face/visualizations"
+VISUAL_SAVE_DIR = "Face_Pose/results/260301_3/face/visualizations"
 
 # 情绪类别映射
 EMOTION_LABELS = {
@@ -85,7 +87,7 @@ EMOTION_LABELS = {
 #     )
 # ])
 TRANSFORMS = transforms.Compose([
-    transforms.RandomResizedCrop(112, scale=(0.8, 1.0)),
+    transforms.Resize((224, 224)),  # 调整为模型输入大小，不剪裁
     transforms.RandomHorizontalFlip(),
     transforms.RandomRotation(10),
     transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2),
@@ -173,6 +175,7 @@ def train_epoch(model, dataloader, criterion, optimizer, device):
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
+            
             # 统计
             running_loss += loss.item()
             _, predicted = outputs.max(1)
@@ -383,10 +386,45 @@ def main(args):
     model = model.to(device)
     # 定义损失函数和优化器，使用交叉熵损失和Adam优化器
     criterion = nn.CrossEntropyLoss() 
+    
+    # 自动学习率调整
+    if args.auto_lr:
+        # 根据 batch size 和 GPU 数自动调整学习率
+        gpu_count = torch.cuda.device_count() if torch.cuda.is_available() else 1
+        base_batch_size = 128
+        scaling_factor = (args.batch_size * gpu_count) / base_batch_size
+        adjusted_lr = args.lr * scaling_factor
+        logger.info(f"自动调整学习率: {args.lr} -> {adjusted_lr}")
+        args.lr = adjusted_lr
+    
     # 换成AdamW优化器
     optimizer = optim.AdamW(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
-    # 学习率调度器，每10个epoch学习率衰减为原来的0.1倍
-    scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=5, gamma=0.2) # 每5个epoch学习率衰减为原来的0.2倍
+    
+    # 学习率调度器，使用余弦退火调度器
+    total_epochs = args.epochs
+    warmup_epochs = args.warmup_epochs
+    
+    # 余弦退火调度器，带预热
+    scheduler = optim.lr_scheduler.CosineAnnealingLR(
+        optimizer,
+        T_max=total_epochs - warmup_epochs,
+        eta_min=args.lr * 0.01  # 最小学习率
+    )
+    
+    # 预热调度器
+    if warmup_epochs > 0:
+        warmup_scheduler = optim.lr_scheduler.LinearLR(
+            optimizer,
+            start_factor=0.01,
+            end_factor=1.0,
+            total_iters=warmup_epochs
+        )
+        scheduler = optim.lr_scheduler.SequentialLR(
+            optimizer,
+            schedulers=[warmup_scheduler, scheduler],
+            milestones=[warmup_epochs]
+        )
+    
     # 训练循环
     best_val_acc = 0.0
     # 用于可视化的历史数据
@@ -400,33 +438,45 @@ def main(args):
         logger.info(f"\nEpoch {epoch+1}/{args.epochs}")
         logger.info("-" * 50)
         # 训练
-        train_loss, train_acc = train_epoch(model, train_loader, criterion, optimizer, device)
+        train_loss, train_acc = train_epoch(
+            model, 
+            train_loader, 
+            criterion, 
+            optimizer, 
+            device
+        )
         logger.info(f"训练损失: {train_loss:.4f}, 训练准确率: {train_acc:.2f}%")
         # 验证
         val_loss, val_acc = validate(model, val_loader, criterion, device)
-        logger.info(f"验证损失: {val_loss:.4f}, 验证准确率: {val_acc:.2f}%")       
+        logger.info(f"验证损失: {val_loss:.4f}, 验证准确率: {val_acc:.2f}%")
+        
         # 记录历史数据
         train_loss_history.append(train_loss)
         train_acc_history.append(train_acc)
         val_loss_history.append(val_loss)
-        val_acc_history.append(val_acc)        
+        val_acc_history.append(val_acc)
+        
         # 学习率调度
-        scheduler.step()       
+        scheduler.step()
+        
         # 保存最佳模型
         if val_acc > best_val_acc:
             best_val_acc = val_acc
             model_path = os.path.join(MODEL_SAVE_DIR, "best_model.pth")
             torch.save(model.state_dict(), model_path)
-            logger.info(f"保存最佳模型到: {model_path}")   
+            logger.info(f"保存最佳模型到: {model_path}")
+    
     # 保存最终模型
     logger.info(f"\n训练完成!")
-    logger.info(f"保存最佳模型到: {model_path}")
     logger.info(f"最佳验证准确率: {best_val_acc:.2f}%")
+    
     # 可视化训练过程
     visualize_training(train_loss_history, train_acc_history, val_loss_history, val_acc_history)
+    
     # 计算并可视化混淆矩阵
     logger.info("计算混淆矩阵...")
     _, _, confusion_matrix = validate(model, val_loader, criterion, device, return_confusion=True)
+    
     # 定义类别名称
     class_names = ['Antipathic', 'Fear', 'Happy', 'Neutral', 'Sad', 'Surprise']
     # 可视化混淆矩阵
@@ -441,32 +491,44 @@ if __name__ == "__main__":
     parser.add_argument(
         "--batch_size",
         type=int,
-        default=64,
+        default=128,
         help="批次大小"
     )
     parser.add_argument(
         "--epochs",
         type=int,
-        default=50,
+        default=100,
         help="训练轮数"
     )
     parser.add_argument(
         "--lr",
         type=float,
-        default=0.0002,
+        default=5e-4,
         help="学习率"
     )
     parser.add_argument(
         "--weight_decay",
         type=float,
-        default=0.05,
+        default=1e-3,
         help="权重衰减"
     )
     parser.add_argument(
         "--num_workers",
         type=int,
-        default=16,
+        default=8,
         help="数据加载器工作线程数"
+    )
+    parser.add_argument(
+        "--auto_lr",
+        action="store_true",
+        default=True,
+        help="自动学习率调整"
+    )
+    parser.add_argument(
+        "--warmup_epochs",
+        type=int,
+        default=10,
+        help="学习率预热轮数"
     )
     
     args = parser.parse_args()
